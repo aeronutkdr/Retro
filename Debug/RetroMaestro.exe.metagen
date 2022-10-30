@@ -1,0 +1,43 @@
+  RetroMaestro.Form1.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly RetroMaestro, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly CRC32, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Assembly Retro, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Assembly System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Struct Fraction: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(Int32, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    Dump(): PrivateScope, Public, HideBySig
+    op_Multiply(Fraction): PrivateScope, Public, HideBySig, SpecialName
+    op_Division(Fraction): PrivateScope, Public, HideBySig, SpecialName
+    op_Addition(Fraction): PrivateScope, Public, HideBySig, SpecialName
+    op_Subtraction(Fraction): PrivateScope, Public, HideBySig, SpecialName
+Class RetroMaestro.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class RetroMaestro.Form1+EventData: AutoLayout, AnsiClass, Class, NestedPublic, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 BatID : Public
+    Int32 PitID : Public
+    Int32 OutDelta : Public
+    Double Value : Public

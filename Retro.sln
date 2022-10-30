@@ -1,57 +1,48 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Retro", "Retro\Retro.vcproj", "{3AF31935-BF38-4DD4-811F-475C55913D6E}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Retro", "Retro\Retro.vcxproj", "{3AF31935-BF38-4DD4-811F-475C55913D6E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroCmd", "RetroCmd\RetroCmd.vcproj", "{8E3AEB12-4BF3-4678-86F8-B8043C8C2D96}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroCmd", "RetroCmd\RetroCmd.vcxproj", "{8E3AEB12-4BF3-4678-86F8-B8043C8C2D96}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroMaestro", "RetroMaestro\RetroMaestro.vcxproj", "{EE47828A-40E7-450D-BF89-F429BAAD6B36}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRC32", "CRC32\CRC32.vcxproj", "{F5DB51FF-8BC7-46D7-AAE8-48C1A74ECC32}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppendRoster", "AppendRoster\AppendRoster.vcxproj", "{1100343B-8A6A-4CE3-93B0-D6488F57474E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroImport", "RetroImport\RetroImport.vcxproj", "{40F79E25-22A3-4060-BFC5-972CAC2040D8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRCCalc", "CRCCalc\CRCCalc.vcxproj", "{90E796D5-20B1-4906-AF0B-DAF79F71D386}"
 	ProjectSection(ProjectDependencies) = postProject
-		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContourMaestro", "ContourMaestro\ContourMaestro.vcproj", "{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroDBCmd", "RetroDBCmd\RetroDBCmd.vcproj", "{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileEventCmd", "FileEventCmd\FileEventCmd.vcproj", "{AF8BA517-368B-4476-9BD2-771B1343D968}"
-	ProjectSection(ProjectDependencies) = postProject
-		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroMaestro", "RetroMaestro\RetroMaestro.vcproj", "{EE47828A-40E7-450D-BF89-F429BAAD6B36}"
-	ProjectSection(ProjectDependencies) = postProject
-		{8E3AEB12-4BF3-4678-86F8-B8043C8C2D96} = {8E3AEB12-4BF3-4678-86F8-B8043C8C2D96}
-		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
 		{F5DB51FF-8BC7-46D7-AAE8-48C1A74ECC32} = {F5DB51FF-8BC7-46D7-AAE8-48C1A74ECC32}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroUT", "RetroUT\RetroUT.vcproj", "{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "retrocheck", "retrocheck\retrocheck.vcxproj", "{783C187F-10A9-4274-B389-D937F6270D3A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRC32", "CRC32\CRC32.vcproj", "{F5DB51FF-8BC7-46D7-AAE8-48C1A74ECC32}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "retrosplit", "retrosplit\retrosplit.vcxproj", "{42F9C4B9-12D4-4D0F-BA42-7F9EBA0F441A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppendRoster", "AppendRoster\AppendRoster.vcproj", "{1100343B-8A6A-4CE3-93B0-D6488F57474E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroPitchSequence", "RetroPitchSequence\RetroPitchSequence.vcxproj", "{DED7D0B7-62C8-46E7-BB85-F5307F871751}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroImport", "RetroImport\RetroImport.vcproj", "{40F79E25-22A3-4060-BFC5-972CAC2040D8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroEventMaestro", "RetroEventMaestro\RetroEventMaestro.vcxproj", "{0F6A4BC0-E040-4995-84B2-31790D4B63C3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CRCCalc", "CRCCalc\CRCCalc.vcproj", "{90E796D5-20B1-4906-AF0B-DAF79F71D386}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroInningMaestro", "RetroInningMaestro\RetroInningMaestro.vcxproj", "{3FEF9078-D9DE-4EB4-80FD-3824A32A9DC8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "retrocheck", "retrocheck\retrocheck.vcproj", "{783C187F-10A9-4274-B389-D937F6270D3A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroReader", "RetroReader\RetroReader.vcxproj", "{311F6D7A-BFBC-4F23-B00C-4723DED0784B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "retrosplit", "retrosplit\retrosplit.vcproj", "{42F9C4B9-12D4-4D0F-BA42-7F9EBA0F441A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "evReader", "evReader\evReader.vcxproj", "{9358CA3A-B713-49AC-A136-71FF6044AB08}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroPitchSequence", "RetroPitchSequence\RetroPitchSequence.vcproj", "{DED7D0B7-62C8-46E7-BB85-F5307F871751}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GJSolve", "GJSolve\GJSolve.vcxproj", "{FE3AE9F6-AE35-4895-A301-2DB44CD5645E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroEventMaestro", "RetroEventMaestro\RetroEventMaestro.vcproj", "{0F6A4BC0-E040-4995-84B2-31790D4B63C3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroUT", "RetroUT\RetroUT.vcxproj", "{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroInningMaestro", "RetroInningMaestro\RetroInningMaestro.vcproj", "{3FEF9078-D9DE-4EB4-80FD-3824A32A9DC8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroDBCmd", "RetroDBCmd\RetroDBCmd.vcxproj", "{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroReader", "RetroReader\RetroReader.vcproj", "{311F6D7A-BFBC-4F23-B00C-4723DED0784B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileEventCmd", "FileEventCmd\FileEventCmd.vcxproj", "{AF8BA517-368B-4476-9BD2-771B1343D968}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "evReader", "evReader\evReader.vcproj", "{9358CA3A-B713-49AC-A136-71FF6044AB08}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GJSolve", "GJSolve\GJSolve.vcproj", "{FE3AE9F6-AE35-4895-A301-2DB44CD5645E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContourMaestro", "ContourMaestro\ContourMaestro.vcxproj", "{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,26 +58,10 @@ Global
 		{8E3AEB12-4BF3-4678-86F8-B8043C8C2D96}.Debug|Win32.Build.0 = Debug|Win32
 		{8E3AEB12-4BF3-4678-86F8-B8043C8C2D96}.Release|Win32.ActiveCfg = Release|Win32
 		{8E3AEB12-4BF3-4678-86F8-B8043C8C2D96}.Release|Win32.Build.0 = Release|Win32
-		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Debug|Win32.ActiveCfg = Debug|Win32
-		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Debug|Win32.Build.0 = Debug|Win32
-		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Release|Win32.ActiveCfg = Release|Win32
-		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Release|Win32.Build.0 = Release|Win32
-		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Debug|Win32.ActiveCfg = Debug|Win32
-		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Debug|Win32.Build.0 = Debug|Win32
-		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Release|Win32.ActiveCfg = Release|Win32
-		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Release|Win32.Build.0 = Release|Win32
-		{AF8BA517-368B-4476-9BD2-771B1343D968}.Debug|Win32.ActiveCfg = Debug|Win32
-		{AF8BA517-368B-4476-9BD2-771B1343D968}.Debug|Win32.Build.0 = Debug|Win32
-		{AF8BA517-368B-4476-9BD2-771B1343D968}.Release|Win32.ActiveCfg = Release|Win32
-		{AF8BA517-368B-4476-9BD2-771B1343D968}.Release|Win32.Build.0 = Release|Win32
 		{EE47828A-40E7-450D-BF89-F429BAAD6B36}.Debug|Win32.ActiveCfg = Debug|Win32
 		{EE47828A-40E7-450D-BF89-F429BAAD6B36}.Debug|Win32.Build.0 = Debug|Win32
 		{EE47828A-40E7-450D-BF89-F429BAAD6B36}.Release|Win32.ActiveCfg = Release|Win32
 		{EE47828A-40E7-450D-BF89-F429BAAD6B36}.Release|Win32.Build.0 = Release|Win32
-		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Debug|Win32.ActiveCfg = Debug|Win32
-		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Debug|Win32.Build.0 = Debug|Win32
-		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Release|Win32.ActiveCfg = Release|Win32
-		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Release|Win32.Build.0 = Release|Win32
 		{F5DB51FF-8BC7-46D7-AAE8-48C1A74ECC32}.Debug|Win32.ActiveCfg = Debug|Win32
 		{F5DB51FF-8BC7-46D7-AAE8-48C1A74ECC32}.Debug|Win32.Build.0 = Debug|Win32
 		{F5DB51FF-8BC7-46D7-AAE8-48C1A74ECC32}.Release|Win32.ActiveCfg = Release|Win32
@@ -135,8 +110,27 @@ Global
 		{FE3AE9F6-AE35-4895-A301-2DB44CD5645E}.Debug|Win32.Build.0 = Debug|Win32
 		{FE3AE9F6-AE35-4895-A301-2DB44CD5645E}.Release|Win32.ActiveCfg = Release|Win32
 		{FE3AE9F6-AE35-4895-A301-2DB44CD5645E}.Release|Win32.Build.0 = Release|Win32
+		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Debug|Win32.Build.0 = Debug|Win32
+		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Release|Win32.ActiveCfg = Release|Win32
+		{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}.Release|Win32.Build.0 = Release|Win32
+		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Debug|Win32.Build.0 = Debug|Win32
+		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Release|Win32.ActiveCfg = Release|Win32
+		{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}.Release|Win32.Build.0 = Release|Win32
+		{AF8BA517-368B-4476-9BD2-771B1343D968}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AF8BA517-368B-4476-9BD2-771B1343D968}.Debug|Win32.Build.0 = Debug|Win32
+		{AF8BA517-368B-4476-9BD2-771B1343D968}.Release|Win32.ActiveCfg = Release|Win32
+		{AF8BA517-368B-4476-9BD2-771B1343D968}.Release|Win32.Build.0 = Release|Win32
+		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Debug|Win32.Build.0 = Debug|Win32
+		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Release|Win32.ActiveCfg = Release|Win32
+		{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1238A836-A251-48F9-B40F-040763040444}
 	EndGlobalSection
 EndGlobal

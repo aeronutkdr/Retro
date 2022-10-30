@@ -1,0 +1,3 @@
+C:\Users\Kevin\source\repos\Retro\FileEventCmd\Debug\FileEventCmd.vcxproj.AssemblyReference.cache
+C:\Users\Kevin\source\repos\Retro\FileEventCmd\Debug\FileEventCmd.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Kevin\source\repos\Retro\FileEventCmd\Debug\FileEventCmd.vcxproj.CopyComplete

@@ -1,0 +1,5 @@
+C:\Users\Kevin\source\repos\Retro\RetroMaestro\Debug\RetroMaestro.vcxproj.AssemblyReference.cache
+C:\Users\Kevin\source\repos\Retro\RetroMaestro\Debug\RetroMaestro.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Kevin\source\repos\Retro\RetroMaestro\Debug\RetroMaestro.Form1.resources
+C:\Users\Kevin\source\repos\Retro\RetroMaestro\Debug\RetroMaestro.vcxproj.GenerateResource.cache
+C:\Users\Kevin\source\repos\Retro\RetroMaestro\Debug\RetroMaestro.vcxproj.CopyComplete

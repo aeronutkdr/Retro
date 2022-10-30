@@ -1,0 +1,3 @@
+C:\Users\Kevin\source\repos\Retro\RetroUT\Debug\RetroUT.vcxproj.AssemblyReference.cache
+C:\Users\Kevin\source\repos\Retro\RetroUT\Debug\RetroUT.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Kevin\source\repos\Retro\RetroUT\Debug\RetroUT.vcxproj.CopyComplete

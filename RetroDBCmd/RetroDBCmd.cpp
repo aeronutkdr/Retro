@@ -12,10 +12,10 @@ int main(array<System::String ^> ^args)
              "Data Source=RetroDB.accdb");
     m_DB->Open();
 
-    Retro::DBDictionary^ Files   = gcnew Retro::DBDictionary (m_DB, "Files");
-    Retro::DBDictionary^ Games   = gcnew Retro::DBDictionary (m_DB, "Games");
-    Retro::DBDictionary^ Players = gcnew Retro::DBDictionary (m_DB, "Players");
-    Retro::DBDictionary^ Teams   = gcnew Retro::DBDictionary (m_DB, "Teams");
+    Retro::DBDictionary^ Files   = gcnew Retro::DBDictionary (m_DB, "Files", false);
+    Retro::DBDictionary^ Games   = gcnew Retro::DBDictionary (m_DB, "Games", false);
+    Retro::DBDictionary^ Players = gcnew Retro::DBDictionary (m_DB, "Players", false);
+    Retro::DBDictionary^ Teams   = gcnew Retro::DBDictionary (m_DB, "Teams", false);
 
     System::IO::DirectoryInfo^ Dir = gcnew System::IO::DirectoryInfo
                               ("..\\..\\..\\..\\retrosheet\\data");
@@ -25,7 +25,7 @@ int main(array<System::String ^> ^args)
         System::Console::WriteLine ("Reading: " + file->Name);
         System::Int32 ^FileID;
         /* fill [File] */
-        if (Files->Add (file->Name, FileID))
+        if (Files->Add (file->Name, *FileID))
         {
             /* fill [FileData] */
             System::Console::WriteLine ("ID = " + *FileID +
