@@ -1,0 +1,319 @@
+query - see 20171022_151003.txt
+result: textBox_Result.txt
+
+# build PlayerUseArray
+PlayerUseArray <- array(c(0,1,1,2,1,2,2,3,1,2,2,3,2,3,3,4))
+# build PlayerUseArray for all number of Outs
+AllPlayerUseArray <- array(c(PlayerUseArray,PlayerUseArray+1,PlayerUseArray+2,PlayerUseArray+3))
+# build RunMatrix as outer difference of AllPlayerUseArray
+RunMatrix = outer (AllPlayerUseArray, AllPlayerUseArray, "-")
+RunMatrix[1:32*2-1,1:32*2] <- RunMatrix[((1:32)*2)-1,1:32*2]+1
+
+# method1: use RetroMaestro to build matrix
+{
+events <- matrix(scan("E:\\data.txt", 0), ncol=64, byrow=TRUE)
+results = solve(events, -rowSums(events*RunMatrix))
+}
+
+{
+setwd("C:\\Users\\Kevin\\Documents\\Visual Studio 2008\\Projects\\Retro\\RetroMaestro\\UsingR")
+# method2: use RetroMaestro's SELECT query results
+FreqMatrixIn <- matrix(scan("XXXX.txt", integer(), sep=","), ncol=3, byrow=TRUE)
+FreqMatrix <- matrix(0,64,64,TRUE)
+# populate FreqMatrix
+for (i in 1:dim(FreqMatrixIn)[1]) {
+FreqMatrix[FreqMatrixIn[i,1]+1,FreqMatrixIn[i,2]+1]=FreqMatrixIn[i,3]
+}
+# fix1 
+for (i in 1:24*2-1) {
+FreqMatrix[i,i] = -colSums(FreqMatrix)[i]
+FreqMatrix[i,i+1] = FreqMatrix[i,i+1] - FreqMatrix[i,i]
+}
+# fix2
+for (i in 1:24*2) {
+FreqMatrix[i,i] = FreqMatrix[i,i] - rowSums(FreqMatrix)[i]
+}
+# fix3
+for (i in 49:64) {
+FreqMatrix[i,i] = -1
+}
+results201x = solve(FreqMatrix,-rowSums(FreqMatrix*cRunMatrix))
+}
+# check results
+actual = matrix(scan("20171022_151003 - Copy.txt", double()),ncol=1)
+results201x[1:56] - actual
+
+
+for (i in 1:32) {
+    for (j in 1:32) {
+        res[i,j]=results201x[j*2]+cAllPlayerUseArray[i]-results201x[i*2]-cAllPlayerUseArray[j]+1
+    }
+}
+contour(0:31,0:31,res[1:32,1:32],nlevels=10)
+res - results201x_delta
+
+
+# ************************************************************************
+# build Possible
+IsPossible <-
+function(i,j) {
+# if !Runner @ Home
+p <- ((bitwAnd(i,1)==1) &&
+#  next to plate
+      (i+1 == j)) ||
+# if Runner @ Home
+     ((bitwAnd(i,1)==0) &&
+#  !Reflexive
+      (i != j) &&
+#  !Enough Players involved
+      (Outs[i]+Runners[i]>=Outs[j]+Runners[j]) &&
+#  Outs cannot decrease
+      (Outs[i] <= Outs[j]) &&
+      (sum(Bases[i,1:1])>=sum(Bases[j,1:1])) &&
+      (sum(Bases[i,1:2])>=sum(Bases[j,1:2])) &&
+      (sum(Bases[i,1:3])>=sum(Bases[j,1:3])) &&
+      (sum(Bases[i,1:4])>=sum(Bases[j,1:4])))
+p
+}
+
+Possible <- matrix(TRUE,64,64)
+for (i in 1:64) {
+    for (j in 1:64) {
+        Possible[i,j] = IsPossible(i,j);
+    }
+}
+for (i in 1:64) { for (j in 1:64) { print (Possible[i,j] == Possible2[i,j]) }}
+
+for (i in 1:64) { for (j in 1:64) { if (Possible[i,j] && (events[i,j]==0)) {print(paste(i,j,sep=" ")); }}}
+
+SELECT State1, COUNT(*)
+FROM
+    (SELECT
+            StateValue (battereventflag='F',
+                       (batterdest=1 OR
+                        runneron1stdest=1),
+                       (batterdest=2 OR
+                        runneron1stdest=2 OR
+                        runneron2nddest=2),
+                       (batterdest=3 OR
+                        runneron1stdest=3 OR
+                        runneron2nddest=3 OR
+                        runneron3rddest=3),
+                       outs+outsonplay) AS State1
+    FROM rawevents
+    WHERE -- rawevents.gameid rlike '^.\{3}201[0-9]' AND
+            (rawevents.endGameFlag='T') AND
+            (rawevents.outs + rawevents.outsonplay < 3) AND
+            (battereventflag='T')
+    -- LIMIT 0,1000
+    ) AS rollup
+GROUP BY State1
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 5.7/Uploads/2017EndInnings.txt';
+
+for (i in 0:63)
+{
+    BaseLevels[i+1,] <- (tapply(actual,
+                                rep((bitwAnd(0:(2^(i+1)-1),
+                                             2^i))/2^i,
+                                    64/(2^(i+1))),
+                                mean))
+}
+OutLevels <- tapply(actual,
+                    c(rep(0,16),
+                      rep(1,16),
+                      rep(2,16),
+                      rep(3,16)),
+                    mean)
+
+
+
+mask <- vector("integer",64)
+mask[1:64] <- ifelse(bitwAnd(0:63,1)==1,1,0) # runner at home?
+mask[1:64] <- ifelse(bitwAnd(0:63,2)==2,1,0) # runner at first?
+mask[1:64] <- ifelse(bitwAnd(0:63,4)==4,1,0) # runner at second?
+mask[1:64] <- ifelse(bitwAnd(0:63,8)==8,1,0) # runner at third?
+mask[1:64] <- ifelse(bitwAnd(0:63,5)==5,1,0) # runner at home and second
+mask[1:64] <- ifelse(bitwAnd(0:63,48)==48,1,0) # 3 Out
+mask[1:64] <- ifelse(bitwAnd(0:63,48)==32,1,0) # 2 Out
+mask[1:64] <- ifelse(bitwAnd(0:63,48)==16,1,0) # 1 Out
+mask[1:64] <- ifelse(bitwAnd(0:63,48)==0 ,1,0) # 0 Out
+
+> BuildMatrix
+function(In) {
+matrix <- matrix(0,64,64,TRUE)
+# populate matrix
+for (i in 1:dim(In)[1]) {
+matrix[In[i,1]+1,In[i,2]+1]=In[i,4]
+}
+#fix1
+for (i in 1:24*2-1) {
+matrix[i,i] = -colSums(matrix)[i]
+matrix[i,i+1] = matrix[i,i+1]-matrix[i,i]
+}
+#fix2
+for (i in 1:24*2) {
+matrix[i,i] = matrix[i,i] - rowSums(matrix)[i]
+}
+#fix3
+for (i in 49:64) {
+matrix[i,i] = -1
+}
+return (matrix)
+}
+<bytecode: 0x000000001b6139a0>
+
+FreqMatrixIn2016 <- matrix(scan("2016Output.txt", integer(), sep="\t"), ncol=4, byrow=TRUE)
+FreqMatrix2016 <- BuildMatrix(FreqMatrixIn2016)
+solve(FreqMatrix2016, -rowSums(FreqMatrix2016*RunMatrix))
+history(pattern="FreqMatrix2016")
+history(pattern="FreqMatrixIn2016")
+
+{
+setwd("C:\\Users\\Kevin\\Documents\\Visual Studio 2008\\Projects\\Retro\\RetroMaestro\\UsingR")
+FreqMatrix2010sIn <- matrix(scan("2010sOutput.txt", integer(), sep=","),
+                            ncol=3,
+                            byrow=TRUE)
+FreqMatrix <- matrix(0,64,64,TRUE)
+# populate FreqMatrix
+for (i in 1:dim(FreqMatrixIn)[1]) {
+FreqMatrix[FreqMatrixIn[i,1]+1,FreqMatrixIn[i,2]+1]=FreqMatrixIn[i,3]
+}
+# fix1 
+for (i in 1:24*2-1) {
+FreqMatrix[i,i] = -colSums(FreqMatrix)[i]
+FreqMatrix[i,i+1] = FreqMatrix[i,i+1] - FreqMatrix[i,i]
+}
+# fix2
+for (i in 1:24*2) {
+FreqMatrix[i,i] = FreqMatrix[i,i] - rowSums(FreqMatrix)[i]
+}
+# fix3
+for (i in 49:64) {
+FreqMatrix[i,i] = -1
+}
+results201x = solve(FreqMatrix,-rowSums(FreqMatrix*RunMatrix))
+}
+# how to fix
+1. load freqtable
+2. load to_state, count_to_state where endGameFlag = 'T'
+EndInningsIn <- matrix(scan("2010sEndInnings.txt", integer(), sep="\t"), ncol=2, byrow=TRUE);
+# fix
+for (i in 1:dim(EndInningsIn2010s)[1]) {
+FreqMatrix[EndInningsIn2010s[i,1],EndInningsIn2010s[i,1]+1]=FreqMatrix[EndInningsIn2010s[i,1],EndInningsIn2010s[i,1]+1]-EndInningsIn2010s[i,2];
+}
+
+setwd('C:/Users/Kevin/Documents/MySQL')
+freqMatrix32 <- fvalues32('2017Output.txt', '2017EndInnings.txt')
+freqMatrix <- fvalues('2017Output.txt', '2017EndInnings.txt')
+solve(freqMatrix,-rowSums(freqMatrix*cRunMatrix))
+
+fvalues <- function(f,g) {
+    fm_in <- matrix(scan(f, integer(), sep="\t"), ncol=3, byrow=TRUE)
+    #end_in <- matrix(scan(g, integer(), sep="\t"), ncol=2, byrow=TRUE)
+    fm <- matrix(0,64,64,TRUE)
+# populate fm
+for (i in 1:dim(fm_in)[1])
+{
+    fm[fm_in[i,1]+1,fm_in[i,2]+1]=fm_in[i,3]
+}
+# fix1:
+for (i in 1:32*2-1) {
+fm[i,i]     = -colSums(fm)[i]
+fm[i,i+1]   = fm[i,i+1] - fm[i,i]
+fm[i+1,i+1] = fm[i+1,i+1] - rowSums(fm)[i+1]
+}
+for (i in 25:32*2) {
+fm[i,i]     = -fm[i-1,i]
+}
+# fix2
+#for (i in 1:24*2) {
+#fm[i,i] = fm[i,i] - rowSums(fm)[i]
+#}
+# fix3
+#for (i in 49:64) {
+#fm[i,i] = -1
+#}
+# fix4
+#for (i in 1:dim(end_in)[1])
+#{
+#end_in[i,1] <- end_in[i,1]+1
+##fm[end_in[i,1],end_in[i,1]] <- fm[end_in[i,1],end_in[i,1]] + end_in[i,2]
+#fm[end_in[i,1],end_in[i,1]+1] <- fm[end_in[i,1],end_in[i,1]+1] - end_in[i,2]
+#}
+return (fm)
+}
+
+# "32"  refers to the 32 end states (3rd, 2nd, 1st, 4Out)
+fvalues32 <- function(f,g) {
+    fm_in <- matrix(scan(f, integer(), sep="\t"), ncol=3, byrow=TRUE)
+    end_in <- matrix(scan(g, integer(), sep="\t"), ncol=2, byrow=TRUE)
+    fm <- matrix(0,32,32,TRUE)
+# populate fm
+for (i in 1:dim(fm_in)[1])
+{
+    fm[fm_in[i,1]/2+1,fm_in[i,2]/2+1]=
+        fm[fm_in[i,1]/2+1,fm_in[i,2]/2+1]+
+        fm_in[i,3]
+}
+# fix1: subtract the # of times in this state
+for (i in 1:32) {
+#fm[i,i] = fm[i,i]-colSums(fm)[i]
+fm[i,i] = fm[i,i]-rowSums(fm)[i]
+#fm[i,i+1] = fm[i,i+1] - fm[i,i]
+}
+## fix2
+#for (i in 1:24*2) {
+#fm[i,i] = fm[i,i] - rowSums(fm)[i]
+#}
+## fix3
+#for (i in 49:64) {
+#fm[i,i] = -1
+#}
+## fix4
+#for (i in 1:dim(end_in)[1])
+#{
+#end_in[i,1] <- end_in[i,1]+1
+##fm[end_in[i,1],end_in[i,1]] <- fm[end_in[i,1],end_in[i,1]] + end_in[i,2]
+##fm[end_in[i,1],end_in[i,1]+1] <- fm[end_in[i,1],end_in[i,1]+1] - end_in[i,2]
+#}
+return (fm)
+}
+
+# "512" refers to the 512 discrete states 3, 2, 1, 4B, 4S, 4Out
+# g seems to be unused
+fvalues512 <- function(f,g) {
+    fm_in <- matrix(scan(f, integer(), sep="\t"), ncol=3, byrow=TRUE)
+#   end_in <- matrix(scan(g, integer(), sep="\t"), ncol=2, byrow=TRUE)
+    fm <- matrix(0,512,512,TRUE)
+# populate fm
+for (i in 1:dim(fm_in)[1])
+{
+    count1 <- fm_in[i,1] %% 16
+    count2 <- fm_in[i,2] %% 16
+    c1 <- 16*as.integer(fm_in[i,1]/32) + count1
+    c2 <- 16*as.integer(fm_in[i,2]/32) + count2
+    fm[c1, c2] = fm[c1, c2] + fm_in[i,3]
+}
+# fix1: subtract the # of times in this state
+for (i in 1:512) {
+#fm[i,i] = fm[i,i]-colSums(fm)[i]
+fm[i,i] = fm[i,i]-rowSums(fm)[i]
+#fm[i,i+1] = fm[i,i+1] - fm[i,i]
+}
+## fix2
+#for (i in 1:24*2) {
+#fm[i,i] = fm[i,i] - rowSums(fm)[i]
+#}
+## fix3
+#for (i in 49:64) {
+#fm[i,i] = -1
+#}
+## fix4
+#for (i in 1:dim(end_in)[1])
+#{
+#end_in[i,1] <- end_in[i,1]+1
+##fm[end_in[i,1],end_in[i,1]] <- fm[end_in[i,1],end_in[i,1]] + end_in[i,2]
+##fm[end_in[i,1],end_in[i,1]+1] <- fm[end_in[i,1],end_in[i,1]+1] - end_in[i,2]
+#}
+return (fm)
+}

@@ -1,0 +1,4863 @@
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=8
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3548 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 250    Average : (14192.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-730586433, [ProcessingTime]=250, [NumRows]=3548 WHERE [ID]=8
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=9
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5067 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 344    Average : (14729.65 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1313286233, [ProcessingTime]=344, [NumRows]=5067 WHERE [ID]=9
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=10
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5259 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 375    Average : (14024.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2077373259, [ProcessingTime]=375, [NumRows]=5259 WHERE [ID]=10
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=11
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6126 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 421    Average : (14551.07 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=287397354, [ProcessingTime]=421, [NumRows]=6126 WHERE [ID]=11
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=12
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5480 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 281    Average : (19501.78 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-889856846, [ProcessingTime]=281, [NumRows]=5480 WHERE [ID]=12
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=13
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6002 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 344    Average : (17447.67 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1815790054, [ProcessingTime]=344, [NumRows]=6002 WHERE [ID]=13
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=14
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1872 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (24000.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2036066670, [ProcessingTime]=78, [NumRows]=1872 WHERE [ID]=14
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=15
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2671 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (18943.26 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1050714071, [ProcessingTime]=141, [NumRows]=2671 WHERE [ID]=15
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=16
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5699 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 344    Average : (16566.86 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-395151070, [ProcessingTime]=344, [NumRows]=5699 WHERE [ID]=16
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=17
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3794 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (18689.65 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-939360986, [ProcessingTime]=203, [NumRows]=3794 WHERE [ID]=17
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=18
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5000 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 250    Average : (20000.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-529945072, [ProcessingTime]=250, [NumRows]=5000 WHERE [ID]=18
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=19
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5710 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 313    Average : (18242.81 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2119596129, [ProcessingTime]=313, [NumRows]=5710 WHERE [ID]=19
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=20
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6137 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 312    Average : (19669.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-510365718, [ProcessingTime]=312, [NumRows]=6137 WHERE [ID]=20
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=21
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6054 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 219    Average : (27643.84 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1316184776, [ProcessingTime]=219, [NumRows]=6054 WHERE [ID]=21
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=22
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2539 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (27010.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=358855595, [ProcessingTime]=94, [NumRows]=2539 WHERE [ID]=22
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=23
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5576 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 375    Average : (14869.33 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=187459529, [ProcessingTime]=375, [NumRows]=5576 WHERE [ID]=23
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=24
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5903 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 234    Average : (25226.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=355713326, [ProcessingTime]=234, [NumRows]=5903 WHERE [ID]=24
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=25
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5634 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 234    Average : (24076.92 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1386536084, [ProcessingTime]=234, [NumRows]=5634 WHERE [ID]=25
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=26
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4957 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 188    Average : (26367.02 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2063996694, [ProcessingTime]=188, [NumRows]=4957 WHERE [ID]=26
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=27
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6468 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 265    Average : (24407.55 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1670825936, [ProcessingTime]=265, [NumRows]=6468 WHERE [ID]=27
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=28
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2222 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (23892.47 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=635171293, [ProcessingTime]=93, [NumRows]=2222 WHERE [ID]=28
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=29
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2431 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (38587.30 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=538663346, [ProcessingTime]=63, [NumRows]=2431 WHERE [ID]=29
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=30
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1989 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (42319.15 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1553775197, [ProcessingTime]=47, [NumRows]=1989 WHERE [ID]=30
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=31
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3751 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 234    Average : (16029.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-274103310, [ProcessingTime]=234, [NumRows]=3751 WHERE [ID]=31
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=32
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6228 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 281    Average : (22163.70 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1688988313, [ProcessingTime]=281, [NumRows]=6228 WHERE [ID]=32
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=33
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4787 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (43917.43 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-812542469, [ProcessingTime]=109, [NumRows]=4787 WHERE [ID]=33
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=34
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5303 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (33993.59 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-282793541, [ProcessingTime]=156, [NumRows]=5303 WHERE [ID]=34
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=35
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5253 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (42024.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=308582800, [ProcessingTime]=125, [NumRows]=5253 WHERE [ID]=35
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=36
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5999 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (38455.13 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=522384925, [ProcessingTime]=156, [NumRows]=5999 WHERE [ID]=36
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=37
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6416 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (45828.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=327302747, [ProcessingTime]=140, [NumRows]=6416 WHERE [ID]=37
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=38
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3677 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (47141.03 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=455942594, [ProcessingTime]=78, [NumRows]=3677 WHERE [ID]=38
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=39
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4948 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (52638.30 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1945712463, [ProcessingTime]=94, [NumRows]=4948 WHERE [ID]=39
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=40
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5350 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (42800.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1664421137, [ProcessingTime]=125, [NumRows]=5350 WHERE [ID]=40
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=41
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5982 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 157    Average : (38101.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1463112892, [ProcessingTime]=157, [NumRows]=5982 WHERE [ID]=41
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=42
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5440 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (31627.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=125130781, [ProcessingTime]=172, [NumRows]=5440 WHERE [ID]=42
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=43
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6278 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 235    Average : (26714.89 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1357706564, [ProcessingTime]=235, [NumRows]=6278 WHERE [ID]=43
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=44
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4764 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (51225.80 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-815756147, [ProcessingTime]=93, [NumRows]=4764 WHERE [ID]=44
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=45
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4051 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (51935.90 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2083296513, [ProcessingTime]=78, [NumRows]=4051 WHERE [ID]=45
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=46
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2783 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (35679.49 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1040738276, [ProcessingTime]=78, [NumRows]=2783 WHERE [ID]=46
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=47
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4797 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 218    Average : (22004.59 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=35519576, [ProcessingTime]=218, [NumRows]=4797 WHERE [ID]=47
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=48
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3720 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (47692.31 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1387059715, [ProcessingTime]=78, [NumRows]=3720 WHERE [ID]=48
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=49
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4822 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (51849.46 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=357260289, [ProcessingTime]=93, [NumRows]=4822 WHERE [ID]=49
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=50
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5018 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (24719.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1496974700, [ProcessingTime]=203, [NumRows]=5018 WHERE [ID]=50
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=51
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5099 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (46779.82 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=421938676, [ProcessingTime]=109, [NumRows]=5099 WHERE [ID]=51
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=52
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6156 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (43659.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2130928446, [ProcessingTime]=141, [NumRows]=6156 WHERE [ID]=52
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=53
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6176 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (49408.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=791305788, [ProcessingTime]=125, [NumRows]=6176 WHERE [ID]=53
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=54
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3917 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (41670.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-84837680, [ProcessingTime]=94, [NumRows]=3917 WHERE [ID]=54
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=55
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4623 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (49709.68 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1726388891, [ProcessingTime]=93, [NumRows]=4623 WHERE [ID]=55
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=56
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6031 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (29709.36 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-132235063, [ProcessingTime]=203, [NumRows]=6031 WHERE [ID]=56
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=57
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6037 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (55385.32 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1886009028, [ProcessingTime]=109, [NumRows]=6037 WHERE [ID]=57
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=58
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5677 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (52082.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1112147696, [ProcessingTime]=109, [NumRows]=5677 WHERE [ID]=58
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=59
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6129 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (56229.36 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1687419497, [ProcessingTime]=109, [NumRows]=6129 WHERE [ID]=59
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=60
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5279 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (42232.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-425254016, [ProcessingTime]=125, [NumRows]=5279 WHERE [ID]=60
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=61
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5305 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (57043.01 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2115941310, [ProcessingTime]=93, [NumRows]=5305 WHERE [ID]=61
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=62
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3930 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (31440.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-161122759, [ProcessingTime]=125, [NumRows]=3930 WHERE [ID]=62
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=63
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4408 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (35264.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1312404002, [ProcessingTime]=125, [NumRows]=4408 WHERE [ID]=63
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=64
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6061 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (42985.82 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1851238840, [ProcessingTime]=141, [NumRows]=6061 WHERE [ID]=64
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=65
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4068 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (52153.85 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1941806, [ProcessingTime]=78, [NumRows]=4068 WHERE [ID]=65
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=66
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5243 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (55776.60 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1824064416, [ProcessingTime]=94, [NumRows]=5243 WHERE [ID]=66
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=67
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5351 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (42808.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1397364542, [ProcessingTime]=125, [NumRows]=5351 WHERE [ID]=67
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=68
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5857 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (31320.86 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=730199534, [ProcessingTime]=187, [NumRows]=5857 WHERE [ID]=68
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=69
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6394 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 188    Average : (34010.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=623292848, [ProcessingTime]=188, [NumRows]=6394 WHERE [ID]=69
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=70
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3046 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (49129.03 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=199958386, [ProcessingTime]=62, [NumRows]=3046 WHERE [ID]=70
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=71
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5846 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 204    Average : (28656.86 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1835638633, [ProcessingTime]=204, [NumRows]=5846 WHERE [ID]=71
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=72
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5540 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (29625.67 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1006822156, [ProcessingTime]=187, [NumRows]=5540 WHERE [ID]=72
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=73
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6116 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (30128.08 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=953151368, [ProcessingTime]=203, [NumRows]=6116 WHERE [ID]=73
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=74
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4264 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (39119.27 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-690584554, [ProcessingTime]=109, [NumRows]=4264 WHERE [ID]=74
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=75
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5718 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (51981.82 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=198260730, [ProcessingTime]=110, [NumRows]=5718 WHERE [ID]=75
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=76
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3373 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (43243.59 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1583694920, [ProcessingTime]=78, [NumRows]=3373 WHERE [ID]=76
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=77
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2477 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (39317.46 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-655399146, [ProcessingTime]=63, [NumRows]=2477 WHERE [ID]=77
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=78
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3160 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (28727.27 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=972623692, [ProcessingTime]=110, [NumRows]=3160 WHERE [ID]=78
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=79
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4737 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (33835.71 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-680045720, [ProcessingTime]=140, [NumRows]=4737 WHERE [ID]=79
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=80
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5915 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (34389.54 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1333002918, [ProcessingTime]=172, [NumRows]=5915 WHERE [ID]=80
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=81
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4381 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (25470.93 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1116665604, [ProcessingTime]=172, [NumRows]=4381 WHERE [ID]=81
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=82
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5236 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (56301.07 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1163438322, [ProcessingTime]=93, [NumRows]=5236 WHERE [ID]=82
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=83
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4837 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (38696.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1295157921, [ProcessingTime]=125, [NumRows]=4837 WHERE [ID]=83
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=84
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6012 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (42638.30 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1057787578, [ProcessingTime]=141, [NumRows]=6012 WHERE [ID]=84
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=85
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6113 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (55572.73 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2108224267, [ProcessingTime]=110, [NumRows]=6113 WHERE [ID]=85
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=86
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4071 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 171    Average : (23807.02 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1477703356, [ProcessingTime]=171, [NumRows]=4071 WHERE [ID]=86
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=87
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5565 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (35673.08 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1985663846, [ProcessingTime]=156, [NumRows]=5565 WHERE [ID]=87
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=88
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5591 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (50827.27 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1646200346, [ProcessingTime]=110, [NumRows]=5591 WHERE [ID]=88
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=89
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5811 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (28625.62 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-22696200, [ProcessingTime]=203, [NumRows]=5811 WHERE [ID]=89
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=90
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5096 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (46752.29 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1727638081, [ProcessingTime]=109, [NumRows]=5096 WHERE [ID]=90
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=91
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6273 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (36470.93 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2057585233, [ProcessingTime]=172, [NumRows]=6273 WHERE [ID]=91
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=92
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3940 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (31520.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=814082963, [ProcessingTime]=125, [NumRows]=3940 WHERE [ID]=92
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=93
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3539 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (25099.29 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-159695813, [ProcessingTime]=141, [NumRows]=3539 WHERE [ID]=93
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=94
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3633 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (58596.77 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1385718143, [ProcessingTime]=62, [NumRows]=3633 WHERE [ID]=94
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=95
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4217 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (45344.09 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1328497471, [ProcessingTime]=93, [NumRows]=4217 WHERE [ID]=95
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=96
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6061 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (42985.82 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1185350378, [ProcessingTime]=141, [NumRows]=6061 WHERE [ID]=96
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=97
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2774 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (25218.18 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1212212028, [ProcessingTime]=110, [NumRows]=2774 WHERE [ID]=97
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=98
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5171 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (47440.37 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=509373739, [ProcessingTime]=109, [NumRows]=5171 WHERE [ID]=98
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=99
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4268 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (45404.25 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1264127356, [ProcessingTime]=94, [NumRows]=4268 WHERE [ID]=99
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=100
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6080 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (48640.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-450201584, [ProcessingTime]=125, [NumRows]=6080 WHERE [ID]=100
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=101
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6200 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (44285.71 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1457245149, [ProcessingTime]=140, [NumRows]=6200 WHERE [ID]=101
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=102
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3095 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (28394.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1253403420, [ProcessingTime]=109, [NumRows]=3095 WHERE [ID]=102
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=103
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4489 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (28775.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-422409832, [ProcessingTime]=156, [NumRows]=4489 WHERE [ID]=103
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=104
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5146 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (41168.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-940440184, [ProcessingTime]=125, [NumRows]=5146 WHERE [ID]=104
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=105
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6366 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (31359.61 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1904058106, [ProcessingTime]=203, [NumRows]=6366 WHERE [ID]=105
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=106
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5918 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (34406.98 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1758752717, [ProcessingTime]=172, [NumRows]=5918 WHERE [ID]=106
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=107
+The thread 'Win32 Thread' (0x5cd8) has exited with code 0 (0x0).
+The thread 'Win32 Thread' (0x9fc) has exited with code 0 (0x0).
+The thread 'Win32 Thread' (0x57c4) has exited with code 0 (0x0).
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3591 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (57000.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1871307599, [ProcessingTime]=63, [NumRows]=3591 WHERE [ID]=107
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=108
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4280 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (45531.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1382640078, [ProcessingTime]=94, [NumRows]=4280 WHERE [ID]=108
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=109
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4028 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (51641.03 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-903902456, [ProcessingTime]=78, [NumRows]=4028 WHERE [ID]=109
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=110
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3434 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 79     Average : (43468.36 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-184330363, [ProcessingTime]=79, [NumRows]=3434 WHERE [ID]=110
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=111
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4304 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (46279.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=136897527, [ProcessingTime]=93, [NumRows]=4304 WHERE [ID]=111
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=112
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6115 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (55590.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-695047557, [ProcessingTime]=110, [NumRows]=6115 WHERE [ID]=112
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=113
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4217 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (33736.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1217722476, [ProcessingTime]=125, [NumRows]=4217 WHERE [ID]=113
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=114
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5374 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (42992.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=587268634, [ProcessingTime]=125, [NumRows]=5374 WHERE [ID]=114
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=115
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5026 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (64435.90 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1995394197, [ProcessingTime]=78, [NumRows]=5026 WHERE [ID]=115
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=116
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6044 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (42865.25 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=587666323, [ProcessingTime]=141, [NumRows]=6044 WHERE [ID]=116
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=117
+The thread 'Win32 Thread' (0x6ad4) has exited with code 0 (0x0).
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5669 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (27926.11 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=768687168, [ProcessingTime]=203, [NumRows]=5669 WHERE [ID]=117
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=118
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3783 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (24250.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-595501789, [ProcessingTime]=156, [NumRows]=3783 WHERE [ID]=118
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=119
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4778 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (33886.52 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=450792993, [ProcessingTime]=141, [NumRows]=4778 WHERE [ID]=119
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=120
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4802 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 157    Average : (30585.99 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1048881124, [ProcessingTime]=157, [NumRows]=4802 WHERE [ID]=120
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=121
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6150 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (43617.02 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-291014011, [ProcessingTime]=141, [NumRows]=6150 WHERE [ID]=121
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=122
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5499 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (49990.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-516996988, [ProcessingTime]=110, [NumRows]=5499 WHERE [ID]=122
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=123
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5508 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (39063.83 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-762151130, [ProcessingTime]=141, [NumRows]=5508 WHERE [ID]=123
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=124
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4133 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (33064.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=627220486, [ProcessingTime]=125, [NumRows]=4133 WHERE [ID]=124
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=125
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3755 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (30040.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-77668387, [ProcessingTime]=125, [NumRows]=3755 WHERE [ID]=125
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=126
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3346 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (53967.74 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1778368029, [ProcessingTime]=62, [NumRows]=3346 WHERE [ID]=126
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=127
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4160 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (44255.32 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1089741289, [ProcessingTime]=94, [NumRows]=4160 WHERE [ID]=127
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=128
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6108 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (55527.27 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1389673552, [ProcessingTime]=110, [NumRows]=6108 WHERE [ID]=128
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=129
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4336 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (30751.77 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1066369444, [ProcessingTime]=141, [NumRows]=4336 WHERE [ID]=129
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=130
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4098 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (43595.75 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1025245711, [ProcessingTime]=94, [NumRows]=4098 WHERE [ID]=130
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=131
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4361 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (55910.26 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1799536674, [ProcessingTime]=78, [NumRows]=4361 WHERE [ID]=131
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=132
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6309 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 219    Average : (28808.22 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=710926737, [ProcessingTime]=219, [NumRows]=6309 WHERE [ID]=132
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=133
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5053 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (36092.86 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=429356586, [ProcessingTime]=140, [NumRows]=5053 WHERE [ID]=133
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=134
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4134 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (44451.61 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1806434579, [ProcessingTime]=93, [NumRows]=4134 WHERE [ID]=134
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=135
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4761 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (33765.96 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-409024927, [ProcessingTime]=141, [NumRows]=4761 WHERE [ID]=135
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=136
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4655 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (50053.76 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-13763040, [ProcessingTime]=93, [NumRows]=4655 WHERE [ID]=136
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=137
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6010 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 219    Average : (27442.92 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=557496052, [ProcessingTime]=219, [NumRows]=6010 WHERE [ID]=137
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=138
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3341 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (30651.38 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1130416752, [ProcessingTime]=109, [NumRows]=3341 WHERE [ID]=138
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=139
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3466 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 171    Average : (20269.01 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1523342402, [ProcessingTime]=171, [NumRows]=3466 WHERE [ID]=139
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=140
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2866 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (46225.80 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1991664413, [ProcessingTime]=62, [NumRows]=2866 WHERE [ID]=140
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=141
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3313 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (26504.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1521926396, [ProcessingTime]=125, [NumRows]=3313 WHERE [ID]=141
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=142
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3534 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (57000.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1232385121, [ProcessingTime]=62, [NumRows]=3534 WHERE [ID]=142
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=143
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4260 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (30212.77 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-609299962, [ProcessingTime]=141, [NumRows]=4260 WHERE [ID]=143
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=144
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5949 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 219    Average : (27164.38 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2110220007, [ProcessingTime]=219, [NumRows]=5949 WHERE [ID]=144
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=145
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3957 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (28264.29 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1203430462, [ProcessingTime]=140, [NumRows]=3957 WHERE [ID]=145
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=146
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4424 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (31600.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1041767179, [ProcessingTime]=140, [NumRows]=4424 WHERE [ID]=146
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=147
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4530 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 157    Average : (28853.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1475504811, [ProcessingTime]=157, [NumRows]=4530 WHERE [ID]=147
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=148
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5965 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (34680.23 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-640232817, [ProcessingTime]=172, [NumRows]=5965 WHERE [ID]=148
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=149
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5358 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (48709.09 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=249522801, [ProcessingTime]=110, [NumRows]=5358 WHERE [ID]=149
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=150
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3596 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (38255.32 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1053423616, [ProcessingTime]=94, [NumRows]=3596 WHERE [ID]=150
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=151
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5346 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (34269.23 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-5524897, [ProcessingTime]=156, [NumRows]=5346 WHERE [ID]=151
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=152
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4695 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (27296.51 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1682011801, [ProcessingTime]=172, [NumRows]=4695 WHERE [ID]=152
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=153
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5939 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (29256.16 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-981864497, [ProcessingTime]=203, [NumRows]=5939 WHERE [ID]=153
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=154
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3335 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (35860.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1139631829, [ProcessingTime]=93, [NumRows]=3335 WHERE [ID]=154
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=155
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3497 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (37202.13 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1475924919, [ProcessingTime]=94, [NumRows]=3497 WHERE [ID]=155
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=156
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2637 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (42532.26 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=168428359, [ProcessingTime]=62, [NumRows]=2637 WHERE [ID]=156
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=157
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2584 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (41015.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1063456586, [ProcessingTime]=63, [NumRows]=2584 WHERE [ID]=157
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=158
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3161 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (50983.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=377882547, [ProcessingTime]=62, [NumRows]=3161 WHERE [ID]=158
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=159
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5370 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 234    Average : (22948.72 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=134422991, [ProcessingTime]=234, [NumRows]=5370 WHERE [ID]=159
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=160
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4193 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (33544.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1201010071, [ProcessingTime]=125, [NumRows]=4193 WHERE [ID]=160
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=161
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5137 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (54648.94 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1097309310, [ProcessingTime]=94, [NumRows]=5137 WHERE [ID]=161
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=162
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5156 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (25399.02 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=3195079, [ProcessingTime]=203, [NumRows]=5156 WHERE [ID]=162
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=163
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3261 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (26088.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-618887704, [ProcessingTime]=125, [NumRows]=3261 WHERE [ID]=163
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=164
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6123 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (35598.84 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=491503547, [ProcessingTime]=172, [NumRows]=6123 WHERE [ID]=164
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=165
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6259 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (40121.79 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1804750778, [ProcessingTime]=156, [NumRows]=6259 WHERE [ID]=165
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=166
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3254 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (23242.86 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=504832743, [ProcessingTime]=140, [NumRows]=3254 WHERE [ID]=166
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=167
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2462 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (31564.10 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1346461524, [ProcessingTime]=78, [NumRows]=2462 WHERE [ID]=167
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=168
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4932 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (35228.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1224378766, [ProcessingTime]=140, [NumRows]=4932 WHERE [ID]=168
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=169
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6269 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (33524.06 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2030875145, [ProcessingTime]=187, [NumRows]=6269 WHERE [ID]=169
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=170
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4214 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (44829.79 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-25420004, [ProcessingTime]=94, [NumRows]=4214 WHERE [ID]=170
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=171
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2270 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (48297.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1564142182, [ProcessingTime]=47, [NumRows]=2270 WHERE [ID]=171
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=172
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2041 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (32919.36 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1251658128, [ProcessingTime]=62, [NumRows]=2041 WHERE [ID]=172
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=173
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1877 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (39936.17 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1365930454, [ProcessingTime]=47, [NumRows]=1877 WHERE [ID]=173
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=174
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2902 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (46806.45 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2007095105, [ProcessingTime]=62, [NumRows]=2902 WHERE [ID]=174
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=175
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5148 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (41184.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=199617843, [ProcessingTime]=125, [NumRows]=5148 WHERE [ID]=175
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=176
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4668 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (37344.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-375019516, [ProcessingTime]=125, [NumRows]=4668 WHERE [ID]=176
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=177
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4714 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (42854.55 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1823203636, [ProcessingTime]=110, [NumRows]=4714 WHERE [ID]=177
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=178
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5187 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (36787.23 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2041479480, [ProcessingTime]=141, [NumRows]=5187 WHERE [ID]=178
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=179
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5807 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (46456.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1426142709, [ProcessingTime]=125, [NumRows]=5807 WHERE [ID]=179
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=180
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6202 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 157    Average : (39503.18 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1221203341, [ProcessingTime]=157, [NumRows]=6202 WHERE [ID]=180
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=181
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5580 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (29839.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=558971742, [ProcessingTime]=187, [NumRows]=5580 WHERE [ID]=181
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=182
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3934 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 79     Average : (49797.47 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1222865799, [ProcessingTime]=79, [NumRows]=3934 WHERE [ID]=182
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=183
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4797 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (38376.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1961781059, [ProcessingTime]=125, [NumRows]=4797 WHERE [ID]=183
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=184
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6070 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 171    Average : (35497.07 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2000771472, [ProcessingTime]=171, [NumRows]=6070 WHERE [ID]=184
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=185
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6267 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (50136.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-130154996, [ProcessingTime]=125, [NumRows]=6267 WHERE [ID]=185
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=186
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4602 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (42220.18 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-984017315, [ProcessingTime]=109, [NumRows]=4602 WHERE [ID]=186
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=187
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5529 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (50724.77 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-575133015, [ProcessingTime]=109, [NumRows]=5529 WHERE [ID]=187
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=188
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4337 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (46634.41 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2146585652, [ProcessingTime]=93, [NumRows]=4337 WHERE [ID]=188
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=189
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3986 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (36236.36 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2062243853, [ProcessingTime]=110, [NumRows]=3986 WHERE [ID]=189
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=190
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3930 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (42258.07 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-270456430, [ProcessingTime]=93, [NumRows]=3930 WHERE [ID]=190
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=191
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3982 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (28442.86 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-383248854, [ProcessingTime]=140, [NumRows]=3982 WHERE [ID]=191
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=192
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3702 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (39382.98 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1768462975, [ProcessingTime]=94, [NumRows]=3702 WHERE [ID]=192
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=193
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3610 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (58225.80 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1028778930, [ProcessingTime]=62, [NumRows]=3610 WHERE [ID]=193
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=194
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3624 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (58451.61 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1691742917, [ProcessingTime]=62, [NumRows]=3624 WHERE [ID]=194
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=195
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5520 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (35384.62 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1348328061, [ProcessingTime]=156, [NumRows]=5520 WHERE [ID]=195
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=196
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5982 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 219    Average : (27315.07 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1105395629, [ProcessingTime]=219, [NumRows]=5982 WHERE [ID]=196
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=197
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5067 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (54483.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=114570949, [ProcessingTime]=93, [NumRows]=5067 WHERE [ID]=197
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=198
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2432 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (39225.80 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=737124866, [ProcessingTime]=62, [NumRows]=2432 WHERE [ID]=198
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=199
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3745 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (39840.43 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=419526836, [ProcessingTime]=94, [NumRows]=3745 WHERE [ID]=199
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=200
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5688 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (51709.09 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=740753444, [ProcessingTime]=110, [NumRows]=5688 WHERE [ID]=200
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=201
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5650 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (45200.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-367251308, [ProcessingTime]=125, [NumRows]=5650 WHERE [ID]=201
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=202
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4169 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (44351.06 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=546563112, [ProcessingTime]=94, [NumRows]=4169 WHERE [ID]=202
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=203
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3651 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (25893.62 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2102922845, [ProcessingTime]=141, [NumRows]=3651 WHERE [ID]=203
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=204
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2530 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (26914.89 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1116702540, [ProcessingTime]=94, [NumRows]=2530 WHERE [ID]=204
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=205
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2698 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (34589.74 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-530286108, [ProcessingTime]=78, [NumRows]=2698 WHERE [ID]=205
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=206
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2725 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (34935.90 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-566880564, [ProcessingTime]=78, [NumRows]=2725 WHERE [ID]=206
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=207
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4176 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (44425.53 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-446463091, [ProcessingTime]=94, [NumRows]=4176 WHERE [ID]=207
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=208
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4322 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (45978.72 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2005156867, [ProcessingTime]=94, [NumRows]=4322 WHERE [ID]=208
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=209
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4244 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (45148.94 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-825304959, [ProcessingTime]=94, [NumRows]=4244 WHERE [ID]=209
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=210
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4408 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (35264.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-681569358, [ProcessingTime]=125, [NumRows]=4408 WHERE [ID]=210
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=211
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3809 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (48833.33 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1897177530, [ProcessingTime]=78, [NumRows]=3809 WHERE [ID]=211
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=212
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6177 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (33032.09 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=431995170, [ProcessingTime]=187, [NumRows]=6177 WHERE [ID]=212
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=213
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2234 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (72064.52 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1226855909, [ProcessingTime]=31, [NumRows]=2234 WHERE [ID]=213
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=214
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3035 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (32287.23 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=256621504, [ProcessingTime]=94, [NumRows]=3035 WHERE [ID]=214
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=215
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3808 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (30464.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=230129178, [ProcessingTime]=125, [NumRows]=3808 WHERE [ID]=215
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=216
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5723 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (36685.90 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=77704240, [ProcessingTime]=156, [NumRows]=5723 WHERE [ID]=216
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=217
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6149 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (39416.67 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=488824629, [ProcessingTime]=156, [NumRows]=6149 WHERE [ID]=217
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=218
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4279 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (34232.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1437355562, [ProcessingTime]=125, [NumRows]=4279 WHERE [ID]=218
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=219
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3342 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (53903.23 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-627283391, [ProcessingTime]=62, [NumRows]=3342 WHERE [ID]=219
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=220
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2480 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (40000.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1974302751, [ProcessingTime]=62, [NumRows]=2480 WHERE [ID]=220
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=221
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2488 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (22618.18 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1994931480, [ProcessingTime]=110, [NumRows]=2488 WHERE [ID]=221
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=222
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2496 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (17702.13 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1916670344, [ProcessingTime]=141, [NumRows]=2496 WHERE [ID]=222
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=223
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3532 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (32403.67 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2122570141, [ProcessingTime]=109, [NumRows]=3532 WHERE [ID]=223
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=224
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6057 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (55063.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1433570738, [ProcessingTime]=110, [NumRows]=6057 WHERE [ID]=224
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=225
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3552 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (45538.46 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1749356149, [ProcessingTime]=78, [NumRows]=3552 WHERE [ID]=225
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=226
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2398 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (30743.59 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2083339704, [ProcessingTime]=78, [NumRows]=2398 WHERE [ID]=226
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=227
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2690 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (19078.01 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2138952007, [ProcessingTime]=141, [NumRows]=2690 WHERE [ID]=227
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=228
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5913 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (54247.71 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1047909099, [ProcessingTime]=109, [NumRows]=5913 WHERE [ID]=228
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=229
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6010 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (48080.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1617091291, [ProcessingTime]=125, [NumRows]=6010 WHERE [ID]=229
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=230
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2363 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (25138.30 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=438355918, [ProcessingTime]=94, [NumRows]=2363 WHERE [ID]=230
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=231
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2862 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (60893.62 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-955559600, [ProcessingTime]=47, [NumRows]=2862 WHERE [ID]=231
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=232
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5565 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (39468.09 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=438992642, [ProcessingTime]=141, [NumRows]=5565 WHERE [ID]=232
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=233
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4778 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (30628.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=957634648, [ProcessingTime]=156, [NumRows]=4778 WHERE [ID]=233
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=234
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3753 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (24057.69 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=788397332, [ProcessingTime]=156, [NumRows]=3753 WHERE [ID]=234
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=235
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3693 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (33572.73 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=958997780, [ProcessingTime]=110, [NumRows]=3693 WHERE [ID]=235
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=236
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1651 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (21166.67 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=178397063, [ProcessingTime]=78, [NumRows]=1651 WHERE [ID]=236
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=237
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2158 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (19618.18 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1954224216, [ProcessingTime]=110, [NumRows]=2158 WHERE [ID]=237
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=238
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2504 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (53276.60 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-382777218, [ProcessingTime]=47, [NumRows]=2504 WHERE [ID]=238
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=239
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3197 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (29330.28 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1046657326, [ProcessingTime]=109, [NumRows]=3197 WHERE [ID]=239
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=240
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6143 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (49144.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=560124964, [ProcessingTime]=125, [NumRows]=6143 WHERE [ID]=240
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=241
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2197 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (28166.67 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1492362704, [ProcessingTime]=78, [NumRows]=2197 WHERE [ID]=241
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=242
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1738 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (22282.05 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2012209383, [ProcessingTime]=78, [NumRows]=1738 WHERE [ID]=242
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=243
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1968 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (31741.94 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1958268608, [ProcessingTime]=62, [NumRows]=1968 WHERE [ID]=243
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=244
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6207 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (30576.36 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=725673593, [ProcessingTime]=203, [NumRows]=6207 WHERE [ID]=244
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=245
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5686 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (51690.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-180985361, [ProcessingTime]=110, [NumRows]=5686 WHERE [ID]=245
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=246
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1762 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (37489.36 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=729337606, [ProcessingTime]=47, [NumRows]=1762 WHERE [ID]=246
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=247
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2101 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (33349.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1323300483, [ProcessingTime]=63, [NumRows]=2101 WHERE [ID]=247
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=248
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6087 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 234    Average : (26012.82 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-211534278, [ProcessingTime]=234, [NumRows]=6087 WHERE [ID]=248
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=249
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4942 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (45339.45 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1068890257, [ProcessingTime]=109, [NumRows]=4942 WHERE [ID]=249
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=250
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2684 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (57106.38 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1113815703, [ProcessingTime]=47, [NumRows]=2684 WHERE [ID]=250
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=251
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2335 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (16560.28 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-353458592, [ProcessingTime]=141, [NumRows]=2335 WHERE [ID]=251
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=252
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2035 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (65645.16 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=905351059, [ProcessingTime]=31, [NumRows]=2035 WHERE [ID]=252
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=253
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2426 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (51617.02 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-504801101, [ProcessingTime]=47, [NumRows]=2426 WHERE [ID]=253
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=254
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1929 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (41042.55 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1060322199, [ProcessingTime]=47, [NumRows]=1929 WHERE [ID]=254
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=255
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1154 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (12276.60 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=296366387, [ProcessingTime]=94, [NumRows]=1154 WHERE [ID]=255
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=256
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5994 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 313    Average : (19150.16 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1976682446, [ProcessingTime]=313, [NumRows]=5994 WHERE [ID]=256
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=257
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2425 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (26075.27 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1688206929, [ProcessingTime]=93, [NumRows]=2425 WHERE [ID]=257
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=258
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1542 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 32     Average : (48187.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-56718435, [ProcessingTime]=32, [NumRows]=1542 WHERE [ID]=258
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=259
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1964 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (31174.60 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-382229243, [ProcessingTime]=63, [NumRows]=1964 WHERE [ID]=259
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=260
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6052 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (35186.05 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=618912963, [ProcessingTime]=172, [NumRows]=6052 WHERE [ID]=260
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=261
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5079 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (29529.07 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=496733691, [ProcessingTime]=172, [NumRows]=5079 WHERE [ID]=261
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=262
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1283 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (41387.10 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1249923588, [ProcessingTime]=31, [NumRows]=1283 WHERE [ID]=262
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=263
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2527 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (32397.44 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1405595227, [ProcessingTime]=78, [NumRows]=2527 WHERE [ID]=263
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=264
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4459 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (40908.26 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-337390992, [ProcessingTime]=109, [NumRows]=4459 WHERE [ID]=264
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=265
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4530 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (41181.82 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=199510223, [ProcessingTime]=110, [NumRows]=4530 WHERE [ID]=265
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=266
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4047 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (37128.44 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2006069242, [ProcessingTime]=109, [NumRows]=4047 WHERE [ID]=266
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=267
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2692 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (34512.82 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-982921264, [ProcessingTime]=78, [NumRows]=2692 WHERE [ID]=267
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=268
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1264 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (40774.20 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-948439613, [ProcessingTime]=31, [NumRows]=1264 WHERE [ID]=268
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=269
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1801 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (23089.74 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1509283355, [ProcessingTime]=78, [NumRows]=1801 WHERE [ID]=269
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=270
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1429 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 16     Average : (89312.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1527614103, [ProcessingTime]=16, [NumRows]=1429 WHERE [ID]=270
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=271
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2234 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (28641.03 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1184387552, [ProcessingTime]=78, [NumRows]=2234 WHERE [ID]=271
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=272
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6184 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (30463.05 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1553232919, [ProcessingTime]=203, [NumRows]=6184 WHERE [ID]=272
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=273
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3516 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 62     Average : (56709.68 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=337361451, [ProcessingTime]=62, [NumRows]=3516 WHERE [ID]=273
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=274
+
+Starting copy...
+
+363 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 16     Average : (22687.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-110834890, [ProcessingTime]=16, [NumRows]=363 WHERE [ID]=274
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=275
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2035 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (43297.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-948476543, [ProcessingTime]=47, [NumRows]=2035 WHERE [ID]=275
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=276
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6003 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 188    Average : (31930.85 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-628818979, [ProcessingTime]=188, [NumRows]=6003 WHERE [ID]=276
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=277
+
+Starting copy...
+
+907 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 32     Average : (28343.75 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1190904824, [ProcessingTime]=32, [NumRows]=907 WHERE [ID]=277
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=278
+
+Starting copy...
+
+547 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 16     Average : (34187.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1558083156, [ProcessingTime]=16, [NumRows]=547 WHERE [ID]=278
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=279
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1720 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (55483.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-87654133, [ProcessingTime]=31, [NumRows]=1720 WHERE [ID]=279
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=280
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3342 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (26736.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-540753873, [ProcessingTime]=125, [NumRows]=3342 WHERE [ID]=280
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=281
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4029 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (36627.27 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=899718658, [ProcessingTime]=110, [NumRows]=4029 WHERE [ID]=281
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=282
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4118 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (32944.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1565274130, [ProcessingTime]=125, [NumRows]=4118 WHERE [ID]=282
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=283
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2763 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (35423.08 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2044352610, [ProcessingTime]=78, [NumRows]=2763 WHERE [ID]=283
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=284
+
+Starting copy...
+
+488 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 78     Average : (6256.41 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1372081009, [ProcessingTime]=78, [NumRows]=488 WHERE [ID]=284
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=285
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2046 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (21765.96 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1457516312, [ProcessingTime]=94, [NumRows]=2046 WHERE [ID]=285
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=286
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1062 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 16     Average : (66375.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1389439816, [ProcessingTime]=16, [NumRows]=1062 WHERE [ID]=286
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=287
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1327 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (42806.45 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1963843940, [ProcessingTime]=31, [NumRows]=1327 WHERE [ID]=287
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=288
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6200 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (30541.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-695750428, [ProcessingTime]=203, [NumRows]=6200 WHERE [ID]=288
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=289
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3344 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 79     Average : (42329.11 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1943432067, [ProcessingTime]=79, [NumRows]=3344 WHERE [ID]=289
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=290
+
+Starting copy...
+
+607 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (19580.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1025473980, [ProcessingTime]=31, [NumRows]=607 WHERE [ID]=290
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=291
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2589 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (55085.11 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1928216533, [ProcessingTime]=47, [NumRows]=2589 WHERE [ID]=291
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=292
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5873 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 219    Average : (26817.35 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-504068272, [ProcessingTime]=219, [NumRows]=5873 WHERE [ID]=292
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=293
+
+Starting copy...
+
+703 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 16     Average : (43937.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1644424465, [ProcessingTime]=16, [NumRows]=703 WHERE [ID]=293
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=294
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+
+1202 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 47     Average : (25574.47 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1871567281, [ProcessingTime]=47, [NumRows]=1202 WHERE [ID]=294
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=295
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3193 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (33968.09 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1060593248, [ProcessingTime]=94, [NumRows]=3193 WHERE [ID]=295
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=296
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2663 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (17070.51 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=9661298, [ProcessingTime]=156, [NumRows]=2663 WHERE [ID]=296
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=297
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4565 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (36520.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=753584270, [ProcessingTime]=125, [NumRows]=4565 WHERE [ID]=297
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=298
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5195 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (30203.49 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1908220419, [ProcessingTime]=172, [NumRows]=5195 WHERE [ID]=298
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=299
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2625 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (41666.67 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=250336384, [ProcessingTime]=63, [NumRows]=2625 WHERE [ID]=299
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=300
+
+Starting copy...
+
+488 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (15741.94 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=586600347, [ProcessingTime]=31, [NumRows]=488 WHERE [ID]=300
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=301
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2441 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (17435.71 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1758383796, [ProcessingTime]=140, [NumRows]=2441 WHERE [ID]=301
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=302
+
+Starting copy...
+
+238 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 31     Average : (7677.42 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1622504628, [ProcessingTime]=31, [NumRows]=238 WHERE [ID]=302
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=303
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4059 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (19995.07 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-449285015, [ProcessingTime]=203, [NumRows]=4059 WHERE [ID]=303
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=304
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6270 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 250    Average : (25080.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1467898857, [ProcessingTime]=250, [NumRows]=6270 WHERE [ID]=304
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=305
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4424 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (47063.83 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1183031229, [ProcessingTime]=94, [NumRows]=4424 WHERE [ID]=305
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=306
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2491 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (39539.68 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-460833169, [ProcessingTime]=63, [NumRows]=2491 WHERE [ID]=306
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=307
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4822 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (28034.88 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2081704634, [ProcessingTime]=172, [NumRows]=4822 WHERE [ID]=307
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=308
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6075 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 188    Average : (32313.83 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1551376422, [ProcessingTime]=188, [NumRows]=6075 WHERE [ID]=308
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=309
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+
+2733 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (19382.98 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1540578527, [ProcessingTime]=141, [NumRows]=2733 WHERE [ID]=309
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=310
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3352 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 79     Average : (42430.38 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1305039088, [ProcessingTime]=79, [NumRows]=3352 WHERE [ID]=310
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=311
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5537 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (50798.16 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1118102003, [ProcessingTime]=109, [NumRows]=5537 WHERE [ID]=311
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=312
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4840 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (31025.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1066308025, [ProcessingTime]=156, [NumRows]=4840 WHERE [ID]=312
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=313
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5276 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (56127.66 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-805006832, [ProcessingTime]=94, [NumRows]=5276 WHERE [ID]=313
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=314
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4714 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (37712.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-653115627, [ProcessingTime]=125, [NumRows]=4714 WHERE [ID]=314
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=315
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4206 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (38587.16 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1621320028, [ProcessingTime]=109, [NumRows]=4206 WHERE [ID]=315
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=316
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3598 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (38276.60 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1415913267, [ProcessingTime]=94, [NumRows]=3598 WHERE [ID]=316
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=317
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4147 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (37700.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=989112945, [ProcessingTime]=110, [NumRows]=4147 WHERE [ID]=317
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=318
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6107 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (32657.75 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1268320584, [ProcessingTime]=187, [NumRows]=6107 WHERE [ID]=318
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=319
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5056 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (32410.26 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=819045944, [ProcessingTime]=156, [NumRows]=5056 WHERE [ID]=319
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=320
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6391 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (51128.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-2141022681, [ProcessingTime]=125, [NumRows]=6391 WHERE [ID]=320
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=321
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4634 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (49827.96 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1419684740, [ProcessingTime]=93, [NumRows]=4634 WHERE [ID]=321
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=322
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3894 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (31152.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-137005738, [ProcessingTime]=125, [NumRows]=3894 WHERE [ID]=322
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=323
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5650 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (40357.14 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-820140065, [ProcessingTime]=140, [NumRows]=5650 WHERE [ID]=323
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=324
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5892 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (31508.02 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=32396725, [ProcessingTime]=187, [NumRows]=5892 WHERE [ID]=324
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=325
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5309 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (34032.05 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1960807416, [ProcessingTime]=156, [NumRows]=5309 WHERE [ID]=325
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=326
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4451 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (40463.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1585767641, [ProcessingTime]=110, [NumRows]=4451 WHERE [ID]=326
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=327
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5285 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (37750.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1178988321, [ProcessingTime]=140, [NumRows]=5285 WHERE [ID]=327
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=328
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5629 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (51642.20 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=816837035, [ProcessingTime]=109, [NumRows]=5629 WHERE [ID]=328
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=329
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4736 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (37888.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=31615417, [ProcessingTime]=125, [NumRows]=4736 WHERE [ID]=329
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=330
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4620 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 157    Average : (29426.75 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1173576251, [ProcessingTime]=157, [NumRows]=4620 WHERE [ID]=330
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=331
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5647 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 188    Average : (30037.23 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1876450872, [ProcessingTime]=188, [NumRows]=5647 WHERE [ID]=331
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=332
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3315 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (35265.96 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1181640396, [ProcessingTime]=94, [NumRows]=3315 WHERE [ID]=332
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=333
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5528 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 187    Average : (29561.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-106672122, [ProcessingTime]=187, [NumRows]=5528 WHERE [ID]=333
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=334
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4641 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (42577.98 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1166230556, [ProcessingTime]=109, [NumRows]=4641 WHERE [ID]=334
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=335
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4951 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (35113.48 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1675552640, [ProcessingTime]=141, [NumRows]=4951 WHERE [ID]=335
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=336
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6264 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 157    Average : (39898.09 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-71498104, [ProcessingTime]=157, [NumRows]=6264 WHERE [ID]=336
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=337
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4992 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 219    Average : (22794.52 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=67839593, [ProcessingTime]=219, [NumRows]=4992 WHERE [ID]=337
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=338
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4685 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (42590.91 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=882356584, [ProcessingTime]=110, [NumRows]=4685 WHERE [ID]=338
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=339
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5702 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (33151.16 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1553645324, [ProcessingTime]=172, [NumRows]=5702 WHERE [ID]=339
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=340
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6009 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (42921.43 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-667368642, [ProcessingTime]=140, [NumRows]=6009 WHERE [ID]=340
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=341
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6024 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (43028.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=437403186, [ProcessingTime]=140, [NumRows]=6024 WHERE [ID]=341
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=342
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4664 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (42788.99 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=39184834, [ProcessingTime]=109, [NumRows]=4664 WHERE [ID]=342
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=343
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5381 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 93     Average : (57860.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=232900290, [ProcessingTime]=93, [NumRows]=5381 WHERE [ID]=343
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=344
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5792 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 188    Average : (30808.51 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=217581809, [ProcessingTime]=188, [NumRows]=5792 WHERE [ID]=344
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=345
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5521 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (50651.38 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=899178180, [ProcessingTime]=109, [NumRows]=5521 WHERE [ID]=345
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=346
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5425 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (49318.18 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1045229282, [ProcessingTime]=110, [NumRows]=5425 WHERE [ID]=346
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=347
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6057 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (48456.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1940737129, [ProcessingTime]=125, [NumRows]=6057 WHERE [ID]=347
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=348
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3940 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 63     Average : (62539.68 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=403452149, [ProcessingTime]=63, [NumRows]=3940 WHERE [ID]=348
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=349
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5042 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (53638.30 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1971694060, [ProcessingTime]=94, [NumRows]=5042 WHERE [ID]=349
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=350
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5468 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 140    Average : (39057.14 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1454034547, [ProcessingTime]=140, [NumRows]=5468 WHERE [ID]=350
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=351
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5635 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 171    Average : (32953.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-320848079, [ProcessingTime]=171, [NumRows]=5635 WHERE [ID]=351
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=352
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6306 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (44723.40 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-693239770, [ProcessingTime]=141, [NumRows]=6306 WHERE [ID]=352
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=353
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4960 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (31794.87 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1863021039, [ProcessingTime]=156, [NumRows]=4960 WHERE [ID]=353
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=354
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4172 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 171    Average : (24397.66 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-918322409, [ProcessingTime]=171, [NumRows]=4172 WHERE [ID]=354
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=355
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5043 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (45845.45 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=447748045, [ProcessingTime]=110, [NumRows]=5043 WHERE [ID]=355
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=356
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6075 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (55733.95 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1090111810, [ProcessingTime]=109, [NumRows]=6075 WHERE [ID]=356
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=357
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6143 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 281    Average : (21861.21 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-294303895, [ProcessingTime]=281, [NumRows]=6143 WHERE [ID]=357
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=358
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4650 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (27034.88 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1630076918, [ProcessingTime]=172, [NumRows]=4650 WHERE [ID]=358
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=359
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5389 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (38219.86 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1919833837, [ProcessingTime]=141, [NumRows]=5389 WHERE [ID]=359
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=360
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6037 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 188    Average : (32111.70 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-388302922, [ProcessingTime]=188, [NumRows]=6037 WHERE [ID]=360
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=361
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5819 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (41269.50 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=525310014, [ProcessingTime]=141, [NumRows]=5819 WHERE [ID]=361
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=362
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5162 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (33089.74 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-133736626, [ProcessingTime]=156, [NumRows]=5162 WHERE [ID]=362
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=363
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5200 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (33333.33 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1092975794, [ProcessingTime]=156, [NumRows]=5200 WHERE [ID]=363
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=364
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3699 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 157    Average : (23560.51 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1630108222, [ProcessingTime]=157, [NumRows]=3699 WHERE [ID]=364
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=365
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4357 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 156    Average : (27929.49 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=2092806149, [ProcessingTime]=156, [NumRows]=4357 WHERE [ID]=365
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=366
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6021 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (35005.81 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1982484309, [ProcessingTime]=172, [NumRows]=6021 WHERE [ID]=366
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=367
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6156 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (43659.57 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1192716213, [ProcessingTime]=141, [NumRows]=6156 WHERE [ID]=367
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=368
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6208 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (30581.28 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1479150328, [ProcessingTime]=203, [NumRows]=6208 WHERE [ID]=368
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=369
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5858 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (53254.55 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1725049034, [ProcessingTime]=110, [NumRows]=5858 WHERE [ID]=369
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=370
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4164 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 172    Average : (24209.30 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1020866540, [ProcessingTime]=172, [NumRows]=4164 WHERE [ID]=370
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=371
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5257 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (42056.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=386035385, [ProcessingTime]=125, [NumRows]=5257 WHERE [ID]=371
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=372
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6125 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (30172.41 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=68162297, [ProcessingTime]=203, [NumRows]=6125 WHERE [ID]=372
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=373
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6031 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 141    Average : (42773.05 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=211889215, [ProcessingTime]=141, [NumRows]=6031 WHERE [ID]=373
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=374
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4336 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (34688.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-210469673, [ProcessingTime]=125, [NumRows]=4336 WHERE [ID]=374
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=375
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5297 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 218    Average : (24298.17 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1577769568, [ProcessingTime]=218, [NumRows]=5297 WHERE [ID]=375
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=376
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6117 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (56119.27 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1662306059, [ProcessingTime]=109, [NumRows]=6117 WHERE [ID]=376
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=377
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5643 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 125    Average : (45144.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-556008445, [ProcessingTime]=125, [NumRows]=5643 WHERE [ID]=377
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=378
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5764 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 110    Average : (52400.00 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1187570909, [ProcessingTime]=110, [NumRows]=5764 WHERE [ID]=378
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=379
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+
+5054 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (46366.97 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-1978308446, [ProcessingTime]=109, [NumRows]=5054 WHERE [ID]=379
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=380
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+
+3500 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 94     Average : (37234.04 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=1308896750, [ProcessingTime]=94, [NumRows]=3500 WHERE [ID]=380
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=381
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+
+4335 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 109    Average : (39770.64 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-290926708, [ProcessingTime]=109, [NumRows]=4335 WHERE [ID]=381
+DELETE FROM [Retrosheet].[dbo].[rawEvents] WHERE [rawFileID]=382
+
+Starting copy...
+1000 rows sent to SQL Server. Total sent: 1000
+1000 rows sent to SQL Server. Total sent: 2000
+1000 rows sent to SQL Server. Total sent: 3000
+1000 rows sent to SQL Server. Total sent: 4000
+1000 rows sent to SQL Server. Total sent: 5000
+1000 rows sent to SQL Server. Total sent: 6000
+
+6022 rows copied.
+Network packet size (bytes): 4096
+Clock Time (ms.) Total     : 203    Average : (29665.03 rows per sec.)
+
+UPDATE [Retrosheet].[dbo].[rawFiles] SET [CRC]=-558092218, [ProcessingTime]=203, [NumRows]=6022 WHERE [ID]=382

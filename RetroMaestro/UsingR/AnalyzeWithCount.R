@@ -1,0 +1,44 @@
+#setwd('C:/Users/Kevin/Documents/MySQL')
+#rm(list = ls())
+setwd('C:/Users/Kevin/Documents/Visual Studio 2008/Projects/Retro/RetroMaestro/UsingR')
+#source('fvalues512.R')
+source('fvalues1024.R')
+setwd('C:/ProgramData/MySQL/MySQL Server 5.7/Uploads')
+#fvalues512('2017OutputwithCount.txt', '')
+freqMatrix <- fvalues1024('2017OutputwithCount.txt', '')
+cPlayerUseArray256 <- array(c(array(data=0,dim=16),
+                              array(data=1,dim=16),
+                              array(data=1,dim=16),
+                              array(data=2,dim=16),
+                              array(data=1,dim=16),
+                              array(data=2,dim=16),
+                              array(data=2,dim=16),
+                              array(data=3,dim=16),
+                              array(data=1,dim=16),
+                              array(data=2,dim=16),
+                              array(data=2,dim=16),
+                              array(data=3,dim=16),
+                              array(data=2,dim=16),
+                              array(data=3,dim=16),
+                              array(data=3,dim=16),
+                              array(data=4,dim=16)))
+cAllPlayerUseArray1024 <- array(c(cPlayerUseArray256,
+                                  cPlayerUseArray256+1,
+                                  cPlayerUseArray256+2,
+                                  cPlayerUseArray256+3))
+cRunMatrix1024 = outer (cAllPlayerUseArray1024, cAllPlayerUseArray1024, "-")
+# OO321hBBSS
+# 9876543210
+# add one to all the entries that has nobody at home that add a runner at home
+#cRunMatrix1024[1:512*2-1,1:512*2] <- cRunMatrix1024[1:512*2-1,1:512*2]+1
+for (i in 1:1024) {
+    if (as.integer(i/16) %% 2 == 1) {
+#       cat (i)
+#       cat ("\n")
+        cRunMatrix1024[i-1,i] <- cRunMatrix1024[i-1,i] + 1
+    }
+}
+results <- solve(freqMatrix, -rowSums(freqMatrix*cRunMatrix1024))
+sink('results.txt')
+results
+sink()      
