@@ -1,19 +1,2 @@
-﻿cl : command line  warning D9035: option 'clr:pure' has been deprecated and will be removed in a future release
-  stdafx.cpp
-c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll : warning C4945: 'SemaphoreFullException': cannot import symbol from 'c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll': as 'System::Threading::SemaphoreFullException' has already been imported from another assembly 'mscorlib'
-c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll : message : first seen type is used; re-order imported assemblies to use the current type
-c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll : message : This diagnostic occurred while importing type 'System.Threading.SemaphoreFullException' from assembly 'System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.
-cl : command line  warning D9035: option 'clr:pure' has been deprecated and will be removed in a future release
-  Contour.cpp
-  AssemblyInfo.cpp
-C:\Users\Kevin\source\repos\Retro\ContourMaestro\AssemblyInfo.cpp(40,29): warning C4947: 'System::Security::Permissions::SecurityAction::RequestMinimum': marked as obsolete
-C:\Users\Kevin\source\repos\Retro\ContourMaestro\AssemblyInfo.cpp(40,29): message : Message: 'Assembly level declarative security is obsolete and is no longer enforced by the CLR by default. See http://go.microsoft.com/fwlink/?LinkID=155570 for more information.'
-  ContourMaestro.cpp
-  Generating Code...
-cl : command line  warning D9035: option 'clr:pure' has been deprecated and will be removed in a future release
-  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
-c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll : warning C4945: 'SemaphoreFullException': cannot import symbol from 'c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll': as 'System::Threading::SemaphoreFullException' has already been imported from another assembly 'mscorlib'
-c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll : message : first seen type is used; re-order imported assemblies to use the current type
-c:\windows\assembly\gac_msil\system\2.0.0.0__b77a5c561934e089\system.dll : message : This diagnostic occurred while importing type 'System.Threading.SemaphoreFullException' from assembly 'System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.
-  Contour.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  Contour.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   ContourMaestro.vcxproj -> C:\Users\Kevin\source\repos\Retro\Debug\ContourMaestro.exe

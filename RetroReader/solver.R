@@ -126,7 +126,7 @@ Unzero <- function(m) {
 #    }
 #    #solution
 #}
-setwd('C:/Users/Kevin/Documents/Visual Studio 2008/Projects/Retro/RetroReader')
+setwd('C:\\Users\\Kevin\\source\\repos\\Retro\\RetroReader')
 #setwd('C:/Users/10032877/Desktop/Reading/retrosheet')
 #NUMBITS <- 14
 #NumRows <- 2^NUMBITS
@@ -139,7 +139,8 @@ setwd('C:/Users/Kevin/Documents/Visual Studio 2008/Projects/Retro/RetroReader')
 #}
 #raw <- matrix(data = scan (file = "kdr.txt", what = integer(), sep = ","), ncol=3, byrow=TRUE); dim(raw)
 #raw <- matrix(data = scan (file = "2000kdr.txt", what = integer(), sep = ","), ncol=3, byrow=TRUE); dim(raw)
-raw <- matrix(data = scan (file = "2018.txt", what = integer(), sep = ","), ncol=3, byrow=TRUE); dim(raw)
+#raw <- matrix(data = scan (file = "2018.txt", what = integer(), sep = ","), ncol=3, byrow=TRUE); dim(raw)
+raw <- matrix(data = scan (file = "2021.txt", what = integer(), sep = ","), ncol=3, byrow=TRUE); dim(raw)
 NumStates=raw[1,1]; NumStates
 NUMBITS=ceiling(log(NumStates,2)); NUMBITS
 runs <- matrix(data=0, nrow=2^NUMBITS, ncol=1); dim(runs)
@@ -167,7 +168,8 @@ resframe <- data.frame(state<-sprintf("%04X",raw[1+(1:raw[1,1])]),
 #length(resframe$state)
 #length(resframe)
 plot.new()
-plot.window(xlim<-c(0,17), ylim<-c(0.2,1.1),log="",par(xaxs="r"),par(yaxs="r"))
+plot.window(xlim<-c(0,13), ylim<-c(0.2,1.1),log="",par(xaxs="r"),par(yaxs="r"))
+#plot.window(xlim<-c(0,17), ylim<-c(0.2,1.1),log="",par(xaxs="r"),par(yaxs="r"))
 #plot.window(xlim<-c(0,15), ylim<-c(0.0,2),log="",par(xaxs="r"),par(yaxs="r"))
 axis(1)
 axis(2)

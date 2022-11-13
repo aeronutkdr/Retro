@@ -112,8 +112,10 @@ CalcPart <- function(sq, run, mask) {
     #solution
 }
 #setwd('C:/Users/10032877/Documents/Visual Studio 2012/Projects/RetroEventMaestro')
-setwd('C:/Users/Kevin/Documents/Visual Studio 2008/Projects/Retro/RetroEventMaestro')
-raw <- matrix(data = scan (file = "evs.out", what = integer(), sep = ","), ncol=3, byrow=TRUE)
+#setwd('C:/Users/Kevin/Documents/Visual Studio 2008/Projects/Retro/RetroEventMaestro')
+setwd('C:\\Users\\Kevin\\source\\repos\\Retro\\RetroEventMaestro')
+raw <- matrix(data = scan (file = "2018.out", what = integer(), sep = ","), ncol=3, byrow=TRUE)
+#raw <- matrix(data = scan (file = "2021.out", what = integer(), sep = ","), ncol=3, byrow=TRUE)
 freq <- matrix(data = raw[1:(dim(raw)[1]-1024),], ncol=3)
 runs <- matrix(data = raw[(dim(raw)[1]-1023):dim(raw)[1],1:2], ncol=2)
 square <- matrix (data = 0, nrow=1024,ncol=1024)

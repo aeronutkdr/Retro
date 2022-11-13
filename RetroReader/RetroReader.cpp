@@ -45,13 +45,10 @@ int main(array<System::String ^> ^args)
     System::Text::RegularExpressions::Regex^ regex = gcnew System::Text::RegularExpressions::Regex(flt);
     array<System::String^>^ names =
        System::IO::Directory::GetFiles(
-                                       //L"C:\\Users\\Kevin\\Documents\\retrosheet\\data\\ev_ files\\import_all",
-                                       L"C:\\Users\\Kevin\\Documents\\retrosheet\\data\\2018eve",
-                                       //L"20*_all.txt");
-                                       //L"2000ANA_all.txt");
-                                       //L"2000TEX_all.txt");
-                                       //L"2000*_all.txt");
-                                       L"2018*.ev?.txt");
+                                       //L"C:\\Users\\Kevin\\Documents\\retrosheet\\data\\2018eve",
+                                       //L"2018*.ev?.txt");
+                                       L"C:\\Users\\Kevin\\source\\repos\\Retro\\RetroEventMaestro\\2021eve",
+                                       L"2021*.ev?.txt");
     System::Byte MaxStrikes = 0;
     for each (System::String^ s in names)
     {
