@@ -1,0 +1,2 @@
+C:\Users\Kevin\source\repos\Retro\RetroPlayer\Debug\RetroPlayer.vcxproj.AssemblyReference.cache
+C:\Users\Kevin\source\repos\Retro\RetroPlayer\Debug\RetroPlayer.vcxproj.SuggestedBindingRedirects.cache

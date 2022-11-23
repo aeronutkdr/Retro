@@ -1,2 +1,19 @@
-﻿  DB.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+﻿  stdafx.cpp
+C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll : warning C4945: 'SemaphoreFullException': cannot import symbol from 'C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll': as 'System::Threading::SemaphoreFullException' has already been imported from another assembly 'mscorlib'
+C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll : message : first seen type is used; re-order imported assemblies to use the current type
+C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll : message : This diagnostic occurred while importing type 'System.Threading.SemaphoreFullException' from assembly 'System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.
+  DB.cpp
+  DBDictionary.cpp
+  DBEvent.cpp
+  Event.cpp
+  FileEvent.cpp
+  RetroDB.cpp
+  RetroEvent.cpp
+  StringList.cpp
+  Generating Code...
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll : warning C4945: 'SemaphoreFullException': cannot import symbol from 'C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll': as 'System::Threading::SemaphoreFullException' has already been imported from another assembly 'mscorlib'
+C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll : message : first seen type is used; re-order imported assemblies to use the current type
+C:\WINDOWS\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll : message : This diagnostic occurred while importing type 'System.Threading.SemaphoreFullException' from assembly 'System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.
+  DB.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   Retro.vcxproj -> C:\Users\Kevin\source\repos\Retro\Debug\Retro.dll
