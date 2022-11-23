@@ -3,22 +3,34 @@
 using namespace System;
 
 System::String^ DumpValues(System::Double v[][8]);
+System::String^ DumpTransactions(System::Double t[][32]);
 System::String^ DumpFreq(System::Int32 v[][32]);
 System::String^ DumpMatch(System::Text::RegularExpressions::Match^ m);
+System::Double CalcValue(System::Double v[][8], System::Int32 from, System::Int32 to);
 /* "C:\Users\Kevin\source\repos\Retro\RetroEventMaestro\OO321 2021.txt" "C:\Users\Kevin\source\repos\Retro\RetroEventMaestro\2021eve" "2021*.ev?.txt" "judga001" */
 /* "C:\Users\Kevin\source\repos\Retro\RetroEventMaestro\OO321 2021.txt" "C:\Users\Kevin\source\repos\Retro\RetroEventMaestro\2021eve" "2021*.ev?.txt" "[^,]*" */
+ref struct DataType
+{
+    System::Int32 n;
+    System::Double total;
+    DataType(void) { n = 0; total = 0.; }
+    System::String^ ToString(System::Void) override
+    {
+        return n + "\t" + total.ToString("F5") + "\t" + (total / (System::Double)n).ToString("F5");
+    }
+};
 int main(array<System::String^>^ args)
 {
     if (args->Length < 4)
     {
         System::Console::WriteLine("usage: " +
-                                   System::AppDomain::CurrentDomain->FriendlyName +
-                                   " <values path> <ev path> <ev filter> <name>");
+            System::AppDomain::CurrentDomain->FriendlyName +
+            " <values path> <ev path> <ev filter> <name>");
         return -1;
     }
     System::Double Values[4][8];
     System::IO::TextReader^ rdr = (System::IO::TextReader^)gcnew System::IO::StreamReader(args[0]);
-    (void) rdr->ReadLine();
+    (void)rdr->ReadLine();
     System::String^ line;
     for (System::Int32 i = 0; i < 4; i++)
     {
@@ -30,13 +42,26 @@ int main(array<System::String^>^ args)
         }
     }
     rdr->Close();
+    System::Double Transactions[24][32] = { 0. };
+    for (System::Int32 i = 0; i < 24; i++)
+    {
+        for (System::Int32 j = 0; j < 32; j++)
+        {
+            Transactions[i][j] = CalcValue(Values, i, j);
+        }
+    }
+    //System::Console::WriteLine(DumpTransactions(Transactions));
+    //return 0;
     //System::Console::WriteLine(DumpValues(Values));
     //System::Diagnostics::Debug::WriteLine(args[1]);
     array<System::String^>^ names = System::IO::Directory::GetFiles(args[1], args[2]);
     System::Text::RegularExpressions::Regex^ regex =
-        gcnew System::Text::RegularExpressions::Regex(L"([^,]*,){10}\"" + args[3] + L"\",([^,]*,){85}");
+        gcnew System::Text::RegularExpressions::Regex(L"([^,]*,){10}\"(" + args[3] + L")\",([^,]*,){85}");
     //System::Diagnostics::Debug::WriteLine(regex->ToString());
     System::Int32 Freq[24][32] = { 0 };
+    System::Collections::Generic::Dictionary<System::String^, ref struct DataType^>^ values =
+        gcnew System::Collections::Generic::Dictionary<System::String^, ref struct DataType^>();
+    ref struct DataType^ All = gcnew ref struct DataType();
     for each (System::String ^ s in names)
     {
         System::Diagnostics::Debug::WriteLine(s);
@@ -47,36 +72,81 @@ int main(array<System::String^>^ args)
             System::Text::RegularExpressions::Match^ m = regex->Match(line);
             if (m->Length == 0) continue;
             //System::Diagnostics::Debug::WriteLine(DumpMatch(m));
-            System::Boolean batterEvent = m->Groups[2]->Captures[35 - 11]->Value == "\"T\",";
+            System::Boolean batterEvent = m->Groups[3]->Captures[35 - 11]->Value == "\"T\",";
             if (!batterEvent) continue;
-            System::Boolean First = m->Groups[2]->Captures[26 - 11]->Value != "\"\",";
-            System::Boolean Second = m->Groups[2]->Captures[27 - 11]->Value != "\"\",";
-            System::Boolean Third = m->Groups[2]->Captures[28 - 11]->Value != "\"\",";
+            System::Boolean First = m->Groups[3]->Captures[26 - 11]->Value != "\"\",";
+            System::Boolean Second = m->Groups[3]->Captures[27 - 11]->Value != "\"\",";
+            System::Boolean Third = m->Groups[3]->Captures[28 - 11]->Value != "\"\",";
             System::Byte BasesStart = (Third ? 0x04 : 0) |
                                       (Second ? 0x02 : 0) |
                                       (First ? 0x01 : 0);
             System::Byte OutsStart = (m->Groups[1]->Captures[4]->Value[0]-'0');
-            First = m->Groups[2]->Captures[58 - 11]->Value == "1," ||
-                    m->Groups[2]->Captures[59 - 11]->Value == "1,";
-            Second = m->Groups[2]->Captures[58 - 11]->Value == "2," ||
-                     m->Groups[2]->Captures[59 - 11]->Value == "2," ||
-                     m->Groups[2]->Captures[60 - 11]->Value == "2,";
-            Third = m->Groups[2]->Captures[58 - 11]->Value == "3," ||
-                    m->Groups[2]->Captures[59 - 11]->Value == "3," ||
-                    m->Groups[2]->Captures[60 - 11]->Value == "3," ||
-                    m->Groups[2]->Captures[61 - 11]->Value == "3,";
+            First = m->Groups[3]->Captures[58 - 11]->Value == "1," ||
+                    m->Groups[3]->Captures[59 - 11]->Value == "1,";
+            Second = m->Groups[3]->Captures[58 - 11]->Value == "2," ||
+                     m->Groups[3]->Captures[59 - 11]->Value == "2," ||
+                     m->Groups[3]->Captures[60 - 11]->Value == "2,";
+            Third = m->Groups[3]->Captures[58 - 11]->Value == "3," ||
+                    m->Groups[3]->Captures[59 - 11]->Value == "3," ||
+                    m->Groups[3]->Captures[60 - 11]->Value == "3," ||
+                    m->Groups[3]->Captures[61 - 11]->Value == "3,";
             System::Byte BasesEnd = (Third ? 0x04 : 0) |
                                     (Second ? 0x02 : 0) |
                                     (First ? 0x01 : 0);
-            System::Byte OutsEnd = OutsStart + (m->Groups[2]->Captures[40-11]->Value[0]-'0');
+            System::Byte OutsEnd = OutsStart + (m->Groups[3]->Captures[40-11]->Value[0]-'0');
             System::Diagnostics::Debug::Assert(((OutsStart << 3) | BasesStart) < 24);
             System::Diagnostics::Debug::Assert(((OutsEnd << 3) | BasesEnd) < 32);
             Freq[(OutsStart<<3) | BasesStart][(OutsEnd<<3) | BasesEnd]++;
+            All->n++;
+            All->total += Transactions[(OutsStart << 3) | BasesStart][(OutsEnd << 3) | BasesEnd];
+            if (!values->ContainsKey(m->Groups[2]->Captures[0]->Value))
+            {
+                values->Add(m->Groups[2]->Captures[0]->Value, gcnew ref struct DataType());
+            }
+            values[m->Groups[2]->Captures[0]->Value]->n++;
+            values[m->Groups[2]->Captures[0]->Value]->total +=
+                    Transactions[(OutsStart << 3) | BasesStart][(OutsEnd << 3) | BasesEnd];
         }
         rdr->Close();
     }
-    System::Diagnostics::Debug::WriteLine (DumpFreq(Freq));
+    //System::Diagnostics::Debug::WriteLine (DumpFreq(Freq));
+    System::Console::WriteLine("All\t" + All->ToString());
+    for each (System::Collections::Generic::KeyValuePair<System::String^,
+                                                         ref struct DataType^>^ kp in values)
+    {
+        System::Console::WriteLine(kp->Key + "\t" + kp->Value->ToString());
+    }
     return 0;
+}
+System::Double CalcValue(System::Double v[][8], System::Int32 from, System::Int32 to)
+{
+    System::Int32 avail = 1;
+    System::Int32 f = from;
+    System::Int32 t = to;
+    if ((to >> 3) < (from >> 3)) return 0.;
+    for (System::Int32 i = 0; avail >= 0 && i < 3; i++)
+    {
+        avail += (f & 1);
+        avail -= (t & 1);
+        f >>= 1;
+        t >>= 1;
+    }
+    if (avail + (from>>3) - (to>>3) < 0) return 0.;
+    return (System::Double)(avail + f - t) + v[to >> 3][to & 7] - v[from >> 3][from & 7];
+}
+System::String^ DumpTransactions(System::Double t[][32])
+{
+    System::String^ retval = "";
+    for (System::Int32 i = 0; i < 24; i++)
+    {
+        for (System::Int32 j = 0; j < 32; j++)
+        {
+            retval += t[i][j].ToString("F3");
+            retval += "\t";
+        }
+        retval += System::Environment::NewLine;
+    }
+    return retval;
 }
 System::String^ DumpValues(System::Double v[][8])
 {
