@@ -6,3 +6,4 @@
 *.vsidx
 *.ipch
 *.log
+.vs/**
