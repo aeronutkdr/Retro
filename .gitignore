@@ -6,4 +6,5 @@
 *.vsidx
 *.ipch
 *.log
-.vs
+.vs/
+Debug/
