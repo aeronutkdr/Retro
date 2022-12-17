@@ -3,7 +3,10 @@
 #include "stdafx.h"
 
 using namespace System;
-
+/* Purpose:
+    read directory of roster files
+    write each line with year#
+*/
 int main(array<System::String ^> ^args)
 {
     array<System::String^>^ files = System::IO::Directory::GetFiles("C:\\Users\\Kevin\\Documents\\retrosheet\\data\\roster files\\years", "*.ros");
