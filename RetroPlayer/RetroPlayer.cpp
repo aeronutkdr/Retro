@@ -57,6 +57,7 @@ int main(array<System::String^>^ args)
     array<System::String^>^ names = System::IO::Directory::GetFiles(args[1], args[2]);
     System::Text::RegularExpressions::Regex^ regex =
         gcnew System::Text::RegularExpressions::Regex(L"([^,]*,){10}\"(" + args[3] + L")\",([^,]*,){85}");
+        //^\("\?[^",]*"\?,\?\)\{97\}$
     //System::Diagnostics::Debug::WriteLine(regex->ToString());
     System::Int32 Freq[24][32] = { 0 };
     System::Collections::Generic::Dictionary<System::String^, ref struct DataType^>^ values =

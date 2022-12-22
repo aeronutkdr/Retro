@@ -78,7 +78,7 @@ template <class NumberType>
 System::Void GJ_Solve (array<NumberType, 2>^ a,
                        array<NumberType, 1>^ b)
 {
-#if 1
+#if 0
     System::Diagnostics::Trace::Assert
                                    (a->GetLength(0) == a->GetLength(1) &&
                                     a->GetLength(0) == b->GetLength(0));

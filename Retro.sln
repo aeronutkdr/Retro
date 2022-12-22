@@ -46,6 +46,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContourMaestro", "ContourMa
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroPlayer", "RetroPlayer\RetroPlayer.vcxproj", "{4D664004-978C-4EF5-81FE-6F7C574EBAB9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroParseEvent", "RetroParseEvent\RetroParseEvent.vcxproj", "{24C8523F-F76B-4753-958D-48E53C7B7168}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -214,6 +216,14 @@ Global
 		{4D664004-978C-4EF5-81FE-6F7C574EBAB9}.Release|Win32.Build.0 = Release|Win32
 		{4D664004-978C-4EF5-81FE-6F7C574EBAB9}.Release|x64.ActiveCfg = Release|x64
 		{4D664004-978C-4EF5-81FE-6F7C574EBAB9}.Release|x64.Build.0 = Release|x64
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Debug|Win32.ActiveCfg = Debug|Win32
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Debug|Win32.Build.0 = Debug|Win32
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Debug|x64.ActiveCfg = Debug|x64
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Debug|x64.Build.0 = Debug|x64
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Release|Win32.ActiveCfg = Release|Win32
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Release|Win32.Build.0 = Release|Win32
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Release|x64.ActiveCfg = Release|x64
+		{24C8523F-F76B-4753-958D-48E53C7B7168}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
