@@ -1,2 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\retrocheck\Debug\retrocheck.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\retrocheck\Debug\retrocheck.vcxproj.SuggestedBindingRedirects.cache
