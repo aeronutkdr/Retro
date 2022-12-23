@@ -1,3 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\RetroDBCmd\Debug\RetroDBCmd.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\RetroDBCmd\Debug\RetroDBCmd.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\Kevin\source\repos\Retro\RetroDBCmd\Debug\RetroDBCmd.vcxproj.CopyComplete
