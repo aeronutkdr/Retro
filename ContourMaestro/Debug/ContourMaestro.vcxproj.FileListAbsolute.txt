@@ -1,4 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\ContourMaestro\Debug\ContourMaestro.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\ContourMaestro\Debug\ContourMaestro.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\Kevin\source\repos\Retro\ContourMaestro\Debug\ContourMaestro.Form1.resources
-C:\Users\Kevin\source\repos\Retro\ContourMaestro\Debug\ContourMaestro.vcxproj.GenerateResource.cache
