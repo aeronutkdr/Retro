@@ -1,2 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\RetroReader\Debug\RetroReader.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\RetroReader\Debug\RetroReader.vcxproj.SuggestedBindingRedirects.cache
