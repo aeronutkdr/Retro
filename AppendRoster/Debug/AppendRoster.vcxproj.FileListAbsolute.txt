@@ -1,2 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\AppendRoster\Debug\AppendRoster.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\AppendRoster\Debug\AppendRoster.vcxproj.SuggestedBindingRedirects.cache
