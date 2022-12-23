@@ -1,3 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\RetroImport\Debug\RetroImport.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\RetroImport\Debug\RetroImport.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\Kevin\source\repos\Retro\RetroImport\Debug\RetroImport.vcxproj.CopyComplete
