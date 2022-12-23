@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Retro", "Retro\Retro.vcxproj", "{3AF31935-BF38-4DD4-811F-475C55913D6E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroCmd", "RetroCmd\RetroCmd.vcxproj", "{8E3AEB12-4BF3-4678-86F8-B8043C8C2D96}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroMaestro", "RetroMaestro\RetroMaestro.vcxproj", "{EE47828A-40E7-450D-BF89-F429BAAD6B36}"
 EndProject
@@ -37,10 +40,19 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GJSolve", "GJSolve\GJSolve.vcxproj", "{FE3AE9F6-AE35-4895-A301-2DB44CD5645E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroUT", "RetroUT\RetroUT.vcxproj", "{81E8899F-3D66-4422-B5D7-8B0CDDE132FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RetroDBCmd", "RetroDBCmd\RetroDBCmd.vcxproj", "{624CD8B8-E4B7-4827-95B9-E1A5D823B2E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileEventCmd", "FileEventCmd\FileEventCmd.vcxproj", "{AF8BA517-368B-4476-9BD2-771B1343D968}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AF31935-BF38-4DD4-811F-475C55913D6E} = {3AF31935-BF38-4DD4-811F-475C55913D6E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ContourMaestro", "ContourMaestro\ContourMaestro.vcxproj", "{F7C4EE3B-79B0-4731-8F06-EE1F105005A0}"
 EndProject

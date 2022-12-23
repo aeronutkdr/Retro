@@ -2,10 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/Retro/v17/Browse.VC.opendb
-*.vsidx
-*.ipch
-*.log
 .vs/
 Debug/
 *.*~
