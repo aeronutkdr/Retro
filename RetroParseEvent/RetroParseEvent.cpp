@@ -166,7 +166,8 @@ System::Int32 Process(array<System::Int32, 2>^ freq,
     System::Diagnostics::Debug::Assert(end   < freq->GetLength(1));
     if ((LastState & 0x1) == 0)
     {
-        freq[LastState, start]++;
+        /* to deal with extra inning / runner on 2nd */
+        freq[(start & ~0x01), start]++;
     }
     freq[start, end]++;
     return end;
