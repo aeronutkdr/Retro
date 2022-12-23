@@ -1,2 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\evReader\Debug\evReader.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\evReader\Debug\evReader.vcxproj.SuggestedBindingRedirects.cache
