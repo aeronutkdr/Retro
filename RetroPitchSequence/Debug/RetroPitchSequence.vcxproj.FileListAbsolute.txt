@@ -1,2 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\RetroPitchSequence\Debug\RetroPitchSequence.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\RetroPitchSequence\Debug\RetroPitchSequence.vcxproj.SuggestedBindingRedirects.cache
