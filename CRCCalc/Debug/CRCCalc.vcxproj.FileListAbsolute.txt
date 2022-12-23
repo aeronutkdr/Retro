@@ -1,3 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\CRCCalc\Debug\CRCCalc.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\CRCCalc\Debug\CRCCalc.vcxproj.SuggestedBindingRedirects.cache
-C:\Users\Kevin\source\repos\Retro\CRCCalc\Debug\CRCCalc.vcxproj.CopyComplete
