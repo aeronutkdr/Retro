@@ -1,2 +1,0 @@
-C:\Users\Kevin\source\repos\Retro\RetroEventMaestro\Debug\RetroEventMaestro.vcxproj.AssemblyReference.cache
-C:\Users\Kevin\source\repos\Retro\RetroEventMaestro\Debug\RetroEventMaestro.vcxproj.SuggestedBindingRedirects.cache
