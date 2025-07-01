@@ -1,0 +1,7 @@
+sub,sexsr001,"Richie Sexson",0,6,7
+sub,petkm001,"Mark Petkovsek",1,0,1
+sub,husoj001,"Jeff Huson",1,3,3
+sub,rincr001,"Ricardo Rincon",0,0,1
+sub,cabrj002,"Jolbert Cabrera",0,8,12
+sub,holtm001,"Mike Holtz",1,0,1
+

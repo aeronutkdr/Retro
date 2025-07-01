@@ -1,0 +1,8 @@
+data,er,wrigj002,5
+data,er,rincr001,0
+data,er,karss001,1
+data,er,belct001,5
+data,er,petkm001,0
+data,er,holtm001,0
+data,er,perct001,0
+

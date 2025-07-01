@@ -1,0 +1,252 @@
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 1(B)16(2)63(1) 
+
+mEv: evNumEvents
+mBaseRes: 255 255 255 0
+mInvolved: 1 1 6 6 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 23 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 2 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 3 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 3(B)3(1) 
+
+mEv: evNumEvents
+mBaseRes: 255 255 0 0
+mInvolved: 3 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 54(1) 
+
+mEv: evNumEvents
+mBaseRes: 0 255 0 0
+mInvolved: 5 4
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 54(B) 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 5 4
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 63 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 6 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 64(1)3 
+
+mEv: evNumEvents
+mBaseRes: 0 255 0 0
+mInvolved: 6 4 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 8 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 8
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 8(B)84(2) 
+
+mEv: evNumEvents
+mBaseRes: 255 0 255 0
+mInvolved: 8 8 4
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe 9 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 9
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe C 
+
+mEv: evInterference
+mBaseRes: 0 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe CS2(24) 
+
+mEv: evCaughtStealing
+mBaseRes: 0 0 255 0
+mInvolved: 2 4
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe D7 
+
+mEv: evDouble
+mBaseRes: 0 0 0 0
+mInvolved: 7
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe DGR 
+
+mEv: evGroundRuleDouble
+mBaseRes: 0 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe E1 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 81
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe E3 
+
+mEv: evNumEvents
+mBaseRes: 255 0 0 0
+mInvolved: 83
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe FC3 
+
+mEv: evFieldersChoice
+mBaseRes: 0 0 0 0
+mInvolved: 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe FC5 
+
+mEv: evFieldersChoice
+mBaseRes: 0 0 0 0
+mInvolved: 5
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe FLE5 
+
+mEv: evFoulError
+mBaseRes: 0 0 0 0
+mInvolved: 85
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe H 
+
+mEv: evHomeRun
+mBaseRes: 4 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe HP 
+
+mEv: evHitByPitch
+mBaseRes: 1 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe HR 
+
+mEv: evHomeRun
+mBaseRes: 4 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe HR9 
+
+mEv: evHomeRun
+mBaseRes: 4 0 0 0
+mInvolved: 9
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe K+PB 
+PB
+mEv: evStrikeout
+mBaseRes: 255 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe K+WP 
+WP
+mEv: evStrikeout
+mBaseRes: 255 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe K23 
+
+mEv: evStrikeout
+mBaseRes: 255 0 0 0
+mInvolved: 2 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe K23+WP 
+WP
+mEv: evStrikeout
+mBaseRes: 255 0 0 0
+mInvolved: 2 3
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe KH 
+
+mEv: evStrikeout
+mBaseRes: 255 0 0 0
+mInvolved: 4
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe NP 
+
+mEv: evNoEvent
+mBaseRes: 0 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe PB 
+
+mEv: evPassedBall
+mBaseRes: 0 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe PO1(E3) 
+
+mEv: evPickoff
+mBaseRes: 0 255 0 0
+mInvolved: 83
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe PO2(14) 
+
+mEv: evPickoff
+mBaseRes: 0 0 255 0
+mInvolved: 1 4
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe POCS2(1361) 
+
+mEv: evPickoffCaughtStealing
+mBaseRes: 0 0 255 0
+mInvolved: 1 3 6 1
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe S7 
+
+mEv: evSingle
+mBaseRes: 0 0 0 0
+mInvolved: 7
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe SB2 
+
+mEv: evStolenBase
+mBaseRes: 0 2 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe SB3 
+
+mEv: evStolenBase
+mBaseRes: 0 0 3 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe SBH 
+
+mEv: evStolenBase
+mBaseRes: 0 0 0 4
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe T9 
+
+mEv: evTriple
+mBaseRes: 0 0 0 0
+mInvolved: 9
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe W 
+
+mEv: evWalk
+mBaseRes: 1 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe W+WP 
+WP
+mEv: evWalk
+mBaseRes: 1 0 0 0
+mInvolved:
+
+C:\Users\Kevin\OneDrive - Yazaki\retrosheet\evMaestro>a.exe WP 
+
+mEv: evWildPitch
+mBaseRes: 0 0 0 0
+mInvolved:

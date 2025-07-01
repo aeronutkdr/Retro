@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>test\actual\halfinning.html</h1>
+<canvas id="myCanvas" width="2246" height="1600" style="border:1px solid grey;"></canvas>
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillText("0000", 0, 1600);
+ctx.fillText("0100", 36, 1600);
+ctx.fillText("1000", 576, 1600);
+ctx.fillText("1100", 612, 1600);
+ctx.fillText("1200", 648, 1600);
+ctx.fillText("1300", 684, 1600);
+ctx.fillText("1600", 792, 1600);
+ctx.fillText("1700", 828, 1600);
+ctx.fillText("2A00", 1512, 1600);
+ctx.fillText("2B00", 1548, 1600);
+ctx.fillText("3A00", 2088, 1600);
+// from 0000 to 0100: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(0, 1600);
+ctx.lineTo(36, 1600);
+ctx.stroke();
+// from 0100 to 1000: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(36, 1600);
+ctx.lineTo(576, 1600);
+ctx.stroke();
+// from 1000 to 1100: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(576, 1600);
+ctx.lineTo(612, 1600);
+ctx.stroke();
+// from 1100 to 1200: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(612, 1600);
+ctx.lineTo(648, 1600);
+ctx.stroke();
+// from 1200 to 1300: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(648, 1600);
+ctx.lineTo(684, 1600);
+ctx.stroke();
+// from 1600 to 1700: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(792, 1600);
+ctx.lineTo(828, 1600);
+ctx.stroke();
+// from 1700 to 2A00: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(828, 1600);
+ctx.lineTo(1512, 1600);
+ctx.stroke();
+// from 2A00 to 2B00: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(1512, 1600);
+ctx.lineTo(1548, 1600);
+ctx.stroke();
+// from 2B00 to 3A00: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(1548, 1600);
+ctx.lineTo(2088, 1600);
+ctx.stroke();
+</script>
+</body>
+</html>

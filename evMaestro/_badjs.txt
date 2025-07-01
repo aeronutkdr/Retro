@@ -1,0 +1,6 @@
+badj,vizqo001,R
+badj,vizqo001,R
+badj,hockd001,R
+badj,hockd001,R
+badj,hockd001,L
+

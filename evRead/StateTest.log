@@ -1,0 +1,73 @@
+this  = 0061FF0C
+  value = 0
+  freq  = 1
+  t = 00C71AD8 s = 0061FEFC 1
+this  = 0061FEFC
+  value = 1
+  freq  = 1
+  t = 00C715A0 s = 0061FEEC 1
+this  = 0061FEEC
+  value = 2
+  freq  = 1
+**** 2 24 ****
+this  = 0061FF0C
+  value = 0
+  freq  = 2
+  t = 00C71AD8 s = 0061FEFC 1
+  t = 00C73FB0 s = 0061FEEC 1
+this  = 0061FEFC
+  value = 1
+  freq  = 1
+  t = 00C715A0 s = 0061FEEC 1
+this  = 0061FEEC
+  value = 2
+  freq  = 2
+**** 3 36 ****
+this  = 0061FF0C
+  value = 0
+  freq  = 2
+  t = 00C71AD8 s = 0061FEFC 1
+  t = 00C73FB0 s = 0061FEEC 1
+this  = 0061FEFC
+  value = 1
+  freq  = 2
+  t = 00C715A0 s = 0061FEEC 2
+this  = 0061FEEC
+  value = 2
+  freq  = 3
+**** 3 36 ****
+this  = 0061FF0C
+  value = 0
+  freq  = 3
+  t = 00C71AD8 s = 0061FEFC 2
+  t = 00C73FB0 s = 0061FEEC 1
+this  = 0061FEFC
+  value = 1
+  freq  = 3
+  t = 00C715A0 s = 0061FEEC 3
+this  = 0061FEEC
+  value = 2
+  freq  = 4
+**** 3 36 ****
+**** 1 36 ****
+**** 0 36 ****
+**** 0 36 ****
+**** 0 36 ****
+**** 0 36 ****
+**** 5 108 ****
+**** 6 120 ****
+**** 6 120 ****
+**** 6 120 ****
+this  = 00C71AD8
+  value = 0
+  freq  = 3
+  t = 00C73FC8 s = 00C73FB0 2
+  t = 00C715D0 s = 00C715A0 1
+this  = 00C73FB0
+  value = 1
+  freq  = 3
+  t = 00C715B8 s = 00C715A0 3
+this  = 00C715A0
+  value = 2
+  freq  = 4
+**** 0 120 ****

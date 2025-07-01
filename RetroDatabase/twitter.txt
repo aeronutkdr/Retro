@@ -1,0 +1,11 @@
+Dell i5 CPU @ 2.40GHz
+256 GB SSD
+6 GB RAM
+
+sorry, didn't see this msg earlier: Dell i5 CPU, 2.40GHz, 256 GB SSD, 6 GB RAM mssqlsvr localhost
+
+also was able to reproduce 1999-2002 The_Book values
+0.553 0.951 1.192 1.582 1.446 1.872 2.078 2.439
+
+0.296 0.568 0.721 0.985 0.997 1.248 1.450 1.665
+0.115 0.244 0.342 0.464 0.385 0.538 0.624 0.800

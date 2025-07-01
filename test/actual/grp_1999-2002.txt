@@ -1,0 +1,7 @@
+1999eve\1999ANA.txt
+1999eve\1999ARI.txt
+1999eve\1999ATL.txt
+1999eve\1999BAL.txt
+1999eve\1999BOS.txt
+1999eve\1999CHA.txt
+1999eve\1999CHN.txt

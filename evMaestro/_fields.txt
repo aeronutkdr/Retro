@@ -1,0 +1,97 @@
+ A	 0	game id*
+ B	 1	visiting team*
+ C	 2	inning*
+ D	 3	batting team*
+ E	 4	outs*
+ F	 5	balls*
+ G	 6	strikes*
+ H	 7	pitch sequence
+ I	 8	vis score*
+ J	 9	home score*
+ K	10	batter
+ L	11	batter hand
+ M	12	res batter*
+ N	13	res batter hand*
+ O	14	pitcher
+ P	15	pitcher hand
+ Q	16	res pitcher*
+ R	17	res pitcher hand*
+ S	18	catcher
+ T	19	first base
+ U	20	second base
+ V	21	third base
+ W	22	shortstop
+ X	23	left field
+ Y	24	center field
+ Z	25	right field
+AA	26	first runner*
+AB	27	second runner*
+AC	28	third runner*
+AD	29	event text*
+AE	30	leadoff flag*
+AF	31	pinchhit flag*
+AG	32	defensive position*
+AH	33	lineup position*
+AI	34	event type*
+AJ	35	batter event flag*
+AK	36	ab flag*
+AL	37	hit value*
+AM	38	SH flag*
+AN	39	SF flag*
+AO	40	outs on play*
+AP	41	double play flag
+AQ	42	triple play flag
+AR	43	RBI on play*
+AS	44	wild pitch flag*
+AT	45	passed ball flag*
+AU	46	fielded by
+AV	47	batted ball type
+AW	48	bunt flag
+AX	49	foul flag
+AY	50	hit location
+AZ	51	num errors*
+BA	52	1st error player
+BB	53	1st error type
+BC	54	2nd error player
+BD	55	2nd error type
+BE	56	3rd error player
+BF	57	3rd error type
+BG	58	batter dest* (5 if scores and unearned, 6 if team unearned)
+BH	59	runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
+BI	60	runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
+BJ	61	runner on 3rd dest* (5 if socres and uneanred, 6 if team unearned)
+BK	62	play on batter
+BL	63	play on runner on 1st
+BM	64	play on runner on 2nd
+BN	65	play on runner on 3rd
+BO	66	SB for runner on 1st flag
+BP	67	SB for runner on 2nd flag
+BQ	68	SB for runner on 3rd flag
+BR	69	CS for runner on 1st flag
+BS	70	CS for runner on 2nd flag
+BT	71	CS for runner on 3rd flag
+BU	72	PO for runner on 1st flag
+BV	73	PO for runner on 2nd flag
+BW	74	PO for runner on 3rd flag
+BX	75	Responsible pitcher for runner on 1st
+BY	76	Responsible pitcher for runner on 2nd
+BZ	77	Responsible pitcher for runner on 3rd
+CA	78	New Game Flag
+CB	79	End Game Flag
+CC	80	Pinch-runner on 1st
+CD	81	Pinch-runner on 2nd
+CE	82	Pinch-runner on 3rd
+CF	83	Runner removed for pinch-runner on 1st
+CG	84	Runner removed for pinch-runner on 2nd
+CH	85	Runner removed for pinch-runner on 3rd
+CI	86	Batter removed for pinch-hitter
+CJ	87	Position of batter removed for pinch-hitter
+CK	88	Fielder with First Putout (0 if none)
+CL	89	Fielder with Second Putout (0 if none)
+CM	90	Fielder with Third Putout (0 if none)
+CN	91	Fielder with First Assist (0 if none)
+CO	92	Fielder with Second Assist (0 if none)
+CP	93	Fielder with Third Assist (0 if none)
+CQ	94	Fielder with Fourth Assist (0 if none)
+CR	95	Fielder with Fifth Assist (0 if none)
+CS	96	event num

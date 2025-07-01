@@ -1,0 +1,18 @@
+#include "standard-types.hsl"
+
+#pragma byteorder(little_endian) 
+
+struct StateType
+{
+	DWORD FreqIn;
+	DWORD Value;
+	WORD NumTos;
+	WORD Pad;
+};
+
+struct ToType
+{
+	DWORD Freq;
+	WORD State;
+	WORD Pad;
+};

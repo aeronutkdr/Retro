@@ -1,0 +1,15 @@
+
+Box generates standard box scores from Project Scoresheet event files.
+Usage: box [options] eventfile
+Standard switches for PS programs:
+  -h        Print help.
+  -vn       Print no status messages.
+  -vf       Print status message for each file (default).
+  -vg       Print status message for each game.
+  -i id     Only process game id.
+  -y year   Year to process (for teamyyyy and aaayyyy.ros).
+  -s start  Earliest date to process (mmdd).
+  -e end    Last date to process (mmdd).
+  -q        Ask about each game.
+  -m        Use master player file instead of local roster files.
+  -D        Print debugging information.

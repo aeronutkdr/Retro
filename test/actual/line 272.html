@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>test\actual\line 272.html</h1>
+<canvas id="myCanvas" width="2246" height="1600" style="border:1px solid grey;"></canvas>
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillText("0000", 0, 1600);
+ctx.fillText("0100", 36, 1600);
+ctx.fillText("1000", 576, 1600);
+ctx.fillText("2200", 1224, 1600);
+ctx.fillText("2300", 1260, 1600);
+ctx.fillText("3100", 1764, 1600);
+// from 0000 to 0100: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(0, 1600);
+ctx.lineTo(36, 1600);
+ctx.stroke();
+// from 0100 to 1000: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(36, 1600);
+ctx.lineTo(576, 1600);
+ctx.stroke();
+// from 2200 to 2300: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(1224, 1600);
+ctx.lineTo(1260, 1600);
+ctx.stroke();
+// from 2300 to 3100: dv = 0.000000
+ctx.strokeStyle="#F0F000";
+ctx.lineWidth=7;
+ctx.beginPath();
+ctx.moveTo(1260, 1600);
+ctx.lineTo(1764, 1600);
+ctx.stroke();
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>test\actual\scoring.html</h1>
+<canvas id="myCanvas" width="2246" height="1600" style="border:1px solid grey;"></canvas>
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillText("0000", 0, 600);
+ctx.fillText("0100", 36, 600);
+ctx.fillText("0200", 72, 600);
+ctx.fillText("0300", 108, 600);
+ctx.fillText("2000", 1152, 600);
+ctx.fillText("2100", 1188, 600);
+ctx.fillText("2400", 1296, 600);
+ctx.fillText("2500", 1332, 600);
+ctx.fillText("2600", 1368, 600);
+ctx.fillText("2700", 1404, 600);
+ctx.fillText("2A00", 1512, 1100);
+ctx.fillText("2B00", 1548, 1100);
+ctx.fillText("2E00", 1656, 1100);
+ctx.fillText("2F00", 1692, 1100);
+ctx.fillText("3E00", 2232, 1600);
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 0000 to 0100: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(0, 600);
+ctx.lineTo(36, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 0100 to 0200: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(36, 600);
+ctx.lineTo(72, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 0200 to 0300: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(72, 600);
+ctx.lineTo(108, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2000 to 2100: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1152, 600);
+ctx.lineTo(1188, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2100 to 2400: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1188, 600);
+ctx.lineTo(1296, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2400 to 2500: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1296, 600);
+ctx.lineTo(1332, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2500 to 2600: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1332, 600);
+ctx.lineTo(1368, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2600 to 2700: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1368, 600);
+ctx.lineTo(1404, 600);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2700 to 2A00: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1404, 600);
+ctx.lineTo(1512, 1100);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2A00 to 2B00: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1512, 1100);
+ctx.lineTo(1548, 1100);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2B00 to 2E00: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1548, 1100);
+ctx.lineTo(1656, 1100);
+ctx.stroke();
+ctx.strokeStyle="#00003F";
+ctx.lineWidth=7;
+// from 2E00 to 2F00: dv = 0.000000
+ctx.beginPath();
+ctx.moveTo(1656, 1100);
+ctx.lineTo(1692, 1100);
+ctx.stroke();
+ctx.strokeStyle="#006027";
+ctx.lineWidth=7;
+// from 2F00 to 2E00: dv = 96.000000
+ctx.beginPath();
+ctx.moveTo(1692, 1100);
+ctx.lineTo(1656, 1100);
+ctx.stroke();
+ctx.strokeStyle="#600027";
+ctx.lineWidth=7;
+// from 2F00 to 3E00: dv = -96.000000
+ctx.beginPath();
+ctx.moveTo(1692, 1100);
+ctx.lineTo(2232, 1600);
+ctx.stroke();
+</script>
+</body>
+</html>
