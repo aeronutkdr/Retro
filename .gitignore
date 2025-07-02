@@ -11,3 +11,5 @@ ev/
 *.ros
 *.zip
 *.swp
+*.o
+*.exe
