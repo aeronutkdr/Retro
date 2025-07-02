@@ -1,6 +1,9 @@
 OBJ_DIR   = Object
 CC        = gcc
-CFLAGS    = -Wall -c -g -O0
+INCDIRS   = ./EvRead
+VPATH     = ./\
+			$(INCDIRS)
+CFLAGS    = -Wall -c -g -O0 -I$(INCDIRS)
 MODULE    = retroBinMerge
 OBJECTS   = $(OBJ_DIR)/$(MODULE).o\
             $(OBJ_DIR)/NodeTree.o\

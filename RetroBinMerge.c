@@ -56,7 +56,7 @@ void BuildHTML (char* fname, struct NT_SolveType* sol, int num, unsigned int* ag
     fprintf (fp, "const canvas = document.getElementById(\"myCanvas\");\n");
     fprintf (fp, "const ctx = canvas.getContext(\"2d\");\n");
     fprintf (fp, "ctx.font = \"25px serif\";\n");
-    for (int i=0; )
+    //for (int i=0; )
     for (int i=0; i<num; i++)
     {
         if ((sol[i].state & 0xFF) != 0) continue;
