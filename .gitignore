@@ -1,15 +1,14 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-#*.ev?
-#*.ev?.*
 .vs/
 Debug/
 data/
-ev/
+_data/
 *.*~
 *.ros
 *.zip
 *.swp
 *.o
 *.exe
+*.json
