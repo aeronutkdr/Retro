@@ -1,0 +1,64 @@
+ Volume in drive C is Windows
+ Volume Serial Number is 90C1-4DCB
+
+ Directory of C:\Users\10032877\OneDrive - Yazaki\RetroReader
+
+07/03/2025  08:43 AM    <DIR>          .
+07/03/2025  08:43 AM    <DIR>          ..
+07/17/2019  07:31 PM          (75,515) .RData
+07/17/2019  07:31 PM          (20,515) .Rhistory
+07/17/2019  07:22 PM            10,743 2000.png
+07/17/2019  06:35 PM          (24,851) 2000ANA.pdf
+07/17/2019  06:55 PM            87,634 2000kdr.txt
+07/23/2003  07:52 PM           (1,078) app.ico
+05/04/2019  09:26 PM           (1,298) app.rc
+05/04/2019  09:26 PM           (1,338) AssemblyInfo.cpp
+07/14/2019  07:41 PM               (3) data
+07/07/2019  03:35 PM             (862) data.txt
+01/09/2025  02:49 PM    <DIR>          Debug
+07/03/2025  08:43 AM                 0 files.txt
+05/04/2019  09:47 PM           (2,112) filters.txt
+07/17/2019  06:54 PM            35,522 kdr.txt
+01/09/2025  02:49 PM    <DIR>          prev
+05/04/2019  09:26 PM           (1,124) ReadMe.txt
+05/04/2019  09:26 PM              (91) resource.h
+07/16/2019  07:33 PM          (14,112) RetroReader - Copy.cpp
+07/17/2019  06:54 PM          (14,303) RetroReader.cpp
+07/07/2019  03:02 PM           (5,274) RetroReader.vcproj
+07/17/2019  06:55 PM           (1,413) RetroReader.vcproj.BABYG.Kevin.user
+07/17/2019  07:27 PM           (9,196) solver.R
+05/04/2019  09:26 PM             (211) stdafx.cpp
+05/04/2019  09:26 PM             (248) stdafx.h
+07/17/2019  05:33 PM          (17,325) tmp RetroReader.cpp
+07/11/2019  06:26 PM         (206,757) tmp.txt
+              24 File(s)        531,525 bytes
+
+ Directory of C:\Users\10032877\OneDrive - Yazaki\RetroReader\Debug
+
+01/09/2025  02:49 PM    <DIR>          .
+01/09/2025  02:49 PM    <DIR>          ..
+05/04/2019  09:27 PM           (1,204) app.res
+05/04/2019  09:26 PM           (4,684) AssemblyInfo.obj
+07/17/2019  06:54 PM           (8,020) BuildLog.htm
+07/17/2019  06:54 PM              (66) mt.dep
+07/17/2019  06:54 PM             (621) RetroReader.exe.intermediate.manifest
+07/17/2019  06:54 PM          (54,241) RetroReader.obj
+05/04/2019  09:26 PM       (2,621,440) RetroReader.pch
+05/04/2019  09:26 PM          (11,542) stdafx.obj
+07/17/2019  06:54 PM          (76,800) vc90.idb
+07/17/2019  06:54 PM         (135,168) vc90.pdb
+              10 File(s)      2,913,786 bytes
+
+ Directory of C:\Users\10032877\OneDrive - Yazaki\RetroReader\prev
+
+01/09/2025  02:49 PM    <DIR>          .
+01/09/2025  02:49 PM    <DIR>          ..
+07/17/2019  06:31 PM          (35,522) kdr.txt
+07/14/2019  06:47 PM          (36,530) kdr0.txt
+07/17/2019  06:13 PM          (35,522) kdr1.txt
+07/16/2019  07:33 PM          (14,112) RetroReader.cpp
+               4 File(s)        121,686 bytes
+
+     Total Files Listed:
+              38 File(s)      3,566,997 bytes
+               8 Dir(s)  230,079,664,128 bytes free
