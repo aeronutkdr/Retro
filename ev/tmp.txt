@@ -1,0 +1,118 @@
+Game//0/0/0////
+i=0 Lineup
+ 0: 
+ 1: 
+ 2: 
+ 3: 
+ 4: 
+ 5: 
+ 6: 
+ 7: 
+ 8: 
+ 9: 
+10: 
+11: 
+12: 
+i=0 Position
+ 0: 
+ 1: 
+ 2: 
+ 3: 
+ 4: 
+ 5: 
+ 6: 
+ 7: 
+ 8: 
+ 9: 
+10: 
+11: 
+12: 
+i=1 Lineup
+ 0: 
+ 1: 
+ 2: 
+ 3: 
+ 4: 
+ 5: 
+ 6: 
+ 7: 
+ 8: 
+ 9: 
+10: 
+11: 
+12: 
+i=1 Position
+ 0: 
+ 1: 
+ 2: 
+ 3: 
+ 4: 
+ 5: 
+ 6: 
+ 7: 
+ 8: 
+ 9: 
+10: 
+11: 
+12: 
+
+philb002!=urshg001
+urshg001!=philb002
+Game/ANA202304090/0/0/0///drurb001/
+i=0 Lineup
+ 0: mayzt001
+ 1: sprig001
+ 2: bichb001
+ 3: guerv002
+ 4: chapm001
+ 5: varsd001
+ 6: merrw001
+ 7: biggc002
+ 8: kirka001
+ 9: kierk001
+10: 
+11: 
+12: 
+i=0 Position
+ 0: 
+ 1: mayzt001
+ 2: kirka001
+ 3: guerv002
+ 4: biggc002
+ 5: chapm001
+ 6: bichb001
+ 7: varsd001
+ 8: kierk001
+ 9: merrw001
+10: sprig001
+11: 
+12: 
+i=1 Lineup
+ 0: estec001
+ 1: wardt002
+ 2: troum001
+ 3: ohtas001
+ 4: fletd002
+ 5: renfh001
+ 6: drurb001
+ 7: rengl001
+ 8: urshg001
+ 9: ohopl001
+10: 
+11: 
+12: 
+i=1 Position
+ 0: 
+ 1: estec001
+ 2: ohopl001
+ 3: drurb001
+ 4: rengl001
+ 5: urshg001
+ 6: fletd002
+ 7: wardt002
+ 8: troum001
+ 9: renfh001
+10: ohtas001
+11: 
+12: 
+
