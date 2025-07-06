@@ -51,6 +51,7 @@ unsigned short evRecordPlay::ProcessEvent(std::string ev)
     unsigned short retval = 0;
     /* 333322221111HHHH */
     std::string p1 = ev.substr(ev.find_first_of('/'));
+/*
     if (p1 == "K") { retval = 0xF; }
     if (p1[0] > '1' && p1[0] <= '9') {  retval = 0x321F ;}
     if (p1[0] == "NP") {retval = 0x3210;}
@@ -90,8 +91,8 @@ play,10,0,kirka001,32,....FBBFFBX,63/G6.2-3
 play,10,0,kierk001,01,SX,DGR/F9LD.3-H(UR)
 play,10,1,troum001,32,FBBBF>B,W.3-H(UR);2-3;1-2
 play,10,1,ohtas001,02,.CSX,43/G34
-
-
+*/
+    return retval;
 }
 #define chToBase(c) (((c)=='H')?0:((c)-'0'))
 /* OO332211HH */                     /* OO321HBBBFFFFFSS */

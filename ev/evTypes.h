@@ -4,7 +4,7 @@
 /* 4 baserunners, 9 fielders, 6 umpires, 2 managers */
 enum ContributorPosition
 {
-    Batter = 0, /* do not use this - it will be 0x10000 - (sum of others) */
+    Batter = 0,
     Runner1,
     Runner2,
     Runner3,
@@ -25,6 +25,7 @@ enum ContributorPosition
     UmpireRight,
     ManagerOffense,
     ManagerDefense,
+    Null,
     NumContributors
 };
 

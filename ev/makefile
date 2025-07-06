@@ -3,6 +3,7 @@ CC        = g++
 CFLAGS    = -Wall -c -g -O0
 MODULE    = ev
 OBJECTS   = $(OBJ_DIR)/$(MODULE).o\
+	        $(OBJ_DIR)/evContrib.o\
 	        $(OBJ_DIR)/evFile.o\
 	        $(OBJ_DIR)/evRecordCom.o\
 	        $(OBJ_DIR)/evRecordData.o\
