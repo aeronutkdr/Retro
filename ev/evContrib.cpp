@@ -45,9 +45,10 @@ double evC_Compress(double* Vals,
         vi = v;
         s0 = e->State;
     }
-    for(int j=0; j<NumContributors; j++)
-    {
-        Out[j] /= (vi - v0);
-    }
+    if (vi-v0)
+        for(int j=0; j<NumContributors; j++)
+        {
+            Out[j] /= (vi - v0);
+        }
     return (vi-v0);
 }
