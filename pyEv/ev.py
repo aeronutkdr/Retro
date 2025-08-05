@@ -21,11 +21,13 @@ class Game:
         self.Version = 0
         self.Info = {}
         self.Lineup = [[0 for _ in range(9)] for _ in range(2)]
+        self.Position = [[0 for _ in range(9)] for _ in range(2)]
     def __str__(self):
         return "Game name = " + self.Name +\
                "\nVersion = " + str(self.Version) +\
                "\nInfo = " + str(self.Info) +\
-               "\nLineup = " + str(self.Lineup)
+               "\nLineup = " + str(self.Lineup) +\
+               "\nPosition = " + str(self.Position)
     def Process(self,r):
         match r[0]:
             case "version": self.Version = int(r[1])
@@ -37,7 +39,7 @@ class Game:
                     self.Lineup[team][ord-1] = r[1]
                 pos = int(r[5])
                 if (pos < 10):
-                    self.Lineup[team][pos-1] = r[1]
+                    self.Position[team][pos-1] = r[1]
             case _: print("other")
 
 def ProcessFile(s):
@@ -51,7 +53,7 @@ def ProcessFile(s):
                 g[-1].Process(row)
     return g
 
-print (os.listdir('.'))
+#print (os.listdir('.'))
 files = [f for f in os.listdir('.') if re.match('.*\\.EV.', f)]
 for f in files:
     games = ProcessFile(f)
