@@ -2,19 +2,20 @@ import re
 import os
 import csv
 
-'''
-class Team:
-    def __init__(self):
-        self.Name = ""
-        self.Players = []
-        self.Batting = [0] * 9
-        self.Defense = [0] * 9
-    def __str__(self):
-        s = " " * self.level + self.number + ": " + self.partName
-        for q in self.subParts:
-            s += "\n" + str(q)
-        return s
-'''
+# OO32 1HBB BSSF FFFF
+def CalcState (O, B, Ba, St, F):
+    return (O << 14) +\
+           (0x2000 if B[3]!="" else 0) +\
+           (0x1000 if B[2]!="" else 0) +\
+           (0x0800 if B[1]!="" else 0) +\
+           (0x0400 if B[0]!="" else 0) +\
+           (Ba << 7) +\
+           (St << 4) +\
+           (F  << 0)
+
+def ProcessPitch(p):
+    return 1 if (p != None) and (p=='S') else 0
+
 class Game:
     def __init__(self, name):
         self.Name = name
@@ -51,6 +52,7 @@ class Game:
                 if (pos < 10):
                     self.Position[team][pos-1] = r[1]
             case "play":
+                States = []
                 self.Inning = int(r[1])
                 self.Bottom = r[2] == '1'
                 #assert self.Inning == inning
@@ -58,6 +60,14 @@ class Game:
                 self.Count = r[4]
                 self.Pitches = r[5]
                 self.Event = r[6]
+                States.append (CalcState(self.Out, self.Bases, 0, 0, 0))
+                i = 0
+                for p in self.Pitches:
+                    BSF = ProcessPitch(self.Pitches[i])
+                    i += 1
+                    States.append (States[-1] + BSF)
+                print ('[{}]'.format(', '.join(hex(x) for x in States)))
+
             case "radj": self.Bases[int(r[2])] = r[1]
             case "com": None
             case "data": None
