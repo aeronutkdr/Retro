@@ -1,6 +1,7 @@
 import re
 import os
 import csv
+import evProcess
 
 # OO32 1HBB BSSF FFFF
 def CalcState (O, B, Ba, St, F):
@@ -57,16 +58,23 @@ class Game:
                 self.Bottom = r[2] == '1'
                 #assert self.Inning == inning
                 self.Bases[0] = r[3]
-                self.Count = r[4]
-                self.Pitches = r[5]
-                self.Event = r[6]
-                States.append (CalcState(self.Out, self.Bases, 0, 0, 0))
-                i = 0
-                for p in self.Pitches:
-                    BSF = ProcessPitch(self.Pitches[i])
-                    i += 1
-                    States.append (States[-1] + BSF)
-                print ('[{}]'.format(', '.join(hex(x) for x in States)))
+                #self.Count = r[4]
+                #self.Pitches = r[5]
+                #self.Event = r[6]
+                #States.append (CalcState(self.Out, self.Bases, 0, 0, 0))
+                States = evProcess.GenSequence (CalcState (self.Out,
+                                                           self.Bases,
+                                                           0,
+                                                           0,
+                                                           0),
+                                                r[5],
+                                                r[6])
+                #i = 0
+                #for p in self.Pitches:
+                    #BSF = ProcessPitch(self.Pitches[i])
+                    #i += 1
+                    #States.append (States[-1] + BSF)
+                #print ('[{}]'.format(', '.join(hex(x) for x in States)))
 
             case "radj": self.Bases[int(r[2])] = r[1]
             case "com": None
@@ -86,5 +94,8 @@ def ProcessFile(s):
 
 files = [f for f in os.listdir('.') if re.match('.*\\.ev.', f, re.IGNORECASE)]
 for f in files:
+    #for i in range(5):
+        #None
+    #print (str(i))
     games = ProcessFile(f)
     print (*games)
