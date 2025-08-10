@@ -19,6 +19,10 @@ def ProcessEvent (runners, event):
     p1 = p2[0] if len(p2[0]) < len(p3[0]) else p3[0]
     advs = [] if len(p3)==1 else re.split(';', p3[1])
     res = re.split(';', p1) + advs
+    Outs = 1 +\
+           (1 if runners[1]>0 else 0) +\
+           (1 if runners[2]>0 else 0) +\
+           (1 if runners[3]>0 else 0)
     for r in res:
         match r:
             case 'K': runners[0] = -1
@@ -47,9 +51,7 @@ def ProcessEvent (runners, event):
             case '54(1)': runners[1] = -1
             case '6': runners[0] = -1
             case '63': runners[0] = -1
-            case '64(1)3':
-                runners[0] = -1
-                runners[1] = -1
+            case '64(1)3': runners[0:2] = [-1, -1]
             case '9': runners[0] = -1
             case 'D7': runners[0] = 2
             case 'DGR': runners[0] = 2
@@ -67,30 +69,37 @@ def ProcessEvent (runners, event):
             case 'W': runners[0] = 1
             case 'WP': None
             case  _ : print (r)
+    Outs -= (1 if runners[0]>-1 else 0) +\
+            (1 if runners[1]>-1 else 0) +\
+            (1 if runners[2]>-1 else 0) +\
+            (1 if runners[3]>-1 else 0)
+    return Outs
 
-def GenSequence (start, pitches, events):
-    OutsStart = start >> 14
-    OutsOnPlay = 0
-    BatterEvent = True
-    EndGameFlag = False
-    to = [start]
-    runners = [0,
-               1 if start & 0x0800 else 0,\
-               2 if start & 0x1000 else 0,\
-               3 if start & 0x2000 else 0]
+def GenSequence (Outs, Bases, pitches, events):
+    to = [(Outs<<14) |\
+          (0 if Bases[3] == "" else (1<<13)) |\
+          (0 if Bases[2] == "" else (1<<12)) |\
+          (0 if Bases[1] == "" else (1<<11)) |\
+          (0 if Bases[0] == "" else (1<<10))]
+    runners = [(-1 if Bases[0] == "" else 0),\
+               (-1 if Bases[1] == "" else 1),\
+               (-1 if Bases[2] == "" else 2),\
+               (-1 if Bases[3] == "" else 3)]
 
     if ((to[-1] & (1<<10)) == 0): # no batter at home
         to.append (to[-1] | (1<<10))
     Strikes = 0
     Balls   = 0
     Fouls   = 0
+    Pitch   = 0
     for p in pitches:
         Pitch = 1
         match p:
-            case 'F' | 'L' | 'O' | 'R' | 'T':                                           Fouls  +=1
-            case 'A' | 'C' | 'K' | 'M' | 'Q' | 'S':                                     Strikes+=1
-            case 'B' | 'I' | 'P' | 'V':                                                 Balls  +=1
-            case 'H' | 'N' | 'U' | '+' | '*' | '.' | '1' | '2' | '3' | '>' | 'X' | 'Y': Pitch   =0
+            case 'F' | 'L' | 'O' | 'R' | 'T':                                     Fouls  +=1
+            case 'A' | 'C' | 'K' | 'M' | 'Q' | 'S':                               Strikes+=1
+            case 'B' | 'I' | 'P' | 'V':                                           Balls  +=1
+            case 'H' | 'N' | 'U' | '+' | '*' | '1' | '2' | '3' | '>' | 'X' | 'Y': Pitch   =0
+            case '.':                                                             Pitch   =0; to=[to[-1]]
             case _ : assert False
 
         if Pitch:
@@ -101,27 +110,33 @@ def GenSequence (start, pitches, events):
             to[-1] |= (Balls   << 7)
             to[-1] |= (Fouls   << 2)
             to[-1] |= (Strikes << 0)
-            if ((to[-1] & 0x3FF) > (to[-2] & 0x3FF)):
-                to.append(to[-1] & 0xFC00)
-            else: Pitch = 0
-    ProcessEvent(runners, events)
+            #if ((to[-1] & 0x3FF) > (to[-2] & 0x3FF)):
+                #to.append(to[-1] & 0xFC00)
+            #else: Pitch = 0
+    OutsOnPlay = ProcessEvent(runners, events)
+    for i in reversed(range(len(runners))):
+        if runners[i]!=i:
+            if runners[i] in range(3):
+                Bases[runners[i]] = Bases[i]
+            Bases[i] = ""
+    BatterEvent = runners[0] != 0
     if not BatterEvent:
         if (Pitch): # take into account event on the pitch
             to.pop(-1)
         to[-1] = 1<<10
-    else: to[-1] = 0
-    to[-1] |= ((OutsStart+OutsOnPlay)<<14)
+    else: to.append(0)
+    to[-1] |= ((Outs+OutsOnPlay)<<14)
     to[-1] |= DEST(runners[0])
     to[-1] |= DEST(runners[1])
     to[-1] |= DEST(runners[2])
     to[-1] |= DEST(runners[3])
-    to[-1] |= (Balls   << 7)
-    to[-1] |= (Fouls   << 2)
-    to[-1] |= (Strikes << 0)
-    if BatterEvent:
-        to[-1] &= 0xFC00
+    if (not BatterEvent):
+        to[-1] |= (Balls   << 7)
+        to[-1] |= (Fouls   << 2)
+        to[-1] |= (Strikes << 0)
+    EndGameFlag = False
     if (EndGameFlag or
-        (OutsStart+OutsOnPlay == 3)):
+        (Outs+OutsOnPlay == 3)):
         to.append(0xFFFF)
     return to
 

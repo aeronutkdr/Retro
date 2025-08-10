@@ -1,22 +1,25 @@
+'''
+..\\RetroEventMaestro\\2021eve\\bevent.exe -f 7,10,26-29,58-61 -i ANA202304090 2023ANA.EVA -y 2023 > out.txt
+..\\RetroEventMaestro\\2021eve\\bevent.exe -f 7,10,26-29 -i ANA202304090 2023ANA.EVA -y 2023 > out.txt
+number	field
+------	-----
+7	pitch sequence
+10	batter
+26	first runner*
+27	second runner*
+28	third runner*
+29	event text*
+58	batter dest* (5 if scores and unearned, 6 if team unearned)
+59	runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
+60	runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
+61	runner on 3rd dest* (5 if socres and uneanred, 6 if team unearned)
+'''
 import re
 import os
 import csv
 import evProcess
 
 # OO32 1HBB BSSF FFFF
-def CalcState (O, B, Ba, St, F):
-    return (O << 14) +\
-           (0x2000 if B[3]!="" else 0) +\
-           (0x1000 if B[2]!="" else 0) +\
-           (0x0800 if B[1]!="" else 0) +\
-           (0x0400 if B[0]!="" else 0) +\
-           (Ba << 7) +\
-           (St << 4) +\
-           (F  << 0)
-
-def ProcessPitch(p):
-    return 1 if (p != None) and (p=='S') else 0
-
 class Game:
     def __init__(self, name):
         self.Name = name
@@ -61,20 +64,25 @@ class Game:
                 #self.Count = r[4]
                 #self.Pitches = r[5]
                 #self.Event = r[6]
-                #States.append (CalcState(self.Out, self.Bases, 0, 0, 0))
-                States = evProcess.GenSequence (CalcState (self.Out,
-                                                           self.Bases,
-                                                           0,
-                                                           0,
-                                                           0),
+                b = self.Bases.copy()
+                States = evProcess.GenSequence (self.Out,
+                                                self.Bases,
                                                 r[5],
                                                 r[6])
-                #i = 0
-                #for p in self.Pitches:
-                    #BSF = ProcessPitch(self.Pitches[i])
-                    #i += 1
-                    #States.append (States[-1] + BSF)
-                #print ('[{}]'.format(', '.join(hex(x) for x in States)))
+                '''
+                print ('\"{}\",{},\"{}\",{},[{}]'.format(r[5],
+                                                     ','.join('\"'+B+'\"' for B in b),
+                                                     r[6],
+                                                     ','.join(str(s) for s in self.Bases),
+                                                     ', '.join(hex(x) for x in States)))
+                '''
+                print ('\"{}\",{},\"{}\"'.format(r[5],
+                                                 ','.join('\"'+B+'\"' for B in b),
+                                                 r[6]))
+                self.Out = States[-1] >> 14
+                if (self.Out == 3):
+                    self.Out = 0
+                    self.Bases = ["", "", "", ""]
 
             case "radj": self.Bases[int(r[2])] = r[1]
             case "com": None
