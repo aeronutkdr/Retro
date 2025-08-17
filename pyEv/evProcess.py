@@ -92,6 +92,8 @@ def GenSequence (Outs, Bases, pitches, events):
     Balls   = 0
     Fouls   = 0
     Pitch   = 0
+    if pitches == "BCBFH":
+        None
     for p in pitches:
         Pitch = 1
         match p:
@@ -116,7 +118,7 @@ def GenSequence (Outs, Bases, pitches, events):
     OutsOnPlay = ProcessEvent(runners, events)
     for i in reversed(range(len(runners))):
         if runners[i]!=i:
-            if runners[i] in range(3):
+            if runners[i] in range(4):
                 Bases[runners[i]] = Bases[i]
             Bases[i] = ""
     BatterEvent = runners[0] != 0

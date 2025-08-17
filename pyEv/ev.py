@@ -51,6 +51,10 @@ class Game:
                 team = int(r[3])
                 ord = int(r[4])
                 if (ord > 0) and (ord < 10):
+                    for i in range (4):
+                        if self.Lineup[team][ord-1] != '' and\
+                           self.Bases[i] == self.Lineup[team][ord-1]:
+                            self.Bases[i] = r[1]
                     self.Lineup[team][ord-1] = r[1]
                 pos = int(r[5])
                 if (pos < 10):
@@ -76,9 +80,10 @@ class Game:
                                                      ','.join(str(s) for s in self.Bases),
                                                      ', '.join(hex(x) for x in States)))
                 '''
-                print ('\"{}\",{},\"{}\"'.format(r[5],
-                                                 ','.join('\"'+B+'\"' for B in b),
-                                                 r[6]))
+                if (r[6] != "NP"):
+                    print ('\"{}\",{},\"{}\"'.format(r[5],
+                                                    ','.join('\"'+B+'\"' for B in b),
+                                                    r[6]))
                 self.Out = States[-1] >> 14
                 if (self.Out == 3):
                     self.Out = 0
