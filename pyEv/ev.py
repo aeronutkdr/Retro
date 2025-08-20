@@ -21,7 +21,7 @@ import evProcess
 
 # OO32 1HBB BSSF FFFF
 class Game:
-    def __init__(self, name):
+    def __init__(self, name : str):
         self.Name = name
         #self.Team = [Team()] * 2
         self.Version = 0
@@ -32,7 +32,7 @@ class Game:
         self.Inning = 0
         self.Bottom = False
         self.Out = 0
-    def __str__(self):
+    def __str__(self) -> str:
                #+ "\nInfo = " + str(self.Info)\
                #+ "\nLineup = " + str(self.Lineup)\
                #+ "\nPosition = " + str(self.Position)\
@@ -43,7 +43,7 @@ class Game:
                + "\nOut = " + str(self.Out)\
                + "\nBases = " + str(self.Bases)\
 
-    def Process(self,r):
+    def Process(self,r: str):
         match r[0]:
             case "version": self.Version = int(r[1])
             case "info": self.Info[r[1]] = r[2]
@@ -65,12 +65,18 @@ class Game:
                 self.Bottom = r[2] == '1'
                 #assert self.Inning == inning
                 self.Bases[0] = r[3]
+                Bases = [[-1] * 2 for _ in range(4)]
+                for i in range(4):
+                    if self.Bases[i] != "" :
+                        Bases[i][0] = self.Lineup[1 if self.Bottom else 0].index(self.Bases[i])
+                        Bases[i][1] = i
                 #self.Count = r[4]
                 #self.Pitches = r[5]
                 #self.Event = r[6]
                 b = self.Bases.copy()
                 States = evProcess.GenSequence (self.Out,
                                                 self.Bases,
+                                                Bases,
                                                 r[5],
                                                 r[6])
                 '''
@@ -94,7 +100,7 @@ class Game:
             case "data": None
             case _: print(r[0])
 
-def ProcessFile(s):
+def ProcessFile(s: str) -> list[Game]:
     g = []
     with open(s, mode='r') as file:
         csv_reader = csv.reader(file)

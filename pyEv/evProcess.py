@@ -10,10 +10,10 @@ OO321HBBBFFFFFSS */
  3 strikes : 2 bit  1.. 0 */
 total      : 16 bit */
 '''
-def DEST(x):
+def DEST(x: int) -> int:
     return (1<<(10+(x&3))) if (x>0 and x<4) else 0
 
-def ProcessEvent (runners, event):
+def ProcessEvent (runners : list[int], event : str) -> int:
     p2 = re.split ('/', event)
     p3 = re.split ('\\.', event)
     p1 = p2[0] if len(p2[0]) < len(p3[0]) else p3[0]
@@ -75,7 +75,17 @@ def ProcessEvent (runners, event):
             (1 if runners[3]>-1 else 0)
     return Outs
 
-def GenSequence (Outs, Bases, pitches, events):
+def GenSequence (Outs : int, Bases : list[str], Bs : list[int], pitches : str, event : str) -> list[int]:
+    to = [(Outs<<14) |\
+          (0 if Bs[3][0] == -1 else (1<<13)) |\
+          (0 if Bs[2][0] == -1 else (1<<12)) |\
+          (0 if Bs[1][0] == -1 else (1<<11)) |\
+          (0 if Bs[0][0] == -1 else (1<<10))]
+    runners = [Bs[0][0],\
+               Bs[1][0],\
+               Bs[2][0],\
+               Bs[3][0]]
+    '''
     to = [(Outs<<14) |\
           (0 if Bases[3] == "" else (1<<13)) |\
           (0 if Bases[2] == "" else (1<<12)) |\
@@ -85,7 +95,7 @@ def GenSequence (Outs, Bases, pitches, events):
                (-1 if Bases[1] == "" else 1),\
                (-1 if Bases[2] == "" else 2),\
                (-1 if Bases[3] == "" else 3)]
-
+    '''
     if ((to[-1] & (1<<10)) == 0): # no batter at home
         to.append (to[-1] | (1<<10))
     Strikes = 0
@@ -115,12 +125,16 @@ def GenSequence (Outs, Bases, pitches, events):
             #if ((to[-1] & 0x3FF) > (to[-2] & 0x3FF)):
                 #to.append(to[-1] & 0xFC00)
             #else: Pitch = 0
-    OutsOnPlay = ProcessEvent(runners, events)
+    OutsOnPlay = ProcessEvent(runners, event)
+    for i in (range(len(runners))):
+        Bs[i][1] = runners[i]
+    '''
     for i in reversed(range(len(runners))):
         if runners[i]!=i:
             if runners[i] in range(4):
                 Bases[runners[i]] = Bases[i]
             Bases[i] = ""
+    '''
     BatterEvent = runners[0] != 0
     if not BatterEvent:
         if (Pitch): # take into account event on the pitch
