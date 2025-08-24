@@ -75,34 +75,24 @@ def ProcessEvent (runners : list[int], event : str) -> int:
             (1 if runners[3]>-1 else 0)
     return Outs
 
-def GenSequence (Outs : int, Bases : list[str], Bs : list[int], pitches : str, event : str) -> list[int]:
+def GenSequence (Outs : int, Bs : list[int], pitches : str, event : str) -> list[int]:
     to = [(Outs<<14) |\
           (0 if Bs[3][0] == -1 else (1<<13)) |\
           (0 if Bs[2][0] == -1 else (1<<12)) |\
           (0 if Bs[1][0] == -1 else (1<<11)) |\
           (0 if Bs[0][0] == -1 else (1<<10))]
-    runners = [Bs[0][0],\
-               Bs[1][0],\
-               Bs[2][0],\
-               Bs[3][0]]
-    '''
-    to = [(Outs<<14) |\
-          (0 if Bases[3] == "" else (1<<13)) |\
-          (0 if Bases[2] == "" else (1<<12)) |\
-          (0 if Bases[1] == "" else (1<<11)) |\
-          (0 if Bases[0] == "" else (1<<10))]
-    runners = [(-1 if Bases[0] == "" else 0),\
-               (-1 if Bases[1] == "" else 1),\
-               (-1 if Bases[2] == "" else 2),\
-               (-1 if Bases[3] == "" else 3)]
-    '''
+    runners = [0 if Bs[0][0] != -1 else -1,\
+               1 if Bs[1][0] != -1 else -1,\
+               2 if Bs[2][0] != -1 else -1,\
+               3 if Bs[3][0] != -1 else -1]
     if ((to[-1] & (1<<10)) == 0): # no batter at home
         to.append (to[-1] | (1<<10))
     Strikes = 0
     Balls   = 0
     Fouls   = 0
     Pitch   = 0
-    if pitches == "BCBFH":
+    if event == "HP.2-3;1-2":
+    #if pitches == ".BX":
         None
     for p in pitches:
         Pitch = 1
@@ -126,15 +116,9 @@ def GenSequence (Outs : int, Bases : list[str], Bs : list[int], pitches : str, e
                 #to.append(to[-1] & 0xFC00)
             #else: Pitch = 0
     OutsOnPlay = ProcessEvent(runners, event)
+    assert OutsOnPlay in range(0,4)
     for i in (range(len(runners))):
         Bs[i][1] = runners[i]
-    '''
-    for i in reversed(range(len(runners))):
-        if runners[i]!=i:
-            if runners[i] in range(4):
-                Bases[runners[i]] = Bases[i]
-            Bases[i] = ""
-    '''
     BatterEvent = runners[0] != 0
     if not BatterEvent:
         if (Pitch): # take into account event on the pitch
@@ -156,35 +140,37 @@ def GenSequence (Outs : int, Bases : list[str], Bs : list[int], pitches : str, e
         to.append(0xFFFF)
     return to
 
-# Pitches - Fouls 
-# 'F': foul
-# 'L': foul bunt
-# 'O': foul tip on bunt
-# 'R': foul ball on pitchout
-# 'T': foul tip
-# Pitches - Strikes
-# 'A': automatic strike, usually for pitch timer violation
-# 'C': called strike
-# 'K': strike (unknown type)
-# 'M': missed bunt attempt
-# 'Q': swinging on pitchout
-# 'S': swinging strike
-# Pitches - Balls
-# 'B': ball
-# 'I': intentional ball
-# 'P': pitchout
-# 'V': called ball because pitcher went to his mouth or automatic ball on intentional walk or pitch timer violation
-# Non Pitches
-# 'H': hit batter
-# 'N': no pitch (on balks and interference calls)
-# 'U': unknown or missed pitch
-# '+': following pickoff throw by the catcher
-# '*': indicates the following pitch was blocked by the catcher
-# '.': marker for play not involving the batter
-# '1': pickoff throw to first
-# '2': pickoff throw to second
-# '3': pickoff throw to third
-# '>': Indicates a runner going on the pitch
-# In Play
-# 'X': ball put into play by batter
-# 'Y': ball put into play on pitchout
+'''
+Pitches - Fouls 
+'F': foul
+'L': foul bunt
+'O': foul tip on bunt
+'R': foul ball on pitchout
+'T': foul tip
+Pitches - Strikes
+'A': automatic strike, usually for pitch timer violation
+'C': called strike
+'K': strike (unknown type)
+'M': missed bunt attempt
+'Q': swinging on pitchout
+'S': swinging strike
+Pitches - Balls
+'B': ball
+'I': intentional ball
+'P': pitchout
+'V': called ball because pitcher went to his mouth or automatic ball on intentional walk or pitch timer violation
+Non Pitches
+'H': hit batter
+'N': no pitch (on balks and interference calls)
+'U': unknown or missed pitch
+'+': following pickoff throw by the catcher
+'*': indicates the following pitch was blocked by the catcher
+'.': marker for play not involving the batter
+'1': pickoff throw to first
+'2': pickoff throw to second
+'3': pickoff throw to third
+'>': Indicates a runner going on the pitch
+In Play
+'X': ball put into play by batter
+'Y': ball put into play on pitchout
+'''

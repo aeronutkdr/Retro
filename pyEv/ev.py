@@ -26,11 +26,12 @@ class Game:
         #self.Team = [Team()] * 2
         self.Version = 0
         self.Info = {}
-        self.Lineup = [["" for _ in range(9)] for _ in range(2)]
-        self.Position = [["" for _ in range(9)] for _ in range(2)]
-        self.Bases = ["" for _ in range(4)]
+        self.Rosters = [[] for _ in range(2)]
+        self.Lineup = [[-1 for _ in range(9)] for _ in range(2)]
+        self.Position = [[-1 for _ in range(10)] for _ in range(2)]
+        self.Bases = [-1 for _ in range(4)]
         self.Inning = 0
-        self.Bottom = False
+        self.Half = 0
         self.Out = 0
     def __str__(self) -> str:
                #+ "\nInfo = " + str(self.Info)\
@@ -39,7 +40,7 @@ class Game:
         return "Game name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
                + "\nInning = " + str(self.Inning)\
-               + "\nBottom = " + str(self.Bottom)\
+               + "\nHalf = " + str(self.Half)\
                + "\nOut = " + str(self.Out)\
                + "\nBases = " + str(self.Bases)\
 
@@ -49,53 +50,56 @@ class Game:
             case "info": self.Info[r[1]] = r[2]
             case "start" | "sub":
                 team = int(r[3])
-                ord = int(r[4])
-                if (ord > 0) and (ord < 10):
-                    for i in range (4):
-                        if self.Lineup[team][ord-1] != '' and\
-                           self.Bases[i] == self.Lineup[team][ord-1]:
-                            self.Bases[i] = r[1]
-                    self.Lineup[team][ord-1] = r[1]
-                pos = int(r[5])
+                ord = int(r[4])-1
+                pos = int(r[5])-1
+                repl = self.Lineup[team][ord]
+                if not r[1] in self.Rosters[team]:
+                    self.Rosters[team].append(r[1])
+                idx = self.Rosters[team].index(r[1])
+                if (ord >= 0):
+                    self.Lineup[team][ord]=idx
                 if (pos < 10):
-                    self.Position[team][pos-1] = r[1]
+                    self.Position[team][pos]=idx
+                if repl>=0:
+                    # if player to be replaced is on base:
+                    for i in range(4):
+                        if self.Bases[i] == repl:
+                            self.Bases[i] = idx
             case "play":
                 States = []
                 self.Inning = int(r[1])
-                self.Bottom = r[2] == '1'
+                if (self.Half != int(r[2])):
+                    assert self.Out == 3
+                    self.Out = 0
+                self.Half = int(r[2])
                 #assert self.Inning == inning
-                self.Bases[0] = r[3]
+                self.Bases[0] = self.Rosters[self.Half].index(r[3])
                 Bases = [[-1] * 2 for _ in range(4)]
                 for i in range(4):
-                    if self.Bases[i] != "" :
-                        Bases[i][0] = self.Lineup[1 if self.Bottom else 0].index(self.Bases[i])
-                        Bases[i][1] = i
-                #self.Count = r[4]
-                #self.Pitches = r[5]
-                #self.Event = r[6]
+                    Bases[i][0] = self.Bases[i]
                 b = self.Bases.copy()
                 States = evProcess.GenSequence (self.Out,
-                                                self.Bases,
                                                 Bases,
                                                 r[5],
                                                 r[6])
-                '''
-                print ('\"{}\",{},\"{}\",{},[{}]'.format(r[5],
-                                                     ','.join('\"'+B+'\"' for B in b),
-                                                     r[6],
-                                                     ','.join(str(s) for s in self.Bases),
-                                                     ', '.join(hex(x) for x in States)))
-                '''
                 if (r[6] != "NP"):
                     print ('\"{}\",{},\"{}\"'.format(r[5],
-                                                    ','.join('\"'+B+'\"' for B in b),
+                                                    ','.join('\"'+("" if (B == -1) else (self.Rosters[self.Half][B]))+'\"' for B in b),
                                                     r[6]))
+                for i in range(4):
+                    self.Bases[i] = -1
+                for i in range(4):
+                    if Bases[i][1] in range(0,4):
+                        self.Bases[Bases[i][1]] = Bases[i][0]
                 self.Out = States[-1] >> 14
                 if (self.Out == 3):
-                    self.Out = 0
-                    self.Bases = ["", "", "", ""]
-
-            case "radj": self.Bases[int(r[2])] = r[1]
+                    #self.Out = 0
+                    self.Bases = [-1, -1, -1, -1]
+            case "radj":
+                if not r[1] in self.Rosters[self.Half]:
+                    self.Rosters[self.Half].append(r[1])
+                idx = self.Rosters[self.Half].index(r[1])
+                self.Bases[int(r[2])] = idx
             case "com": None
             case "data": None
             case _: print(r[0])
