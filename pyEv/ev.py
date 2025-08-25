@@ -83,9 +83,13 @@ class Game:
                                                 r[5],
                                                 r[6])
                 if (r[6] != "NP"):
-                    print ('\"{}\",{},\"{}\"'.format(r[5],
+                    R = ""
+                    for i in range(4):
+                        R += "," + str(0 if Bases[i][1]<0 else Bases[i][1])
+                    print ('\"{}\",{},\"{}\"{}'.format(r[5],
                                                     ','.join('\"'+("" if (B == -1) else (self.Rosters[self.Half][B]))+'\"' for B in b),
-                                                    r[6]))
+                                                    r[6],
+                                                    R))
                 for i in range(4):
                     self.Bases[i] = -1
                 for i in range(4):

@@ -38,12 +38,12 @@ def ProcessEvent (runners : list[int], event : str) -> int:
             case 'HR': runners[0] = 4
             case '1-2': runners[1] = 2
             case '1-3': runners[1] = 3
-            case '1-H(UR)': runners[1] = 4
+            case '1-H(UR)': runners[1] = 5
             case '13': runners[0] = -1
             case '2-3': runners[2] = 3
             case '2-H': runners[2] = 4
             case '3-H': runners[3] = 4
-            case '3-H(UR)': runners[3] = 4
+            case '3-H(UR)': runners[3] = 5
             case '4': runners[0] = -1
             case '43': runners[0] = -1
             case '5': runners[0] = -1
