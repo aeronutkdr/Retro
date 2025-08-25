@@ -1,6 +1,8 @@
 '''
-..\\RetroEventMaestro\\2021eve\\bevent.exe -f 7,10,26-29,58-61 -i ANA202304090 2023ANA.EVA -y 2023 > out.txt
 ..\\RetroEventMaestro\\2021eve\\bevent.exe -f 7,10,26-29 -i ANA202304090 2023ANA.EVA -y 2023 > out.txt
+..\\RetroEventMaestro\\2021eve\\bevent.exe -f 7,10,26-29,58-61 -i ANA202304090 2023ANA.EVA -y 2023 > out.txt
+..\\RetroEventMaestro\\2021eve\\bevent.exe -f 0-10,26-29,58-61 -i ANA202304090 ..\\_data\\2023\\2023ANA.EVA -y 2023 > out.txt
+
 number	field
 ------	-----
 7	pitch sequence
@@ -33,6 +35,7 @@ class Game:
         self.Inning = 0
         self.Half = 0
         self.Out = 0
+        self.Score= [0, 0]
     def __str__(self) -> str:
                #+ "\nInfo = " + str(self.Info)\
                #+ "\nLineup = " + str(self.Lineup)\
@@ -86,13 +89,15 @@ class Game:
                     R = ""
                     for i in range(4):
                         R += "," + str(0 if Bases[i][1]<0 else Bases[i][1])
-                    print ('\"{}\",{},\"{}\"{}'.format(r[5],
+                    print ('\"{}\",\"\",{},{},{},{},{},\"{}\",{},{},{},\"{}\"{}'.format(self.Name, self.Inning, self.Half, self.Out, r[4][0], r[4][1], r[5], self.Score[0], self.Score[1],
                                                     ','.join('\"'+("" if (B == -1) else (self.Rosters[self.Half][B]))+'\"' for B in b),
                                                     r[6],
                                                     R))
                 for i in range(4):
                     self.Bases[i] = -1
                 for i in range(4):
+                    if Bases[i][1] > 3:
+                        self.Score[self.Half]+=1
                     if Bases[i][1] in range(0,4):
                         self.Bases[Bases[i][1]] = Bases[i][0]
                 self.Out = States[-1] >> 14
