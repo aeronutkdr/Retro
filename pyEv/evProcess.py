@@ -75,24 +75,20 @@ def ProcessEvent (runners : list[int], event : str) -> int:
             (1 if runners[3]>-1 else 0)
     return Outs
 
-def GenSequence (Outs : int, Bs : list[int], pitches : str, event : str) -> list[int]:
+def GenSequence (Outs : int, runners : list[int], pitches : str, event : str) -> list[int]:
     to = [(Outs<<14) |\
-          (0 if Bs[3][0] == -1 else (1<<13)) |\
-          (0 if Bs[2][0] == -1 else (1<<12)) |\
-          (0 if Bs[1][0] == -1 else (1<<11)) |\
-          (0 if Bs[0][0] == -1 else (1<<10))]
-    runners = [0 if Bs[0][0] != -1 else -1,\
-               1 if Bs[1][0] != -1 else -1,\
-               2 if Bs[2][0] != -1 else -1,\
-               3 if Bs[3][0] != -1 else -1]
+          (0 if runners[3] == -1 else (1<<13)) |\
+          (0 if runners[2] == -1 else (1<<12)) |\
+          (0 if runners[1] == -1 else (1<<11)) |\
+          (0 if runners[0] == -1 else (1<<10))]
     if ((to[-1] & (1<<10)) == 0): # no batter at home
         to.append (to[-1] | (1<<10))
     Strikes = 0
     Balls   = 0
     Fouls   = 0
     Pitch   = 0
-    if event == "HP.2-3;1-2":
-    #if pitches == ".BX":
+    #if event == "HP.2-3;1-2":
+    if pitches == "1":
         None
     for p in pitches:
         Pitch = 1
@@ -112,13 +108,8 @@ def GenSequence (Outs : int, Bs : list[int], pitches : str, event : str) -> list
             to[-1] |= (Balls   << 7)
             to[-1] |= (Fouls   << 2)
             to[-1] |= (Strikes << 0)
-            #if ((to[-1] & 0x3FF) > (to[-2] & 0x3FF)):
-                #to.append(to[-1] & 0xFC00)
-            #else: Pitch = 0
     OutsOnPlay = ProcessEvent(runners, event)
     assert OutsOnPlay in range(0,4)
-    for i in (range(len(runners))):
-        Bs[i][1] = runners[i]
     BatterEvent = runners[0] != 0
     if not BatterEvent:
         if (Pitch): # take into account event on the pitch
@@ -139,7 +130,6 @@ def GenSequence (Outs : int, Bs : list[int], pitches : str, event : str) -> list
         (Outs+OutsOnPlay == 3)):
         to.append(0xFFFF)
     return to
-
 '''
 Pitches - Fouls 
 'F': foul
