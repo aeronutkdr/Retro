@@ -6,7 +6,6 @@ Debug/
 data/
 _data/
 *.*~
-*.ros
 *.zip
 *.swp
 *.o
