@@ -13,7 +13,7 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-bevent.exe -f 0-30,58-61 -y 2023 2023ANA.EVA > out.txt
+bevent.exe -f 0-40,58-61 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
@@ -28,13 +28,14 @@ class Game:
         self.Version = 0
         self.Info = {}
         self.Lineup = [[None for _ in range(9)] for _ in range(2)]
-        self.Position = [[None for _ in range(10)] for _ in range(2)]
+        self.Position = [[None for _ in range(11)] for _ in range(2)]
         self.Bases = [None for _ in range(4)]
         self.Inning = 0
         self.Half = 0
         self.Out = 0
         self.Score= [0, 0]
         self.Leadoff = True
+        self.Sub = False
     def __str__(self) -> str:
         return "Game name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
@@ -67,11 +68,12 @@ class Game:
                 ord = int(r[4])-1
                 pos = int(r[5])-1
                 repl = self.Lineup[team][ord]
+                self.Sub = self.Bases[0] == repl
                 ros = Rosters[self.Info['visteam'] if team==0 else self.Info['hometeam']]
                 assert r[1] in ros
                 if (ord >= 0):
                     self.Lineup[team][ord]=r[1]
-                if (pos < 10):
+                if (pos < 11):
                     self.Position[team][pos]=r[1]
                 if repl != None:
                     self.Bases = [r[1] if x==repl else x for x in self.Bases]
@@ -85,10 +87,16 @@ class Game:
                 self.Half = int(r[2])
                 self.Bases[0] = r[3]
                 runners = [-1 if self.Bases[v]==None else v for v in range(4)]
+                flags = {'eventtype' : 0,
+                         'hitvalue' : 0,
+                         'outsonplay' : 0,
+                         'batterevent' : True,
+                         'ab' : True}
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
                                                 r[5],
-                                                r[6])
+                                                r[6],
+                                                flags)
                 if (r[6] != "NP"):
                     Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
                     Defros = Rosters[self.Info['visteam'] if self.Half==1 else self.Info['hometeam']]
@@ -128,7 +136,17 @@ class Game:
                     outStr += ',\"' + ("" if self.Bases[2]==None else self.Bases[2]) + '\"'   # 27 second runner*
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'   # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                             # 29 event text*
-                    outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                     # 30 leadoff flag*
+                    outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                   # 30 leadoff flag*
+                    outStr += ',\"' + ('T' if self.Sub else 'F') + '\"'                       # 31 pinchhit flag*
+                    outStr += ',' + str(self.Position[self.Half].index(self.Bases[0])+1)      # 32 defensive position*
+                    outStr += ',' + str(self.Lineup[self.Half].index(self.Bases[0])+1)        # 33 lineup position*
+                    outStr += ',' + str(flags['eventtype'])                                   # 34 event type*
+                    outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'           # 35 batter event flag*
+                    outStr += ',\"' + ('T' if flags['ab'] else 'F') + '\"'                    # 36 ab flag*
+                    outStr += ',' + str(flags['hitvalue'])                                    # 37 hit value*
+                    outStr += ',\"' + 'F' + '\"'                                              # 38 SH flag*
+                    outStr += ',\"' + 'F' + '\"'                                              # 39 SF flag*
+                    outStr += ','  + str(flags['outsonplay'])                                 # 40 outs on play*
                     outStr += ',' + str(0 if runners[0] == -1 else runners[0])                # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[1] == -1 else runners[1])                # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[2] == -1 else runners[2])                # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
@@ -147,6 +165,7 @@ class Game:
                 if (self.Out == 3):
                     self.Bases = [None] * 4
                 self.Leadoff &= (r[6] == "NP")
+                self.Sub = False
             case "radj":
                 self.Bases[int(r[2])] = r[1]
             case "com": None
@@ -174,16 +193,6 @@ for f in files:
 '''
 number    field
 ------    -----
-31        pinchhit flag*
-32        defensive position*
-33        lineup position*
-34        event type*
-35        batter event flag*
-36        ab flag*
-37        hit value*
-38        SH flag*
-39        SF flag*
-40        outs on play*
 41        double play flag
 42        triple play flag
 43        RBI on play*
