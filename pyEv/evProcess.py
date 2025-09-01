@@ -88,7 +88,7 @@ def GenSequence (Outs : int, runners : list[int], pitches : str, event : str) ->
     Fouls   = 0
     Pitch   = 0
     #if event == "HP.2-3;1-2":
-    if pitches == "1":
+    if pitches == "TBBFX":
         None
     for p in pitches:
         Pitch = 1

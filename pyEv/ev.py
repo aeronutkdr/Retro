@@ -15,22 +15,13 @@ options:
   -d        print list of field numbers and descriptions
 bevent.exe -f 0-20,26-29,58-61 -i ANA202304090 -y 2023 2023ANA.EVA > out.txt
 bevent.exe -f 0-20,26-29,58-61 -y 2023 2023ANA.EVA > out.txt
+bevent.exe -f 0-30,58-61 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
 import csv
 import evProcess
 
-'''
-class Player:
-    def __init__(self):
-        self.name = ""
-        self.bat = "?"
-        self.throw = "?"
-        self.team = ""
-        self.pos = ""
-
-''' 
 Rosters = {}
 # OO32 1HBB BSSF FFFF
 class Game:
@@ -45,6 +36,7 @@ class Game:
         self.Half = 0
         self.Out = 0
         self.Score= [0, 0]
+        self.Leadoff = True
     def __str__(self) -> str:
         return "Game name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
@@ -88,6 +80,7 @@ class Game:
             case "play":
                 States = []
                 self.Inning = int(r[1])
+                self.Leadoff |= (self.Half != int(r[2]))
                 if (self.Half != int(r[2])):
                     assert self.Out == 3
                     self.Out = 0
@@ -128,10 +121,16 @@ class Game:
                     outStr += ',\"' + self.Position[1-self.Half][1] +'\"'                     # 18 catcher
                     outStr += ',\"' + self.Position[1-self.Half][2] +'\"'                     # 19 first base
                     outStr += ',\"' + self.Position[1-self.Half][3] +'\"'                     # 20 second base
+                    outStr += ',\"' + self.Position[1-self.Half][4] +'\"'                     # 21 third base
+                    outStr += ',\"' + self.Position[1-self.Half][5] +'\"'                     # 22 shortstop
+                    outStr += ',\"' + self.Position[1-self.Half][6] +'\"'                     # 23 left field
+                    outStr += ',\"' + self.Position[1-self.Half][7] +'\"'                     # 24 center field
+                    outStr += ',\"' + self.Position[1-self.Half][8] +'\"'                     # 25 right field
                     outStr += ',\"' + ("" if self.Bases[1]==None else self.Bases[1]) + '\"'   # 26 first runner*
                     outStr += ',\"' + ("" if self.Bases[2]==None else self.Bases[2]) + '\"'   # 27 second runner*
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'   # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                             # 29 event text*
+                    outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                     # 30 leadoff flag*
                     outStr += ',' + str(0 if runners[0] == -1 else runners[0])                # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[1] == -1 else runners[1])                # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[2] == -1 else runners[2])                # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
@@ -149,6 +148,7 @@ class Game:
                 self.Out = States[-1] >> 14
                 if (self.Out == 3):
                     self.Bases = [None] * 4
+                self.Leadoff &= (r[6] == "NP")
             case "radj":
                 self.Bases[int(r[2])] = r[1]
             case "com": None
