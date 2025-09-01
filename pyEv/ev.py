@@ -13,8 +13,6 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-bevent.exe -f 0-20,26-29,58-61 -i ANA202304090 -y 2023 2023ANA.EVA > out.txt
-bevent.exe -f 0-20,26-29,58-61 -y 2023 2023ANA.EVA > out.txt
 bevent.exe -f 0-30,58-61 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
@@ -173,3 +171,69 @@ for f in files:
     #print (str(i))
     games = ProcessFile(f)
     print (*games)
+'''
+number    field
+------    -----
+31        pinchhit flag*
+32        defensive position*
+33        lineup position*
+34        event type*
+35        batter event flag*
+36        ab flag*
+37        hit value*
+38        SH flag*
+39        SF flag*
+40        outs on play*
+41        double play flag
+42        triple play flag
+43        RBI on play*
+44        wild pitch flag*
+45        passed ball flag*
+46        fielded by
+47        batted ball type
+48        bunt flag
+49        foul flag
+50        hit location
+51        num errors*
+52        1st error player
+53        1st error type
+54        2nd error player
+55        2nd error type
+56        3rd error player
+57        3rd error type
+62        play on batter
+63        play on runner on 1st
+64        play on runner on 2nd
+65        play on runner on 3rd
+66        SB for runner on 1st flag
+67        SB for runner on 2nd flag
+68        SB for runner on 3rd flag
+69        CS for runner on 1st flag
+70        CS for runner on 2nd flag
+71        CS for runner on 3rd flag
+72        PO for runner on 1st flag
+73        PO for runner on 2nd flag
+74        PO for runner on 3rd flag
+75        Responsible pitcher for runner on 1st
+76        Responsible pitcher for runner on 2nd
+77        Responsible pitcher for runner on 3rd
+78        New Game Flag
+79        End Game Flag
+80        Pinch-runner on 1st? (T/F)
+81        Pinch-runner on 2nd? (T/F)
+82        Pinch-runner on 3rd? (T/F)
+83        ID of Runner removed for pinch-runner on 1st
+84        ID of Runner removed for pinch-runner on 2nd
+85        ID of Runner removed for pinch-runner on 3rd
+86        ID of Batter removed for pinch-hitter
+87        Fielding position of batter removed for pinch-hitter
+88        Fielder with First Putout (0 if none)
+89        Fielder with Second Putout (0 if none)
+90        Fielder with Third Putout (0 if none)
+91        Fielder with First Assist (0 if none)
+92        Fielder with Second Assist (0 if none)
+93        Fielder with Third Assist (0 if none)
+94        Fielder with Fourth Assist (0 if none)
+95        Fielder with Fifth Assist (0 if none)
+96        event num
+'''

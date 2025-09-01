@@ -167,37 +167,6 @@ In Play
 '''
 number    field
 ------    -----
- 0        game id*
- 1        visiting team*
- 2        inning*
- 3        batting team*
- 4        outs*
- 5        balls*
- 6        strikes*
- 7        pitch sequence
- 8        vis score*
- 9        home score*
-10        batter
-11        batter hand
-12        res batter*
-13        res batter hand*
-14        pitcher
-15        pitcher hand
-16        res pitcher*
-17        res pitcher hand*
-18        catcher
-19        first base
-20        second base
-21        third base
-22        shortstop
-23        left field
-24        center field
-25        right field
-26        first runner*
-27        second runner*
-28        third runner*
-29        event text*
-30        leadoff flag*
 31        pinchhit flag*
 32        defensive position*
 33        lineup position*
@@ -225,10 +194,6 @@ number    field
 55        2nd error type
 56        3rd error player
 57        3rd error type
-58        batter dest* (5 if scores and unearned, 6 if team unearned)
-59        runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
-60        runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
-61        runner on 3rd dest* (5 if scores and unearned, 6 if team unearned)
 62        play on batter
 63        play on runner on 1st
 64        play on runner on 2nd
