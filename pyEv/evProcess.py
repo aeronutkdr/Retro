@@ -26,16 +26,16 @@ def ProcessEvent (runners : list[int], event : str, flags : dict[int]) -> int:
     for r in res:
         match r:
             case 'K':       runners[0] = -1;         flags['eventtype'] =  3
-            case '3':       runners[0] = -1;         flags['eventtype'] =  2
+            case '3':       runners[0] = -1;         flags['eventtype'] =  2; flags['hitlocation'] = '3'
             case '7':       runners[0] = -1;         flags['eventtype'] =  2
             case '8':       runners[0] = -1;         flags['eventtype'] =  2
             case '31':      runners[0] = -1;         flags['eventtype'] =  2
-            case 'S16':     runners[0] =  1;         flags['eventtype'] = 20; flags['hitvalue'] = 1
-            case 'S7':      runners[0] =  1;         flags['eventtype'] = 20; flags['hitvalue'] = 1
+            case 'S16':     runners[0] =  1;         flags['eventtype'] = 20;                                                   flags['hitvalue'] = 1
+            case 'S7':      runners[0] =  1;         flags['eventtype'] = 20;                                                   flags['hitvalue'] = 1
             case '36(1)':   runners[1] = -1;         flags['eventtype'] =  2
             case 'B-1':     runners[0] =  1
             case '1-H':     runners[1] =  4
-            case 'HR':      runners[0] =  4;         flags['eventtype'] = 23; flags['hitvalue'] = 4
+            case 'HR':      runners[0] =  4;         flags['eventtype'] = 23;                                                   flags['hitvalue'] = 4
             case '1-2':     runners[1] =  2
             case '1-3':     runners[1] =  3
             case '1-H(UR)': runners[1] =  5
@@ -53,20 +53,20 @@ def ProcessEvent (runners : list[int], event : str, flags : dict[int]) -> int:
             case '63':      runners[0] = -1;         flags['eventtype'] =  2
             case '64(1)3':  runners[0:2] = [-1, -1]; flags['eventtype'] =  2
             case '9':       runners[0] = -1;         flags['eventtype'] =  2
-            case 'D7':      runners[0] =  2;         flags['eventtype'] = 21; flags['hitvalue'] = 2
-            case 'DGR':     runners[0] =  2;         flags['eventtype'] = 21; flags['hitvalue'] = 2
+            case 'D7':      runners[0] =  2;         flags['eventtype'] = 21;                                                   flags['hitvalue'] = 2
+            case 'DGR':     runners[0] =  2;         flags['eventtype'] = 21;                                                   flags['hitvalue'] = 2
             case 'E1':      None;                    flags['eventtype'] = 18
-            case 'HP':      runners[0] =  1;         flags['eventtype'] = 16; flags['ab'] = False
-            case 'IW':      runners[0] =  1;         flags['eventtype'] = 15; flags['ab'] = False
+            case 'HP':      runners[0] =  1;         flags['eventtype'] = 16;                               flags['ab'] = False
+            case 'IW':      runners[0] =  1;         flags['eventtype'] = 15;                               flags['ab'] = False
             case 'NP':      None
             case 'PO1(13)': runners[1] = -1;         flags['eventtype'] =  8; flags['batterevent'] = False; flags['ab'] = False
-            case 'S3':      runners[0] =  1;         flags['eventtype'] = 20; flags['hitvalue'] = 1
-            case 'S8':      runners[0] =  1;         flags['eventtype'] = 20; flags['hitvalue'] = 1
-            case 'S9':      runners[0] =  1;         flags['eventtype'] = 20; flags['hitvalue'] = 1
+            case 'S3':      runners[0] =  1;         flags['eventtype'] = 20;                                                   flags['hitvalue'] = 1
+            case 'S8':      runners[0] =  1;         flags['eventtype'] = 20;                                                   flags['hitvalue'] = 1
+            case 'S9':      runners[0] =  1;         flags['eventtype'] = 20;                                                   flags['hitvalue'] = 1
             case 'SB2':     runners[1] =  2;         flags['eventtype'] =  4; flags['batterevent'] = False; flags['ab'] = False
             case 'SB3':     runners[2] =  3;         flags['eventtype'] =  4; flags['batterevent'] = False; flags['ab'] = False
-            case 'T9':      runners[0] =  3;         flags['eventtype'] = 22; flags['hitvalue'] = 3
-            case 'W':       runners[0] =  1;         flags['eventtype'] = 14; flags['ab'] = False
+            case 'T9':      runners[0] =  3;         flags['eventtype'] = 22;                                                   flags['hitvalue'] = 3
+            case 'W':       runners[0] =  1;         flags['eventtype'] = 14;                               flags['ab'] = False
             case 'WP':      None;                    flags['eventtype'] =  9; flags['batterevent'] = False; flags['ab'] = False
             case  _ : print (r)
     Outs -= (1 if runners[0]>-1 else 0) +\

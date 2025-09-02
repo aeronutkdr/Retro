@@ -1,4 +1,5 @@
 '''
+https://www.retrosheet.org/datause.html */
 Usage: bevent [options] eventfile...
 options:
   -h        print this help
@@ -13,7 +14,7 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-bevent.exe -f 0-40,58-61 -y 2023 2023ANA.EVA > out.txt
+bevent.exe -f 0-50,58-61 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
@@ -91,7 +92,18 @@ class Game:
                          'hitvalue' : 0,
                          'outsonplay' : 0,
                          'batterevent' : True,
-                         'ab' : True}
+                         'ab' : True,
+                         'doubleplay' : False,
+                         'tripleplay' : False,
+                         'rbi' : 0,
+                         'wildpitch' : False,
+                         'passedball' : False,
+                         'fieldedby' : 0,
+                         'battedballtype' : '',
+                         'bunt' : False,
+                         'foul' : False,
+                         'hitlocation' : ''
+                    }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
                                                 r[5],
@@ -147,6 +159,16 @@ class Game:
                     outStr += ',\"' + 'F' + '\"'                                              # 38 SH flag*
                     outStr += ',\"' + 'F' + '\"'                                              # 39 SF flag*
                     outStr += ','  + str(flags['outsonplay'])                                 # 40 outs on play*
+                    outStr += ',\"' + ('T' if flags['doubleplay'] else 'F')  + '\"' # 41        double play flag
+                    outStr += ',\"' + ('T' if flags['tripleplay'] else 'F')  + '\"' # 42        triple play flag
+                    outStr += ',' + str(flags['rbi']) # 43        RBI on play*
+                    outStr += ',\"' + ('T' if flags['wildpitch'] else 'F') + '\"' # 44        wild pitch flag*
+                    outStr += ',\"' + ('T' if flags['passedball'] else 'F') + '\"' # 45        passed ball flag*
+                    outStr += ',' + str(flags['fieldedby']) # 46        fielded by
+                    outStr += ',\"' + str(flags['battedballtype']) + '\"' # 47        batted ball type
+                    outStr += ',\"' + ('T' if flags['bunt'] else 'F') + '\"' # 48        bunt flag
+                    outStr += ',\"' + ('T' if flags['foul'] else 'F') + '\"' # 49        foul flag
+                    outStr += ',\"' + str(flags['hitlocation']) + '\"' # 50        hit location
                     outStr += ',' + str(0 if runners[0] == -1 else runners[0])                # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[1] == -1 else runners[1])                # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[2] == -1 else runners[2])                # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
@@ -193,16 +215,6 @@ for f in files:
 '''
 number    field
 ------    -----
-41        double play flag
-42        triple play flag
-43        RBI on play*
-44        wild pitch flag*
-45        passed ball flag*
-46        fielded by
-47        batted ball type
-48        bunt flag
-49        foul flag
-50        hit location
 51        num errors*
 52        1st error player
 53        1st error type
