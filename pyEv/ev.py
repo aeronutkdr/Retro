@@ -159,16 +159,16 @@ class Game:
                     outStr += ',\"' + 'F' + '\"'                                              # 38 SH flag*
                     outStr += ',\"' + 'F' + '\"'                                              # 39 SF flag*
                     outStr += ','  + str(flags['outsonplay'])                                 # 40 outs on play*
-                    outStr += ',\"' + ('T' if flags['doubleplay'] else 'F')  + '\"' # 41        double play flag
-                    outStr += ',\"' + ('T' if flags['tripleplay'] else 'F')  + '\"' # 42        triple play flag
-                    outStr += ',' + str(flags['rbi']) # 43        RBI on play*
-                    outStr += ',\"' + ('T' if flags['wildpitch'] else 'F') + '\"' # 44        wild pitch flag*
-                    outStr += ',\"' + ('T' if flags['passedball'] else 'F') + '\"' # 45        passed ball flag*
-                    outStr += ',' + str(flags['fieldedby']) # 46        fielded by
-                    outStr += ',\"' + str(flags['battedballtype']) + '\"' # 47        batted ball type
-                    outStr += ',\"' + ('T' if flags['bunt'] else 'F') + '\"' # 48        bunt flag
-                    outStr += ',\"' + ('T' if flags['foul'] else 'F') + '\"' # 49        foul flag
-                    outStr += ',\"' + str(flags['hitlocation']) + '\"' # 50        hit location
+                    outStr += ',\"' + ('T' if flags['doubleplay'] else 'F')  + '\"'           # 41 double play flag
+                    outStr += ',\"' + ('T' if flags['tripleplay'] else 'F')  + '\"'           # 42 triple play flag
+                    outStr += ',' + str(flags['rbi'])                                         # 43 RBI on play*
+                    outStr += ',\"' + ('T' if flags['wildpitch'] else 'F') + '\"'             # 44 wild pitch flag*
+                    outStr += ',\"' + ('T' if flags['passedball'] else 'F') + '\"'            # 45 passed ball flag*
+                    outStr += ',' + str(flags['fieldedby'])                                   # 46 fielded by
+                    outStr += ',\"' + str(flags['battedballtype']) + '\"'                     # 47 batted ball type
+                    outStr += ',\"' + ('T' if flags['bunt'] else 'F') + '\"'                  # 48 bunt flag
+                    outStr += ',\"' + ('T' if flags['foul'] else 'F') + '\"'                  # 49 foul flag
+                    outStr += ',\"' + str(flags['hitlocation']) + '\"'                        # 50 hit location
                     outStr += ',' + str(0 if runners[0] == -1 else runners[0])                # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[1] == -1 else runners[1])                # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[2] == -1 else runners[2])                # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)

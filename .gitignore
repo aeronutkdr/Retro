@@ -5,6 +5,7 @@
 Debug/
 data/
 _data/
+Object/
 *.*~
 *.zip
 *.swp
