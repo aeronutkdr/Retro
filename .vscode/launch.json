@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Django",
+            "name": "Python Debugger: Ev",
             "type": "debugpy",
             "request": "launch",
             "args": [
@@ -11,6 +11,18 @@
             "django": true,
             "autoStartBrowser": false,
             "program": "${workspaceFolder}\\pyEv\\ev.py",
+            "cwd": "${fileDirname}"
+        },
+        {
+            "name": "Python Debugger: EvRead",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "program": "${workspaceFolder}\\pyEvRead\\evRead.py",
             "cwd": "${fileDirname}"
         },
         {
