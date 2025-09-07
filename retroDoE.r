@@ -1,4 +1,16 @@
 #https://www.r-tutor.com/elementary-statistics/analysis-variance/factorial-design
+setwd(dir='C:/Users/Kevin/source/repos/Retro')
+tab <- read.delim(file='./pyEvRead/evRead.out', header=TRUE, sep=' ')
+tab$IDHex <- paste('0x',as.hexmode(tab$ID), sep='')
+strtoi(x=tab$IDHex, base=16)
+tab$Out <- as.integer(tab$ID/strtoi('0x4000', base=16))
+tab$B3 <- bitwAnd(tab$ID, strtoi(x <- '0x2000', base=16)) != 0
+tab$B2 <- bitwAnd(tab$ID, strtoi(x <- '0x1000', base=16)) != 0
+tab$B1 <- bitwAnd(tab$ID, strtoi(x <- '0x0800', base=16)) != 0
+av <- aov(tab$Value ~ (tab$Out + tab$B3 + tab$B2 + tab$B1)^4)
+lm(tab$Value ~ (tab$Out + tab$B3 + tab$B2 + tab$B1)^2)
+
+#https://www.r-tutor.com/elementary-statistics/analysis-variance/factorial-design
 rv <- c(+
 0.553,0.949,1.191,1.58,1.445,1.871,2.077,2.437,+
 0.295,0.567,0.72,0.982,0.996,1.246,1.448,1.662,+
