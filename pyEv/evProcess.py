@@ -26,7 +26,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict[int]) -> int:
     for r in res:
         match r:
             case 'K':       runners[0] = -1;         flags['eventtype'] =  3
-            case '3':       runners[0] = -1;         flags['eventtype'] =  2; flags['hitlocation'] = '3'
+            case '3':       runners[0] = -1;         flags['eventtype'] =  2; flags['hitlocation'] = '3'; flags['fieldedby'] = 3
             case '7':       runners[0] = -1;         flags['eventtype'] =  2
             case '8':       runners[0] = -1;         flags['eventtype'] =  2
             case '31':      runners[0] = -1;         flags['eventtype'] =  2
