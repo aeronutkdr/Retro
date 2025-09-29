@@ -56,7 +56,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict[int]) -> int:
             case '9':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 9
             case 'D7':      runners[0] =  2;         flags['eventtype'] = 21; flags['fieldedby'] = 7;                           flags['hitvalue'] = 2
             case 'DGR':     runners[0] =  2;         flags['eventtype'] = 21;                                                   flags['hitvalue'] = 2
-            case 'E1':      None;                    flags['eventtype'] = 18; flags['fieldedby'] = 1
+            case 'E1':      flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 1; flags['eventtype'] = 18; flags['fieldedby'] = 1; flags['error' + str(flags['numerrors']) + 'type'] = 'F'
             case 'HP':      runners[0] =  1;         flags['eventtype'] = 16;                               flags['ab'] = False
             case 'IW':      runners[0] =  1;         flags['eventtype'] = 15;                               flags['ab'] = False
             case 'NP':      None

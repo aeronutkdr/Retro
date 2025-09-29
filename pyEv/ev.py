@@ -14,7 +14,7 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-bevent.exe -f 0-50,58-61 -y 2023 2023ANA.EVA > out.txt
+bevent.exe -f 0-61 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
@@ -102,7 +102,14 @@ class Game:
                          'battedballtype' : '',
                          'bunt' : False,
                          'foul' : False,
-                         'hitlocation' : ''
+                         'hitlocation' : '',
+                         'numerrors' : 0,
+                         'error1player' : 0,
+                         'error1type' : 'N',
+                         'error2player' : 0,
+                         'error2type' : 'N',
+                         'error3player' : 0,
+                         'error3type' : 'N'
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -169,6 +176,13 @@ class Game:
                     outStr += ',\"' + ('T' if flags['bunt'] else 'F') + '\"'                  # 48 bunt flag
                     outStr += ',\"' + ('T' if flags['foul'] else 'F') + '\"'                  # 49 foul flag
                     outStr += ',\"' + str(flags['hitlocation']) + '\"'                        # 50 hit location
+                    outStr += ',' + str(flags['numerrors'])                                   # 51 num errors*
+                    outStr += ',' + str(flags['error1player'])                                # 52 1st error player
+                    outStr += ',\"' + str(flags['error1type']) + '\"'                         # 53 1st error type
+                    outStr += ',' + str(flags['error2player'])                                # 54 2nd error player
+                    outStr += ',\"' + str(flags['error2type']) + '\"'                         # 55 2nd error type
+                    outStr += ',' + str(flags['error3player'])                                # 56 3rd error player
+                    outStr += ',\"' + str(flags['error3type']) + '\"'                         # 57 3rd error type
                     outStr += ',' + str(0 if runners[0] == -1 else runners[0])                # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[1] == -1 else runners[1])                # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[2] == -1 else runners[2])                # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
@@ -216,13 +230,6 @@ for f in files:
 '''
 number    field
 ------    -----
-51        num errors*
-52        1st error player
-53        1st error type
-54        2nd error player
-55        2nd error type
-56        3rd error player
-57        3rd error type
 62        play on batter
 63        play on runner on 1st
 64        play on runner on 2nd
