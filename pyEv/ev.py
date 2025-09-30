@@ -14,7 +14,7 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-bevent.exe -f 0-61 -y 2023 2023ANA.EVA > out.txt
+bevent.exe -f 0-70 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
@@ -109,7 +109,16 @@ class Game:
                          'error2player' : 0,
                          'error2type' : 'N',
                          'error3player' : 0,
-                         'error3type' : 'N'
+                         'error3type' : 'N',
+                         'playonbatter' : '',
+                         'playonrunner1' : '',
+                         'playonrunner2' : '',
+                         'playonrunner3' : '',
+                         'sbrunner1' : False,
+                         'sbrunner2' : False,
+                         'sbrunner3' : False,
+                         'csrunner1' : False,
+                         'csrunner2' : False
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -187,6 +196,15 @@ class Game:
                     outStr += ',' + str(0 if runners[1] == -1 else runners[1])                # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[2] == -1 else runners[2])                # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[3] == -1 else runners[3])                # 61 runner on 3rd dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',\"' + flags['playonbatter'] + '\"'                            # 62 play on batter
+                    outStr += ',\"' + flags['playonrunner1'] + '\"'                           # 63 play on runner on 1st
+                    outStr += ',\"' + flags['playonrunner2'] + '\"'                           # 64 play on runner on 2nd
+                    outStr += ',\"' + flags['playonrunner3'] + '\"'                           # 65 play on runner on 3rd
+                    outStr += ',\"' + ('T' if flags['sbrunner1'] else 'F') + '\"'             # 66 SB for runner on 1st flag
+                    outStr += ',\"' + ('T' if flags['sbrunner2'] else 'F')+ '\"'              # 67 SB for runner on 2nd flag
+                    outStr += ',\"' + ('T' if flags['sbrunner3'] else 'F')+ '\"'              # 68 SB for runner on 3rd flag
+                    outStr += ',\"' + ('T' if flags['csrunner1'] else 'F')+ '\"'              # 69 CS for runner on 1st flag
+                    outStr += ',\"' + ('T' if flags['csrunner2'] else 'F')+ '\"'              # 70 CS for runner on 2nd flag
                     print (outStr)
                 for i in reversed(range(4)):
                     if i != runners[i] and runners[i] in range(4):
@@ -230,15 +248,6 @@ for f in files:
 '''
 number    field
 ------    -----
-62        play on batter
-63        play on runner on 1st
-64        play on runner on 2nd
-65        play on runner on 3rd
-66        SB for runner on 1st flag
-67        SB for runner on 2nd flag
-68        SB for runner on 3rd flag
-69        CS for runner on 1st flag
-70        CS for runner on 2nd flag
 71        CS for runner on 3rd flag
 72        PO for runner on 1st flag
 73        PO for runner on 2nd flag
