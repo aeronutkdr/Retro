@@ -14,7 +14,7 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-bevent.exe -f 0-70 -y 2023 2023ANA.EVA > out.txt
+bevent.exe -f 0-80 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
@@ -37,6 +37,7 @@ class Game:
         self.Score= [0, 0]
         self.Leadoff = True
         self.Sub = False
+        self.NewGame = True
     def __str__(self) -> str:
         return "Game name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
@@ -64,6 +65,7 @@ class Game:
                                     Rosters[r[2]][row[0]]['throws'] = row[4]
                                     Rosters[r[2]][row[0]]['team'] = row[5]
                                     Rosters[r[2]][row[0]]['pos'] = row[6]
+                                    Rosters[r[2]][row[0]]['resp'] = ''
             case "start" | "sub":
                 team = int(r[3])
                 ord = int(r[4])-1
@@ -118,7 +120,13 @@ class Game:
                          'sbrunner2' : False,
                          'sbrunner3' : False,
                          'csrunner1' : False,
-                         'csrunner2' : False
+                         'csrunner2' : False,
+                         'csrunner3' : False,
+                         'porunner1' : False,
+                         'porunner2' : False,
+                         'porunner3' : False,
+                         'endgame' : False,
+                         'pinchrunner1' : False
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -129,83 +137,95 @@ class Game:
                     Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
                     Defros = Rosters[self.Info['visteam'] if self.Half==1 else self.Info['hometeam']]
                     BatHand = Offros[self.Bases[0]]['bats']
+                    Offros[r[3]]['resp'] = self.Position[1-self.Half][0]
                     if BatHand=='B':
                         if Defros[self.Position[1-self.Half][0]]['throws'] == 'L':
                             BatHand = 'R'
                         else:
                             BatHand = 'L'
-                    outStr = '\"' + str(self.Name) + '\"'                                     # 0  game id*
-                    outStr += ',\"' + self.Info['visteam'] + '\"'                             # 1  visiting team*
-                    outStr += ',' + str(self.Inning)                                          # 2  inning*
-                    outStr += ',' + str(self.Half)                                            # 3  batting team*
-                    outStr += ',' + str(self.Out)                                             # 4  outs*
-                    outStr += ',' + str(r[4][0])                                              # 5  balls*
-                    outStr += ',' + str(r[4][1])                                              # 6  strikes*
-                    outStr += ',\"' + str(r[5]) + '\"'                                        # 7  pitch sequence
-                    outStr += ',' + str(self.Score[0])                                        # 8  vis score*
-                    outStr += ',' + str(self.Score[1])                                        # 9  home score*
-                    outStr += ',\"' + self.Bases[0] + '\"'                                    # 10 batter
-                    outStr += ',\"' + BatHand + '\"'                                          # 11 batter hand
-                    outStr += ',\"' + self.Bases[0] + '\"'                                    # 12 res batter*
-                    outStr += ',\"' + BatHand + '\"'                                          # 13 res batter hand*
-                    outStr += ',\"' + self.Position[1-self.Half][0] +'\"'                     # 14 pitcher
-                    outStr += ',\"' + Defros[self.Position[1-self.Half][0]]['throws'] + '\"'  # 15 pitcher hand
-                    outStr += ',\"' + self.Position[1-self.Half][0] +'\"'                     # 16 res pitcher*
-                    outStr += ',\"' + Defros[self.Position[1-self.Half][0]]['throws'] + '\"'  # 17 res pitcher hand*
-                    outStr += ',\"' + self.Position[1-self.Half][1] +'\"'                     # 18 catcher
-                    outStr += ',\"' + self.Position[1-self.Half][2] +'\"'                     # 19 first base
-                    outStr += ',\"' + self.Position[1-self.Half][3] +'\"'                     # 20 second base
-                    outStr += ',\"' + self.Position[1-self.Half][4] +'\"'                     # 21 third base
-                    outStr += ',\"' + self.Position[1-self.Half][5] +'\"'                     # 22 shortstop
-                    outStr += ',\"' + self.Position[1-self.Half][6] +'\"'                     # 23 left field
-                    outStr += ',\"' + self.Position[1-self.Half][7] +'\"'                     # 24 center field
-                    outStr += ',\"' + self.Position[1-self.Half][8] +'\"'                     # 25 right field
-                    outStr += ',\"' + ("" if self.Bases[1]==None else self.Bases[1]) + '\"'   # 26 first runner*
-                    outStr += ',\"' + ("" if self.Bases[2]==None else self.Bases[2]) + '\"'   # 27 second runner*
-                    outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'   # 28 third runner*
-                    outStr += ',\"' + r[6] + '\"'                                             # 29 event text*
-                    outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                   # 30 leadoff flag*
-                    outStr += ',\"' + ('T' if self.Sub else 'F') + '\"'                       # 31 pinchhit flag*
-                    outStr += ',' + str(self.Position[self.Half].index(self.Bases[0])+1)      # 32 defensive position*
-                    outStr += ',' + str(self.Lineup[self.Half].index(self.Bases[0])+1)        # 33 lineup position*
-                    outStr += ',' + str(flags['eventtype'])                                   # 34 event type*
-                    outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'           # 35 batter event flag*
-                    outStr += ',\"' + ('T' if flags['ab'] else 'F') + '\"'                    # 36 ab flag*
-                    outStr += ',' + str(flags['hitvalue'])                                    # 37 hit value*
-                    outStr += ',\"' + 'F' + '\"'                                              # 38 SH flag*
-                    outStr += ',\"' + 'F' + '\"'                                              # 39 SF flag*
-                    outStr += ','  + str(flags['outsonplay'])                                 # 40 outs on play*
-                    outStr += ',\"' + ('T' if flags['doubleplay'] else 'F')  + '\"'           # 41 double play flag
-                    outStr += ',\"' + ('T' if flags['tripleplay'] else 'F')  + '\"'           # 42 triple play flag
-                    outStr += ',' + str(flags['rbi'])                                         # 43 RBI on play*
-                    outStr += ',\"' + ('T' if flags['wildpitch'] else 'F') + '\"'             # 44 wild pitch flag*
-                    outStr += ',\"' + ('T' if flags['passedball'] else 'F') + '\"'            # 45 passed ball flag*
-                    outStr += ',' + str(flags['fieldedby'])                                   # 46 fielded by
-                    outStr += ',\"' + str(flags['battedballtype']) + '\"'                     # 47 batted ball type
-                    outStr += ',\"' + ('T' if flags['bunt'] else 'F') + '\"'                  # 48 bunt flag
-                    outStr += ',\"' + ('T' if flags['foul'] else 'F') + '\"'                  # 49 foul flag
-                    outStr += ',\"' + str(flags['hitlocation']) + '\"'                        # 50 hit location
-                    outStr += ',' + str(flags['numerrors'])                                   # 51 num errors*
-                    outStr += ',' + str(flags['error1player'])                                # 52 1st error player
-                    outStr += ',\"' + str(flags['error1type']) + '\"'                         # 53 1st error type
-                    outStr += ',' + str(flags['error2player'])                                # 54 2nd error player
-                    outStr += ',\"' + str(flags['error2type']) + '\"'                         # 55 2nd error type
-                    outStr += ',' + str(flags['error3player'])                                # 56 3rd error player
-                    outStr += ',\"' + str(flags['error3type']) + '\"'                         # 57 3rd error type
-                    outStr += ',' + str(0 if runners[0] == -1 else runners[0])                # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
-                    outStr += ',' + str(0 if runners[1] == -1 else runners[1])                # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
-                    outStr += ',' + str(0 if runners[2] == -1 else runners[2])                # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
-                    outStr += ',' + str(0 if runners[3] == -1 else runners[3])                # 61 runner on 3rd dest* (5 if scores and unearned, 6 if team unearned)
-                    outStr += ',\"' + flags['playonbatter'] + '\"'                            # 62 play on batter
-                    outStr += ',\"' + flags['playonrunner1'] + '\"'                           # 63 play on runner on 1st
-                    outStr += ',\"' + flags['playonrunner2'] + '\"'                           # 64 play on runner on 2nd
-                    outStr += ',\"' + flags['playonrunner3'] + '\"'                           # 65 play on runner on 3rd
-                    outStr += ',\"' + ('T' if flags['sbrunner1'] else 'F') + '\"'             # 66 SB for runner on 1st flag
-                    outStr += ',\"' + ('T' if flags['sbrunner2'] else 'F')+ '\"'              # 67 SB for runner on 2nd flag
-                    outStr += ',\"' + ('T' if flags['sbrunner3'] else 'F')+ '\"'              # 68 SB for runner on 3rd flag
-                    outStr += ',\"' + ('T' if flags['csrunner1'] else 'F')+ '\"'              # 69 CS for runner on 1st flag
-                    outStr += ',\"' + ('T' if flags['csrunner2'] else 'F')+ '\"'              # 70 CS for runner on 2nd flag
+                    outStr = '\"' + str(self.Name) + '\"'                                                   # 0  game id*
+                    outStr += ',\"' + self.Info['visteam'] + '\"'                                           # 1  visiting team*
+                    outStr += ',' + str(self.Inning)                                                        # 2  inning*
+                    outStr += ',' + str(self.Half)                                                          # 3  batting team*
+                    outStr += ',' + str(self.Out)                                                           # 4  outs*
+                    outStr += ',' + str(r[4][0])                                                            # 5  balls*
+                    outStr += ',' + str(r[4][1])                                                            # 6  strikes*
+                    outStr += ',\"' + str(r[5]) + '\"'                                                      # 7  pitch sequence
+                    outStr += ',' + str(self.Score[0])                                                      # 8  vis score*
+                    outStr += ',' + str(self.Score[1])                                                      # 9  home score*
+                    outStr += ',\"' + self.Bases[0] + '\"'                                                  # 10 batter
+                    outStr += ',\"' + BatHand + '\"'                                                        # 11 batter hand
+                    outStr += ',\"' + self.Bases[0] + '\"'                                                  # 12 res batter*
+                    outStr += ',\"' + BatHand + '\"'                                                        # 13 res batter hand*
+                    outStr += ',\"' + self.Position[1-self.Half][0] +'\"'                                   # 14 pitcher
+                    outStr += ',\"' + Defros[self.Position[1-self.Half][0]]['throws'] + '\"'                # 15 pitcher hand
+                    outStr += ',\"' + self.Position[1-self.Half][0] +'\"'                                   # 16 res pitcher*
+                    outStr += ',\"' + Defros[self.Position[1-self.Half][0]]['throws'] + '\"'                # 17 res pitcher hand*
+                    outStr += ',\"' + self.Position[1-self.Half][1] +'\"'                                   # 18 catcher
+                    outStr += ',\"' + self.Position[1-self.Half][2] +'\"'                                   # 19 first base
+                    outStr += ',\"' + self.Position[1-self.Half][3] +'\"'                                   # 20 second base
+                    outStr += ',\"' + self.Position[1-self.Half][4] +'\"'                                   # 21 third base
+                    outStr += ',\"' + self.Position[1-self.Half][5] +'\"'                                   # 22 shortstop
+                    outStr += ',\"' + self.Position[1-self.Half][6] +'\"'                                   # 23 left field
+                    outStr += ',\"' + self.Position[1-self.Half][7] +'\"'                                   # 24 center field
+                    outStr += ',\"' + self.Position[1-self.Half][8] +'\"'                                   # 25 right field
+                    outStr += ',\"' + ("" if self.Bases[1]==None else self.Bases[1]) + '\"'                 # 26 first runner*
+                    outStr += ',\"' + ("" if self.Bases[2]==None else self.Bases[2]) + '\"'                 # 27 second runner*
+                    outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
+                    outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
+                    outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
+                    outStr += ',\"' + ('T' if self.Sub else 'F') + '\"'                                     # 31 pinchhit flag*
+                    outStr += ',' + str(self.Position[self.Half].index(self.Bases[0])+1)                    # 32 defensive position*
+                    outStr += ',' + str(self.Lineup[self.Half].index(self.Bases[0])+1)                      # 33 lineup position*
+                    outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
+                    outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                         # 35 batter event flag*
+                    outStr += ',\"' + ('T' if flags['ab'] else 'F') + '\"'                                  # 36 ab flag*
+                    outStr += ',' + str(flags['hitvalue'])                                                  # 37 hit value*
+                    outStr += ',\"' + 'F' + '\"'                                                            # 38 SH flag*
+                    outStr += ',\"' + 'F' + '\"'                                                            # 39 SF flag*
+                    outStr += ','  + str(flags['outsonplay'])                                               # 40 outs on play*
+                    outStr += ',\"' + ('T' if flags['doubleplay'] else 'F')  + '\"'                         # 41 double play flag
+                    outStr += ',\"' + ('T' if flags['tripleplay'] else 'F')  + '\"'                         # 42 triple play flag
+                    outStr += ',' + str(flags['rbi'])                                                       # 43 RBI on play*
+                    outStr += ',\"' + ('T' if flags['wildpitch'] else 'F') + '\"'                           # 44 wild pitch flag*
+                    outStr += ',\"' + ('T' if flags['passedball'] else 'F') + '\"'                          # 45 passed ball flag*
+                    outStr += ',' + str(flags['fieldedby'])                                                 # 46 fielded by
+                    outStr += ',\"' + str(flags['battedballtype']) + '\"'                                   # 47 batted ball type
+                    outStr += ',\"' + ('T' if flags['bunt'] else 'F') + '\"'                                # 48 bunt flag
+                    outStr += ',\"' + ('T' if flags['foul'] else 'F') + '\"'                                # 49 foul flag
+                    outStr += ',\"' + str(flags['hitlocation']) + '\"'                                      # 50 hit location
+                    outStr += ',' + str(flags['numerrors'])                                                 # 51 num errors*
+                    outStr += ',' + str(flags['error1player'])                                              # 52 1st error player
+                    outStr += ',\"' + str(flags['error1type']) + '\"'                                       # 53 1st error type
+                    outStr += ',' + str(flags['error2player'])                                              # 54 2nd error player
+                    outStr += ',\"' + str(flags['error2type']) + '\"'                                       # 55 2nd error type
+                    outStr += ',' + str(flags['error3player'])                                              # 56 3rd error player
+                    outStr += ',\"' + str(flags['error3type']) + '\"'                                       # 57 3rd error type
+                    outStr += ',' + str(0 if runners[0] == -1 else runners[0])                              # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',' + str(0 if runners[1] == -1 else runners[1])                              # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',' + str(0 if runners[2] == -1 else runners[2])                              # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',' + str(0 if runners[3] == -1 else runners[3])                              # 61 runner on 3rd dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',\"' + flags['playonbatter'] + '\"'                                          # 62 play on batter
+                    outStr += ',\"' + flags['playonrunner1'] + '\"'                                         # 63 play on runner on 1st
+                    outStr += ',\"' + flags['playonrunner2'] + '\"'                                         # 64 play on runner on 2nd
+                    outStr += ',\"' + flags['playonrunner3'] + '\"'                                         # 65 play on runner on 3rd
+                    outStr += ',\"' + ('T' if flags['sbrunner1'] else 'F') + '\"'                           # 66 SB for runner on 1st flag
+                    outStr += ',\"' + ('T' if flags['sbrunner2'] else 'F') + '\"'                           # 67 SB for runner on 2nd flag
+                    outStr += ',\"' + ('T' if flags['sbrunner3'] else 'F') + '\"'                           # 68 SB for runner on 3rd flag
+                    outStr += ',\"' + ('T' if flags['csrunner1'] else 'F') + '\"'                           # 69 CS for runner on 1st flag
+                    outStr += ',\"' + ('T' if flags['csrunner2'] else 'F') + '\"'                           # 70 CS for runner on 2nd flag
+                    outStr += ',\"' + ('T' if flags['csrunner3'] else 'F') + '\"'                           # 71 CS for runner on 3rd flag
+                    outStr += ',\"' + ('T' if flags['porunner1'] else 'F') + '\"'                           # 72 PO for runner on 1st flag
+                    outStr += ',\"' + ('T' if flags['porunner2'] else 'F') + '\"'                           # 73 PO for runner on 2nd flag
+                    outStr += ',\"' + ('T' if flags['porunner3'] else 'F') + '\"'                           # 74 PO for runner on 3rd flag
+                    outStr += ',\"' + ('' if self.Bases[1]==None else Offros[self.Bases[1]]['resp']) + '\"' # 75 Responsible pitcher for runner on 1st
+                    outStr += ',\"' + ('' if self.Bases[2]==None else Offros[self.Bases[2]]['resp']) + '\"' # 76 Responsible pitcher for runner on 2nd
+                    outStr += ',\"' + ('' if self.Bases[3]==None else Offros[self.Bases[3]]['resp']) + '\"' # 77 Responsible pitcher for runner on 3rd
+                    outStr += ',\"' + ('T' if self.NewGame else 'F') + '\"'                                 # 78 New Game Flag
+                    outStr += ',\"' + ('T' if flags['endgame'] else 'F') + '\"'                             # 79 End Game Flag
+                    outStr += ',\"' + ('T' if flags['pinchrunner1'] else 'F') + '\"'                        # 80 Pinch-runner on 1st? (T/F)
                     print (outStr)
+                    self.NewGame = False
                 for i in reversed(range(4)):
                     if i != runners[i] and runners[i] in range(4):
                         self.Bases[runners[i]] = self.Bases[i]
@@ -248,16 +268,6 @@ for f in files:
 '''
 number    field
 ------    -----
-71        CS for runner on 3rd flag
-72        PO for runner on 1st flag
-73        PO for runner on 2nd flag
-74        PO for runner on 3rd flag
-75        Responsible pitcher for runner on 1st
-76        Responsible pitcher for runner on 2nd
-77        Responsible pitcher for runner on 3rd
-78        New Game Flag
-79        End Game Flag
-80        Pinch-runner on 1st? (T/F)
 81        Pinch-runner on 2nd? (T/F)
 82        Pinch-runner on 3rd? (T/F)
 83        ID of Runner removed for pinch-runner on 1st

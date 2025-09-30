@@ -13,7 +13,7 @@ total      : 16 bit */
 def DEST(x: int) -> int:
     return (1<<(10+(x&3))) if (x>0 and x<4) else 0
 
-def ProcessEvent (runners : list[int], event : str, flags : dict[int]) -> int:
+def ProcessEvent (runners : list[int], event : str, flags) -> int:
     #p2 = re.split ('/', event)
     #p3 = re.split ('\\.', event)
     #p1 = p2[0] if len(p2[0]) < len(p3[0]) else p3[0]
@@ -60,7 +60,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict[int]) -> int:
             case 'HP':      runners[0] =  1;         flags['eventtype'] = 16;                               flags['ab'] = False
             case 'IW':      runners[0] =  1;         flags['eventtype'] = 15;                               flags['ab'] = False
             case 'NP':      None
-            case 'PO1(13)': runners[1] = -1;         flags['eventtype'] =  8; flags['batterevent'] = False; flags['ab'] = False; flags['playonrunner1'] = '13'
+            case 'PO1(13)': runners[1] = -1;         flags['eventtype'] =  8; flags['batterevent'] = False; flags['ab'] = False; flags['playonrunner1'] = '13'; flags['porunner1'] = True
             case 'S3':      runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 3;                           flags['hitvalue'] = 1
             case 'S8':      runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 8;                           flags['hitvalue'] = 1
             case 'S9':      runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 9;                           flags['hitvalue'] = 1
@@ -126,7 +126,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict[int]) -> int:
                    (1 if runners[3]>3 else 0)
     return Outs
 
-def GenSequence (Outs : int, runners : list[int], pitches : str, event : str, flags : dict[int]) -> list[int]:
+def GenSequence (Outs : int, runners : list[int], pitches : str, event : str, flags) -> list[int]:
     to = [(Outs<<14) |\
           (0 if runners[3] == -1 else (1<<13)) |\
           (0 if runners[2] == -1 else (1<<12)) |\
@@ -177,10 +177,9 @@ def GenSequence (Outs : int, runners : list[int], pitches : str, event : str, fl
         to[-1] |= (Balls   << 7)
         to[-1] |= (Fouls   << 2)
         to[-1] |= (Strikes << 0)
-    EndGameFlag = False
-    if (EndGameFlag or
-        (Outs+OutsOnPlay == 3)):
+    if (Outs+OutsOnPlay == 3):
         to.append(0xFFFF)
+        #flags['endgame'] = True
     return to
 '''
 Pitches - Fouls 
