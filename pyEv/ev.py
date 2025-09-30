@@ -36,7 +36,10 @@ class Game:
         self.Out = 0
         self.Score= [0, 0]
         self.Leadoff = True
-        self.Sub = False
+        self.Sub0 = False
+        self.Sub1 = False
+        self.Sub2 = False
+        self.Sub3 = False
         self.NewGame = True
     def __str__(self) -> str:
         return "Game name = " + self.Name\
@@ -71,7 +74,10 @@ class Game:
                 ord = int(r[4])-1
                 pos = int(r[5])-1
                 repl = self.Lineup[team][ord]
-                self.Sub = self.Bases[0] == repl
+                self.Sub0 = self.Bases[0] == repl
+                self.Sub1 = self.Bases[1] == repl
+                self.Sub2 = self.Bases[2] == repl
+                self.Sub3 = self.Bases[3] == repl
                 ros = Rosters[self.Info['visteam'] if team==0 else self.Info['hometeam']]
                 assert r[1] in ros
                 if (ord >= 0):
@@ -80,6 +86,7 @@ class Game:
                     self.Position[team][pos]=r[1]
                 if repl != None:
                     self.Bases = [r[1] if x==repl else x for x in self.Bases]
+                    ros[r[1]]['resp'] = ros[repl]['resp']
             case "play":
                 States = []
                 self.Inning = int(r[1])
@@ -124,9 +131,7 @@ class Game:
                          'csrunner3' : False,
                          'porunner1' : False,
                          'porunner2' : False,
-                         'porunner3' : False,
-                         'endgame' : False,
-                         'pinchrunner1' : False
+                         'porunner3' : False
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -137,12 +142,18 @@ class Game:
                     Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
                     Defros = Rosters[self.Info['visteam'] if self.Half==1 else self.Info['hometeam']]
                     BatHand = Offros[self.Bases[0]]['bats']
-                    Offros[r[3]]['resp'] = self.Position[1-self.Half][0]
                     if BatHand=='B':
                         if Defros[self.Position[1-self.Half][0]]['throws'] == 'L':
                             BatHand = 'R'
                         else:
                             BatHand = 'L'
+                    Offros[r[3]]['resp'] = self.Position[1-self.Half][0]
+                    EndGame = False
+                    if (self.Inning > 8):
+                        if ((self.Half == 1) or ((States[-1] >> 14)==3)) and (self.Score[1] > self.Score[0]):
+                            EndGame = True
+                        if ((self.Half == 1) and ((States[-1] >> 14)==3)) and (self.Score[1] != self.Score[0]):
+                            EndGame = True
                     outStr = '\"' + str(self.Name) + '\"'                                                   # 0  game id*
                     outStr += ',\"' + self.Info['visteam'] + '\"'                                           # 1  visiting team*
                     outStr += ',' + str(self.Inning)                                                        # 2  inning*
@@ -174,7 +185,7 @@ class Game:
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
-                    outStr += ',\"' + ('T' if self.Sub else 'F') + '\"'                                     # 31 pinchhit flag*
+                    outStr += ',\"' + ('T' if self.Sub0 else 'F') + '\"'                                    # 31 pinchhit flag*
                     outStr += ',' + str(self.Position[self.Half].index(self.Bases[0])+1)                    # 32 defensive position*
                     outStr += ',' + str(self.Lineup[self.Half].index(self.Bases[0])+1)                      # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
@@ -222,8 +233,8 @@ class Game:
                     outStr += ',\"' + ('' if self.Bases[2]==None else Offros[self.Bases[2]]['resp']) + '\"' # 76 Responsible pitcher for runner on 2nd
                     outStr += ',\"' + ('' if self.Bases[3]==None else Offros[self.Bases[3]]['resp']) + '\"' # 77 Responsible pitcher for runner on 3rd
                     outStr += ',\"' + ('T' if self.NewGame else 'F') + '\"'                                 # 78 New Game Flag
-                    outStr += ',\"' + ('T' if flags['endgame'] else 'F') + '\"'                             # 79 End Game Flag
-                    outStr += ',\"' + ('T' if flags['pinchrunner1'] else 'F') + '\"'                        # 80 Pinch-runner on 1st? (T/F)
+                    outStr += ',\"' + ('T' if EndGame else 'F') + '\"'                                      # 79 End Game Flag
+                    outStr += ',\"' + ('T' if self.Sub1 else 'F') + '\"'                                    # 80 Pinch-runner on 1st? (T/F)
                     print (outStr)
                     self.NewGame = False
                 for i in reversed(range(4)):
@@ -239,9 +250,14 @@ class Game:
                 if (self.Out == 3):
                     self.Bases = [None] * 4
                 self.Leadoff &= (r[6] == "NP")
-                self.Sub = False
+                self.Sub0 = False
+                self.Sub1 = False
+                self.Sub2 = False
+                self.Sub3 = False
             case "radj":
                 self.Bases[int(r[2])] = r[1]
+                Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
+                Offros[r[1]]['resp'] = self.Position[1-self.Half][0]
             case "com": None
             case "data": None
             case _: print(r[0])

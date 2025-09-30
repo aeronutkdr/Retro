@@ -57,7 +57,7 @@ def ProcessEvent (runners : list[int], event : str, flags) -> int:
             case 'D7':      runners[0] =  2;         flags['eventtype'] = 21; flags['fieldedby'] = 7;                           flags['hitvalue'] = 2
             case 'DGR':     runners[0] =  2;         flags['eventtype'] = 21;                                                   flags['hitvalue'] = 2
             case 'E1':      flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 1; flags['eventtype'] = 18; flags['fieldedby'] = 1; flags['error' + str(flags['numerrors']) + 'type'] = 'F'
-            case 'HP':      runners[0] =  1;         flags['eventtype'] = 16;                               flags['ab'] = False
+            case 'HP':      runners[0] =  1;         flags['eventtype'] = 16;                               flags['ab'] = False; flags['responsible'] = False
             case 'IW':      runners[0] =  1;         flags['eventtype'] = 15;                               flags['ab'] = False
             case 'NP':      None
             case 'PO1(13)': runners[1] = -1;         flags['eventtype'] =  8; flags['batterevent'] = False; flags['ab'] = False; flags['playonrunner1'] = '13'; flags['porunner1'] = True
@@ -138,8 +138,8 @@ def GenSequence (Outs : int, runners : list[int], pitches : str, event : str, fl
     Balls   = 0
     Fouls   = 0
     Pitch   = 0
-    #if event == "HP.2-3;1-2":
-    if pitches == "TBBFX":
+    #if pitches == "TBBFX":
+    if event == "43/G34":
         None
     for p in pitches:
         Pitch = 1
