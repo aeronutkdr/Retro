@@ -14,7 +14,7 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-bevent.exe -f 0-80 -y 2023 2023ANA.EVA > out.txt
+.\bevent.exe -f 0-70,88-96 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
@@ -41,6 +41,7 @@ class Game:
         self.Sub2 = False
         self.Sub3 = False
         self.NewGame = True
+        self.EventNum = 0
     def __str__(self) -> str:
         return "Game name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
@@ -131,7 +132,19 @@ class Game:
                          'csrunner3' : False,
                          'porunner1' : False,
                          'porunner2' : False,
-                         'porunner3' : False
+                         'porunner3' : False,
+                         'endgame' : False,
+                         'pinchrunner1' : False,
+                         'pinchrunner2' : False,
+                         'pinchrunner3' : False,
+                         'putout1' : 0,
+                         'putout2' : 0,
+                         'putout3' : 0,
+                         'assist1' : 0,
+                         'assist2' : 0,
+                         'assist3' : 0,
+                         'assist4' : 0,
+                         'assist5' : 0
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -139,6 +152,7 @@ class Game:
                                                 r[6],
                                                 flags)
                 if (r[6] != "NP"):
+                    self.EventNum += 1
                     Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
                     Defros = Rosters[self.Info['visteam'] if self.Half==1 else self.Info['hometeam']]
                     BatHand = Offros[self.Bases[0]]['bats']
@@ -235,6 +249,32 @@ class Game:
                     outStr += ',\"' + ('T' if self.NewGame else 'F') + '\"'                                 # 78 New Game Flag
                     outStr += ',\"' + ('T' if EndGame else 'F') + '\"'                                      # 79 End Game Flag
                     outStr += ',\"' + ('T' if self.Sub1 else 'F') + '\"'                                    # 80 Pinch-runner on 1st? (T/F)
+                    #outStr += ',\"' + ('T' if flags['csrunner3'] else 'F') + '\"'                           # 71 CS for runner on 3rd flag
+                    #outStr += ',\"' + ('T' if flags['porunner1'] else 'F') + '\"'                           # 72 PO for runner on 1st flag
+                    #outStr += ',\"' + ('T' if flags['porunner2'] else 'F') + '\"'                           # 73 PO for runner on 2nd flag
+                    #outStr += ',\"' + ('T' if flags['porunner3'] else 'F') + '\"'                           # 74 PO for runner on 3rd flag
+                    #outStr += ',\"' + ('' if self.Bases[1]==None else Offros[self.Bases[1]]['resp']) + '\"' # 75 Responsible pitcher for runner on 1st
+                    #outStr += ',\"' + ('' if self.Bases[2]==None else Offros[self.Bases[2]]['resp']) + '\"' # 76 Responsible pitcher for runner on 2nd
+                    #outStr += ',\"' + ('' if self.Bases[3]==None else Offros[self.Bases[3]]['resp']) + '\"' # 77 Responsible pitcher for runner on 3rd
+                    #outStr += ',\"' + ('T' if self.NewGame else 'F') + '\"'                                 # 78 New Game Flag
+                    #outStr += ',\"' + ('T' if flags['endgame'] else 'F') + '\"'                             # 79 End Game Flag
+                    #outStr += ',\"' + ('T' if flags['pinchrunner1'] else 'F') + '\"'                        # 80 Pinch-runner on 1st? (T/F)
+                    #outStr += ',\"' + ('T' if flags['pinchrunner2'] else 'F') + '\"'                        # 81 Pinch-runner on 2nd? (T/F)
+                    #outStr += ',\"' + ('T' if flags['pinchrunner3'] else 'F') + '\"'                        # 82 Pinch-runner on 3rd? (T/F)
+                    #outStr += ',\"' + '' + '\"' # 83        ID of Runner removed for pinch-runner on 1st
+                    #outStr += ',\"' + '' + '\"' # 84        ID of Runner removed for pinch-runner on 2nd
+                    #outStr += ',\"' + '' + '\"' # 85        ID of Runner removed for pinch-runner on 3rd
+                    #outStr += ',\"' + '' + '\"' # 86        ID of Batter removed for pinch-hitter
+                    #outStr += ',' + '0' # 87        Fielding position of batter removed for pinch-hitter
+                    outStr += ',' + str(flags['putout1']) # 88        Fielder with First Putout (0 if none)
+                    outStr += ',' + str(flags['putout2']) # 89        Fielder with Second Putout (0 if none)
+                    outStr += ',' + str(flags['putout3']) # 90        Fielder with Third Putout (0 if none)
+                    outStr += ',' + str(flags['assist1']) # 91        Fielder with First Assist (0 if none)
+                    outStr += ',' + str(flags['assist2']) # 92        Fielder with Second Assist (0 if none)
+                    outStr += ',' + str(flags['assist3']) # 93        Fielder with Third Assist (0 if none)
+                    outStr += ',' + str(flags['assist4']) # 94        Fielder with Fourth Assist (0 if none)
+                    outStr += ',' + str(flags['assist5']) # 95        Fielder with Fifth Assist (0 if none)
+                    outStr += ',' + str(self.EventNum) # 96        event num
                     print (outStr)
                     self.NewGame = False
                 for i in reversed(range(4)):
@@ -274,30 +314,11 @@ def ProcessFile(s: str) -> list[Game]:
     return g
 
 files = [f for f in os.listdir('.') if re.match('.*\\.ev.$', f, re.IGNORECASE)]
-print("game id,visiting team,inning,batting team,outs,balls,strikes,pitch sequence,vis score,home score,batter,batter hand,res batter,res batter hand,pitcher,pitcher hand,res pitcher,res pitcher hand,catcher,first base,second base,third base,shortstop,left field,center field,right field,first runner,second runner,third runner,event text,leadoff flag,pinchhit flag,defensive position,lineup position,event type,batter event flag,ab flag,hit value,SH flag,SF flag,outs on play,double play flag,triple play flag,RBI on play,wild pitch flag,passed ball flag,fielded by,batted ball type,bunt flag,foul flag,hit location,num errors,1st error player,1st error type,2nd error player,2nd error type,3rd error player,3rd error type,batter dest,runner on 1st dest,runner on 2nd dest,runner on 3rd dest,play on batter,play on runner on 1st,play on runner on 2nd,play on runner on 3rd,SB for runner on 1st flag,SB for runner on 2nd flag,SB for runner on 3rd flag,CS for runner on 1st flag,CS for runner on 2nd flag,CS for runner on 3rd flag,PO for runner on 1st flag,PO for runner on 2nd flag,PO for runner on 3rd flag,Responsible pitcher for runner on 1st,Responsible pitcher for runner on 2nd,Responsible pitcher for runner on 3rd,New Game Flag,End Game Flag,Pinch-runner on 1st,Pinch-runner on 2nd,Pinch-runner on 3rd,ID of Runner removed for pinch-runner on 1st,ID of Runner removed for pinch-runner on 2nd,ID of Runner removed for pinch-runner on 3rd,ID of Batter removed for pinch-hitter,Fielding position of batter removed for pinch-hitter,Fielder with First Putout,Fielder with Second Putout,Fielder with Third Putout,Fielder with First Assist,Fielder with Second Assist,Fielder with Third Assist,Fielder with Fourth Assist,Fielder with Fifth Assist,event num")
+print("game id,visiting team,inning,batting team,outs,balls,strikes,pitch sequence,vis score,home score,batter,batter hand,res batter,res batter hand,pitcher,pitcher hand,res pitcher,res pitcher hand,catcher,first base,second base,third base,shortstop,left field,center field,right field,first runner,second runner,third runner,event text,leadoff flag,pinchhit flag,defensive position,lineup position,event type,batter event flag,ab flag,hit value,SH flag,SF flag,outs on play,double play flag,triple play flag,RBI on play,wild pitch flag,passed ball flag,fielded by,batted ball type,bunt flag,foul flag,hit location,num errors,1st error player,1st error type,2nd error player,2nd error type,3rd error player,3rd error type,batter dest,runner on 1st dest,runner on 2nd dest,runner on 3rd dest,play on batter,play on runner on 1st,play on runner on 2nd,play on runner on 3rd,SB for runner on 1st flag,SB for runner on 2nd flag,SB for runner on 3rd flag,CS for runner on 1st flag,CS for runner on 2nd flag,Fielder with First Putout,Fielder with Second Putout,Fielder with Third Putout,Fielder with First Assist,Fielder with Second Assist,Fielder with Third Assist,Fielder with Fourth Assist,Fielder with Fifth Assist,event num")
+#print("game id,visiting team,inning,batting team,outs,balls,strikes,pitch sequence,vis score,home score,batter,batter hand,res batter,res batter hand,pitcher,pitcher hand,res pitcher,res pitcher hand,catcher,first base,second base,third base,shortstop,left field,center field,right field,first runner,second runner,third runner,event text,leadoff flag,pinchhit flag,defensive position,lineup position,event type,batter event flag,ab flag,hit value,SH flag,SF flag,outs on play,double play flag,triple play flag,RBI on play,wild pitch flag,passed ball flag,fielded by,batted ball type,bunt flag,foul flag,hit location,num errors,1st error player,1st error type,2nd error player,2nd error type,3rd error player,3rd error type,batter dest,runner on 1st dest,runner on 2nd dest,runner on 3rd dest,play on batter,play on runner on 1st,play on runner on 2nd,play on runner on 3rd,SB for runner on 1st flag,SB for runner on 2nd flag,SB for runner on 3rd flag,CS for runner on 1st flag,CS for runner on 2nd flag,CS for runner on 3rd flag,PO for runner on 1st flag,PO for runner on 2nd flag,PO for runner on 3rd flag,Responsible pitcher for runner on 1st,Responsible pitcher for runner on 2nd,Responsible pitcher for runner on 3rd,New Game Flag,End Game Flag,Pinch-runner on 1st,Pinch-runner on 2nd,Pinch-runner on 3rd,ID of Runner removed for pinch-runner on 1st,ID of Runner removed for pinch-runner on 2nd,ID of Runner removed for pinch-runner on 3rd,ID of Batter removed for pinch-hitter,Fielding position of batter removed for pinch-hitter,Fielder with First Putout,Fielder with Second Putout,Fielder with Third Putout,Fielder with First Assist,Fielder with Second Assist,Fielder with Third Assist,Fielder with Fourth Assist,Fielder with Fifth Assist,event num")
 for f in files:
     #for i in range(5):
         #None
     #print (str(i))
     games = ProcessFile(f)
     print (*games)
-'''
-number    field
-------    -----
-81        Pinch-runner on 2nd? (T/F)
-82        Pinch-runner on 3rd? (T/F)
-83        ID of Runner removed for pinch-runner on 1st
-84        ID of Runner removed for pinch-runner on 2nd
-85        ID of Runner removed for pinch-runner on 3rd
-86        ID of Batter removed for pinch-hitter
-87        Fielding position of batter removed for pinch-hitter
-88        Fielder with First Putout (0 if none)
-89        Fielder with Second Putout (0 if none)
-90        Fielder with Third Putout (0 if none)
-91        Fielder with First Assist (0 if none)
-92        Fielder with Second Assist (0 if none)
-93        Fielder with Third Assist (0 if none)
-94        Fielder with Fourth Assist (0 if none)
-95        Fielder with Fifth Assist (0 if none)
-96        event num
-'''

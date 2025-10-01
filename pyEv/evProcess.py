@@ -13,6 +13,9 @@ total      : 16 bit */
 def DEST(x: int) -> int:
     return (1<<(10+(x&3))) if (x>0 and x<4) else 0
 
+def strval (s, v):
+    return s + str(v)
+
 def ProcessEvent (runners : list[int], event : str, flags) -> int:
     #p2 = re.split ('/', event)
     #p3 = re.split ('\\.', event)
@@ -24,43 +27,45 @@ def ProcessEvent (runners : list[int], event : str, flags) -> int:
            (1 if runners[1]>0 else 0) +\
            (1 if runners[2]>0 else 0) +\
            (1 if runners[3]>0 else 0)
+    assist = 0
+    putout = 0
     for r in res:
         match r:
-            case 'K':       runners[0] = -1;         flags['eventtype'] =  3; flags['playonbatter'] = '2'
-            case '3':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '3'
-            case '7':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 7; flags['playonbatter'] = '7'
-            case '8':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 8; flags['playonbatter'] = '8'
-            case '31':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '31'
+            case 'K':       runners[0] = -1;         flags['eventtype'] =  3; flags['playonbatter'] = '2'; putout+=1; flags[strval('putout', putout)] = 2
+            case '3':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '3'; putout += 1; flags[strval('putout', putout)] = 3
+            case '7':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 7; flags['playonbatter'] = '7'; putout += 1; flags[strval('putout', putout)] = 7
+            case '8':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 8; flags['playonbatter'] = '8'; putout += 1;flags[strval('putout', putout)] = 8
+            case '31':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '31'; putout += 1; flags[strval('putout', putout)] = 1; assist += 1; flags[strval('assist', assist)] = 3
             case 'S16':     runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 1;                           flags['hitvalue'] = 1
             case 'S7':      runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 7;                           flags['hitvalue'] = 1
-            case '36(1)':   runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonrunner1'] = '36'
+            case '36(1)':   runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonrunner1'] = '36'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 3
             case 'B-1':     runners[0] =  1
             case '1-H':     runners[1] =  4
             case 'HR':      runners[0] =  4;         flags['eventtype'] = 23;                                                   flags['hitvalue'] = 4
             case '1-2':     runners[1] =  2
             case '1-3':     runners[1] =  3
             case '1-H(UR)': runners[1] =  5
-            case '13':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 1; flags['playonbatter'] = '13'
+            case '13':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 1; flags['playonbatter'] = '13'; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 1
             case '2-3':     runners[2] =  3
             case '2-H':     runners[2] =  4
             case '3-H':     runners[3] =  4
             case '3-H(UR)': runners[3] =  5
-            case '4':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '4'
-            case '43':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '43'
-            case '5':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonbatter'] = '5'
-            case '53':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonbatter'] = '53'
-            case '54(1)':   runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonrunner1'] = '54'
-            case '6':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '6'
-            case '63':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '63'
-            case '64(1)3':  runners[0:2] = [-1, -1]; flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '43'; flags['playonrunner1'] = '64'
-            case '9':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 9; flags['playonbatter'] = '9'
+            case '4':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '4'; putout += 1; flags[strval('putout', putout)] = 4
+            case '43':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '43'; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 4
+            case '5':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonbatter'] = '5'; putout += 1; flags[strval('putout', putout)] = 5
+            case '53':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonbatter'] = '53'; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 5
+            case '54(1)':   runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonrunner1'] = '54'; putout += 1; flags[strval('putout', putout)] = 4; assist += 1; flags[strval('assist', assist)] = 5
+            case '6':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '6'; putout += 1; flags[strval('putout', putout)] = 6
+            case '63':      runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '63'; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 6
+            case '64(1)3':  runners[0:2] = [-1, -1]; flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '43'; flags['playonrunner1'] = '64'; putout += 1; flags[strval('putout', putout)] = 4; assist += 1; flags[strval('assist', assist)] = 6; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 4
+            case '9':       runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 9; flags['playonbatter'] = '9'; putout+=1; flags[strval('putout', putout)] = 9
             case 'D7':      runners[0] =  2;         flags['eventtype'] = 21; flags['fieldedby'] = 7;                           flags['hitvalue'] = 2
             case 'DGR':     runners[0] =  2;         flags['eventtype'] = 21;                                                   flags['hitvalue'] = 2
             case 'E1':      flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 1; flags['eventtype'] = 18; flags['fieldedby'] = 1; flags['error' + str(flags['numerrors']) + 'type'] = 'F'
             case 'HP':      runners[0] =  1;         flags['eventtype'] = 16;                               flags['ab'] = False; flags['responsible'] = False
             case 'IW':      runners[0] =  1;         flags['eventtype'] = 15;                               flags['ab'] = False
             case 'NP':      None
-            case 'PO1(13)': runners[1] = -1;         flags['eventtype'] =  8; flags['batterevent'] = False; flags['ab'] = False; flags['playonrunner1'] = '13'; flags['porunner1'] = True
+            case 'PO1(13)': runners[1] = -1;         flags['eventtype'] =  8; flags['batterevent'] = False; flags['ab'] = False; flags['playonrunner1'] = '13'; flags['porunner1'] = True; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 1
             case 'S3':      runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 3;                           flags['hitvalue'] = 1
             case 'S8':      runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 8;                           flags['hitvalue'] = 1
             case 'S9':      runners[0] =  1;         flags['eventtype'] = 20; flags['fieldedby'] = 9;                           flags['hitvalue'] = 1
