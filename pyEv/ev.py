@@ -14,7 +14,7 @@ options:
   -f flist  give list of fields to output
               Default is 0-6,8-9,12-13,16-17,26-40,43-45,51,58-61
   -d        print list of field numbers and descriptions
-.\bevent.exe -f 0-80,88-96 -y 2023 2023ANA.EVA > out.txt
+.\bevent.exe -f 0-96 -y 2023 2023ANA.EVA > out.txt
 '''
 import re
 import os
@@ -36,10 +36,10 @@ class Game:
         self.Out = 0
         self.Score= [0, 0]
         self.Leadoff = True
-        self.Sub0 = False
-        self.Sub1 = False
-        self.Sub2 = False
-        self.Sub3 = False
+        self.Sub0 = {'name': None, 'pos': 0}
+        self.Sub1 = {'name': None, 'pos': 0}
+        self.Sub2 = {'name': None, 'pos': 0}
+        self.Sub3 = {'name': None, 'pos': 0}
         self.NewGame = True
         self.EventNum = 0
     def __str__(self) -> str:
@@ -75,10 +75,15 @@ class Game:
                 ord = int(r[4])-1
                 pos = int(r[5])-1
                 repl = self.Lineup[team][ord]
-                self.Sub0 = self.Bases[0] == repl
-                self.Sub1 = self.Bases[1] == repl
-                self.Sub2 = self.Bases[2] == repl
-                self.Sub3 = self.Bases[3] == repl
+                
+                self.Sub0['name'] = repl if repl != None and self.Bases[0] == repl else self.Sub0['name']
+                self.Sub0['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[0] == repl else self.Sub0['pos']
+                self.Sub1['name'] = repl if repl != None and self.Bases[1] == repl else self.Sub1['name']
+                self.Sub1['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[1] == repl else self.Sub1['pos']
+                self.Sub2['name'] = repl if repl != None and self.Bases[2] == repl else self.Sub2['name']
+                self.Sub2['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[2] == repl else self.Sub2['pos']
+                self.Sub3['name'] = repl if repl != None and self.Bases[3] == repl else self.Sub3['name']
+                self.Sub3['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[3] == repl else self.Sub3['pos']
                 ros = Rosters[self.Info['visteam'] if team==0 else self.Info['hometeam']]
                 assert r[1] in ros
                 if (ord >= 0):
@@ -199,7 +204,7 @@ class Game:
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
-                    outStr += ',\"' + ('T' if self.Sub0 else 'F') + '\"'                                    # 31 pinchhit flag*
+                    outStr += ',\"' + ('F' if self.Sub0['name']==None else 'T') + '\"'                      # 31 pinchhit flag*
                     outStr += ',' + str(self.Position[self.Half].index(self.Bases[0])+1)                    # 32 defensive position*
                     outStr += ',' + str(self.Lineup[self.Half].index(self.Bases[0])+1)                      # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
@@ -248,23 +253,23 @@ class Game:
                     outStr += ',\"' + ('' if self.Bases[3]==None else Offros[self.Bases[3]]['resp']) + '\"' # 77 Responsible pitcher for runner on 3rd
                     outStr += ',\"' + ('T' if self.NewGame else 'F') + '\"'                                 # 78 New Game Flag
                     outStr += ',\"' + ('T' if EndGame else 'F') + '\"'                                      # 79 End Game Flag
-                    outStr += ',\"' + ('T' if self.Sub1 else 'F') + '\"'                                    # 80 Pinch-runner on 1st? (T/F)
-                    #outStr += ',\"' + ('T' if flags['pinchrunner2'] else 'F') + '\"'                        # 81 Pinch-runner on 2nd? (T/F)
-                    #outStr += ',\"' + ('T' if flags['pinchrunner3'] else 'F') + '\"'                        # 82 Pinch-runner on 3rd? (T/F)
-                    #outStr += ',\"' + '' + '\"' # 83        ID of Runner removed for pinch-runner on 1st
-                    #outStr += ',\"' + '' + '\"' # 84        ID of Runner removed for pinch-runner on 2nd
-                    #outStr += ',\"' + '' + '\"' # 85        ID of Runner removed for pinch-runner on 3rd
-                    #outStr += ',\"' + '' + '\"' # 86        ID of Batter removed for pinch-hitter
-                    #outStr += ',' + '0' # 87        Fielding position of batter removed for pinch-hitter
-                    outStr += ',' + str(flags['putout1']) # 88        Fielder with First Putout (0 if none)
-                    outStr += ',' + str(flags['putout2']) # 89        Fielder with Second Putout (0 if none)
-                    outStr += ',' + str(flags['putout3']) # 90        Fielder with Third Putout (0 if none)
-                    outStr += ',' + str(flags['assist1']) # 91        Fielder with First Assist (0 if none)
-                    outStr += ',' + str(flags['assist2']) # 92        Fielder with Second Assist (0 if none)
-                    outStr += ',' + str(flags['assist3']) # 93        Fielder with Third Assist (0 if none)
-                    outStr += ',' + str(flags['assist4']) # 94        Fielder with Fourth Assist (0 if none)
-                    outStr += ',' + str(flags['assist5']) # 95        Fielder with Fifth Assist (0 if none)
-                    outStr += ',' + str(self.EventNum) # 96        event num
+                    outStr += ',\"' + ('F' if self.Sub1['name']==None else 'T') + '\"'                      # 80 Pinch-runner on 1st? (T/F)
+                    outStr += ',\"' + ('F' if self.Sub2['name']==None else 'T') + '\"'                      # 81 Pinch-runner on 2nd? (T/F)
+                    outStr += ',\"' + ('F' if self.Sub3['name']==None else 'T') + '\"'                      # 82 Pinch-runner on 3rd? (T/F)
+                    outStr += ',\"' + ('' if self.Sub1['name']==None else self.Sub1['name'])+ '\"'          # 83 ID of Runner removed for pinch-runner on 1st
+                    outStr += ',\"' + ('' if self.Sub2['name']==None else self.Sub2['name'])+ '\"'          # 84 ID of Runner removed for pinch-runner on 2nd
+                    outStr += ',\"' + ('' if self.Sub3['name']==None else self.Sub3['name'])+ '\"'          # 85 ID of Runner removed for pinch-runner on 3rd
+                    outStr += ',\"' + ('' if self.Sub0['name']==None else self.Sub0['name'])+ '\"'          # 86 ID of Batter removed for pinch-hitter
+                    outStr += ',' + str(self.Sub0['pos'])                                                   # 87 Fielding position of batter removed for pinch-hitter
+                    outStr += ',' + str(flags['putout1'])                                                   # 88 Fielder with First Putout (0 if none)
+                    outStr += ',' + str(flags['putout2'])                                                   # 89 Fielder with Second Putout (0 if none)
+                    outStr += ',' + str(flags['putout3'])                                                   # 90 Fielder with Third Putout (0 if none)
+                    outStr += ',' + str(flags['assist1'])                                                   # 91 Fielder with First Assist (0 if none)
+                    outStr += ',' + str(flags['assist2'])                                                   # 92 Fielder with Second Assist (0 if none)
+                    outStr += ',' + str(flags['assist3'])                                                   # 93 Fielder with Third Assist (0 if none)
+                    outStr += ',' + str(flags['assist4'])                                                   # 94 Fielder with Fourth Assist (0 if none)
+                    outStr += ',' + str(flags['assist5'])                                                   # 95 Fielder with Fifth Assist (0 if none)
+                    outStr += ',' + str(self.EventNum)                                                      # 96 event num
                     print (outStr)
                     self.NewGame = False
                 for i in reversed(range(4)):
@@ -280,10 +285,10 @@ class Game:
                 if (self.Out == 3):
                     self.Bases = [None] * 4
                 self.Leadoff &= (r[6] == "NP")
-                self.Sub0 = False
-                self.Sub1 = False
-                self.Sub2 = False
-                self.Sub3 = False
+                self.Sub0 = {'name': None, 'pos': 0}
+                self.Sub1 = {'name': None, 'pos': 0}
+                self.Sub2 = {'name': None, 'pos': 0}
+                self.Sub3 = {'name': None, 'pos': 0}
             case "radj":
                 self.Bases[int(r[2])] = r[1]
                 Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
