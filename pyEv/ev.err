@@ -1,0 +1,20 @@
+1-3(E2
+TH)
+S1
+BG23
+Traceback (most recent call last):
+  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 317, in <module>
+    games = ProcessFile(f)
+  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 308, in ProcessFile
+    g[-1].Process(row)
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 154, in Process
+    States = evProcess.GenSequence (self.Out,
+                                    runners,
+                                    r[5],
+                                    r[6],
+                                    flags)
+  File "C:\Users\Kevin\source\repos\Retro\pyEv\evProcess.py", line 186, in GenSequence
+    assert OutsOnPlay in range(0,4)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
