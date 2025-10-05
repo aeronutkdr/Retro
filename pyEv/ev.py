@@ -149,7 +149,8 @@ class Game:
                          'assist2' : 0,
                          'assist3' : 0,
                          'assist4' : 0,
-                         'assist5' : 0
+                         'assist5' : 0,
+                         'shhit'   : False
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -211,7 +212,7 @@ class Game:
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                         # 35 batter event flag*
                     outStr += ',\"' + ('T' if flags['ab'] else 'F') + '\"'                                  # 36 ab flag*
                     outStr += ',' + str(flags['hitvalue'])                                                  # 37 hit value*
-                    outStr += ',\"' + 'F' + '\"'                                                            # 38 SH flag*
+                    outStr += ',\"' + ('T' if flags['shhit'] else 'F') + '\"'                               # 38 SH flag*
                     outStr += ',\"' + 'F' + '\"'                                                            # 39 SF flag*
                     outStr += ','  + str(flags['outsonplay'])                                               # 40 outs on play*
                     outStr += ',\"' + ('T' if flags['doubleplay'] else 'F')  + '\"'                         # 41 double play flag
