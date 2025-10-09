@@ -29,7 +29,7 @@ class Game:
         self.Version = 0
         self.Info = {}
         self.Lineup = [[None for _ in range(9)] for _ in range(2)]
-        self.Position = [[None for _ in range(11)] for _ in range(2)]
+        self.Position = [[None for _ in range(12)] for _ in range(2)]
         self.Bases = [None for _ in range(4)]
         self.Inning = 0
         self.Half = 0
@@ -42,6 +42,7 @@ class Game:
         self.Sub3 = {'name': None, 'pos': 0}
         self.NewGame = True
         self.EventNum = 0
+        self.PinchHit = True
     def __str__(self) -> str:
         return "Game name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
@@ -74,8 +75,17 @@ class Game:
                 team = int(r[3])
                 ord = int(r[4])-1
                 pos = int(r[5])-1
+                if team == 1 and ord == 7 and pos == 4:
+                    None
                 repl = self.Lineup[team][ord]
-                
+                #sub,biggc002,"Cavan Biggio",0,8,11
+                #PinchHit  DefPos
+                #  F        10
+                #  T        11
+                # if replacing 10 then Pos 10 and !PinchHit
+                if (repl != None and self.Position[team].index(repl) == 9):
+                    pos = 9
+                    self.PinchHit = False
                 self.Sub0['name'] = repl if repl != None and self.Bases[0] == repl else self.Sub0['name']
                 self.Sub0['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[0] == repl else self.Sub0['pos']
                 self.Sub1['name'] = repl if repl != None and self.Bases[1] == repl else self.Sub1['name']
@@ -88,7 +98,7 @@ class Game:
                 assert r[1] in ros
                 if (ord >= 0):
                     self.Lineup[team][ord]=r[1]
-                if (pos < 11):
+                if (pos < 12):
                     self.Position[team][pos]=r[1]
                 if repl != None:
                     self.Bases = [r[1] if x==repl else x for x in self.Bases]
@@ -205,7 +215,7 @@ class Game:
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
-                    outStr += ',\"' + ('F' if self.Sub0['name']==None else 'T') + '\"'                      # 31 pinchhit flag*
+                    outStr += ',\"' + ('F' if not self.PinchHit or self.Sub0['name']==None else 'T') + '\"' # 31 pinchhit flag*
                     outStr += ',' + str(self.Position[self.Half].index(self.Bases[0])+1)                    # 32 defensive position*
                     outStr += ',' + str(self.Lineup[self.Half].index(self.Bases[0])+1)                      # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
@@ -290,6 +300,7 @@ class Game:
                 self.Sub1 = {'name': None, 'pos': 0}
                 self.Sub2 = {'name': None, 'pos': 0}
                 self.Sub3 = {'name': None, 'pos': 0}
+                self.PinchHit = True
             case "radj":
                 self.Bases[int(r[2])] = r[1]
                 Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]

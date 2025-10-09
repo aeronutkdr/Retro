@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 327, in <module>
+    games = ProcessFile(f)
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 318, in ProcessFile
+    g[-1].Process(row)
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 84, in Process
+    if (repl != None and self.Position[team].index(repl) == 9):
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+ValueError: 'urshg001' is not in list
