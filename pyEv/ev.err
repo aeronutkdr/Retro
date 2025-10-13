@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 347, in <module>
+    for f in files: games = ProcessFile(f); print (*games)
+                            ~~~~~~~~~~~^^^
+  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 340, in ProcessFile
+    g[-1].Process(row)
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 268, in Process
+    outStr += ',\"' + ('' if self.Bases[2]==None else Offros[self.Bases[2]]['resp']) + '\"' # 76 Responsible pitcher for runner on 2nd
+              ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "NoneType") to str

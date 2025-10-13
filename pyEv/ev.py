@@ -23,13 +23,25 @@ import evProcess
 
 Rosters = {}
 # OO32 1HBB BSSF FFFF
+
+def FindByField(r: dict, fld: str, val: int) -> str:
+    v = None
+    for k,item in r.items():
+        if item[fld] == val:
+            v = k
+            break
+    return v
+
+def MIN(a,b):
+    return a if a<b else b
+
 class Game:
     def __init__(self, name : str):
         self.Name = name
         self.Version = 0
         self.Info = {}
-        self.Lineup = [[None for _ in range(9)] for _ in range(2)]
-        self.Position = [[None for _ in range(11)] for _ in range(2)]
+        self.Lineup = [[None for _ in range(10)] for _ in range(2)]
+        self.Position = [[None for _ in range(12)] for _ in range(2)]
         self.Bases = [None for _ in range(4)]
         self.Inning = 0
         self.Half = 0
@@ -42,6 +54,7 @@ class Game:
         self.Sub3 = {'name': None, 'pos': 0}
         self.NewGame = True
         self.EventNum = 0
+        self.Rosters = [None, None]
     def __str__(self) -> str:
         return "Game name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
@@ -55,27 +68,29 @@ class Game:
             case "version": self.Version = int(r[1])
             case "info":
                 self.Info[r[1]] = r[2]
-                if r[1] == 'visteam' or r[1] == 'hometeam':
-                    if not r[2] in Rosters:
-                        Rosters[r[2]] = {}
-                        fname = r[2]+self.Name[3:7]+'.ros'
-                        with open(fname, mode='r') as file:
-                                csv_reader = csv.reader(file)
-                                for row in csv_reader:
-                                    Rosters[r[2]][row[0]] = {}
-                                    Rosters[r[2]][row[0]]['lastname'] = row[1]
-                                    Rosters[r[2]][row[0]]['firstname'] = row[2]
-                                    Rosters[r[2]][row[0]]['bats'] = row[3]
-                                    Rosters[r[2]][row[0]]['throws'] = row[4]
-                                    Rosters[r[2]][row[0]]['team'] = row[5]
-                                    Rosters[r[2]][row[0]]['pos'] = row[6]
-                                    Rosters[r[2]][row[0]]['resp'] = ''
+                if r[1] == 'visteam' : self.Rosters[0] = Rosters[r[2]]
+                if r[1] == 'hometeam': self.Rosters[1] = Rosters[r[2]]
             case "start" | "sub":
                 team = int(r[3])
-                ord = int(r[4])-1
-                pos = int(r[5])-1
+                ord = int(r[4])
+                pos = int(r[5])
+                ros = self.Rosters[team]
                 repl = self.Lineup[team][ord]
+
+                posent = FindByField(ros, 'pos', pos)
+                if (posent):
+                    ros[posent]['pos'] = -pos
+                ros[r[1]]['pos'] = pos
+                if ord > 0:
+                    ordent = FindByField(ros, 'ord', ord)
+                    if (ordent):
+                        ros[ordent]['ord'] = -ord
+                    ros[r[1]]['ord'] = ord
+                    if repl != None:
+                        self.Bases = [r[1] if x==repl else x for x in self.Bases]
+                        ros[r[1]]['resp'] = ros[repl]['resp']
                 
+                '''
                 self.Sub0['name'] = repl if repl != None and self.Bases[0] == repl else self.Sub0['name']
                 self.Sub0['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[0] == repl else self.Sub0['pos']
                 self.Sub1['name'] = repl if repl != None and self.Bases[1] == repl else self.Sub1['name']
@@ -84,8 +99,6 @@ class Game:
                 self.Sub2['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[2] == repl else self.Sub2['pos']
                 self.Sub3['name'] = repl if repl != None and self.Bases[3] == repl else self.Sub3['name']
                 self.Sub3['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[3] == repl else self.Sub3['pos']
-                ros = Rosters[self.Info['visteam'] if team==0 else self.Info['hometeam']]
-                assert r[1] in ros
                 if (ord >= 0):
                     self.Lineup[team][ord]=r[1]
                 if (pos < 11):
@@ -93,6 +106,7 @@ class Game:
                 if repl != None:
                     self.Bases = [r[1] if x==repl else x for x in self.Bases]
                     ros[r[1]]['resp'] = ros[repl]['resp']
+                '''
             case "play":
                 States = []
                 self.Inning = int(r[1])
@@ -159,15 +173,16 @@ class Game:
                                                 flags)
                 if (r[6] != "NP"):
                     self.EventNum += 1
-                    Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
-                    Defros = Rosters[self.Info['visteam'] if self.Half==1 else self.Info['hometeam']]
+                    Offros = self.Rosters[self.Half]
+                    Defros = self.Rosters[1-self.Half]
                     BatHand = Offros[self.Bases[0]]['bats']
+                    pitcher = FindByField(Defros, 'pos', 1)
                     if BatHand=='B':
-                        if Defros[self.Position[1-self.Half][0]]['throws'] == 'L':
+                        if Defros[pitcher]['throws'] == 'L':
                             BatHand = 'R'
                         else:
                             BatHand = 'L'
-                    Offros[r[3]]['resp'] = self.Position[1-self.Half][0]
+                    Offros[r[3]]['resp'] = pitcher
                     EndGame = False
                     if (self.Inning > 8):
                         if ((self.Half == 1) or ((States[-1] >> 14)==3)) and (self.Score[1] > self.Score[0]):
@@ -188,26 +203,26 @@ class Game:
                     outStr += ',\"' + BatHand + '\"'                                                        # 11 batter hand
                     outStr += ',\"' + self.Bases[0] + '\"'                                                  # 12 res batter*
                     outStr += ',\"' + BatHand + '\"'                                                        # 13 res batter hand*
-                    outStr += ',\"' + self.Position[1-self.Half][0] +'\"'                                   # 14 pitcher
-                    outStr += ',\"' + Defros[self.Position[1-self.Half][0]]['throws'] + '\"'                # 15 pitcher hand
-                    outStr += ',\"' + self.Position[1-self.Half][0] +'\"'                                   # 16 res pitcher*
-                    outStr += ',\"' + Defros[self.Position[1-self.Half][0]]['throws'] + '\"'                # 17 res pitcher hand*
-                    outStr += ',\"' + self.Position[1-self.Half][1] +'\"'                                   # 18 catcher
-                    outStr += ',\"' + self.Position[1-self.Half][2] +'\"'                                   # 19 first base
-                    outStr += ',\"' + self.Position[1-self.Half][3] +'\"'                                   # 20 second base
-                    outStr += ',\"' + self.Position[1-self.Half][4] +'\"'                                   # 21 third base
-                    outStr += ',\"' + self.Position[1-self.Half][5] +'\"'                                   # 22 shortstop
-                    outStr += ',\"' + self.Position[1-self.Half][6] +'\"'                                   # 23 left field
-                    outStr += ',\"' + self.Position[1-self.Half][7] +'\"'                                   # 24 center field
-                    outStr += ',\"' + self.Position[1-self.Half][8] +'\"'                                   # 25 right field
+                    outStr += ',\"' + pitcher +'\"'                                                         # 14 pitcher
+                    outStr += ',\"' + Defros[pitcher]['throws'] + '\"'                                      # 15 pitcher hand
+                    outStr += ',\"' + pitcher +'\"'                                                         # 16 res pitcher*
+                    outStr += ',\"' + Defros[pitcher]['throws'] + '\"'                                      # 17 res pitcher hand*
+                    outStr += ',\"' + FindByField(Defros, 'pos', 2) +'\"'                                   # 18 catcher
+                    outStr += ',\"' + FindByField(Defros, 'pos', 3) +'\"'                                   # 19 first base
+                    outStr += ',\"' + FindByField(Defros, 'pos', 4) +'\"'                                   # 20 second base
+                    outStr += ',\"' + FindByField(Defros, 'pos', 5) +'\"'                                   # 21 third base
+                    outStr += ',\"' + FindByField(Defros, 'pos', 6) +'\"'                                   # 22 shortstop
+                    outStr += ',\"' + FindByField(Defros, 'pos', 7) +'\"'                                   # 23 left field
+                    outStr += ',\"' + FindByField(Defros, 'pos', 8) +'\"'                                   # 24 center field
+                    outStr += ',\"' + FindByField(Defros, 'pos', 9) +'\"'                                   # 25 right field
                     outStr += ',\"' + ("" if self.Bases[1]==None else self.Bases[1]) + '\"'                 # 26 first runner*
                     outStr += ',\"' + ("" if self.Bases[2]==None else self.Bases[2]) + '\"'                 # 27 second runner*
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
                     outStr += ',\"' + ('F' if self.Sub0['name']==None else 'T') + '\"'                      # 31 pinchhit flag*
-                    outStr += ',' + str(self.Position[self.Half].index(self.Bases[0])+1)                    # 32 defensive position*
-                    outStr += ',' + str(self.Lineup[self.Half].index(self.Bases[0])+1)                      # 33 lineup position*
+                    outStr += ',' + str(MIN(10,Offros[self.Bases[0]]['pos']))                               # 32 defensive position*
+                    outStr += ',' + str(Offros[self.Bases[0]]['ord'])                                       # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                         # 35 batter event flag*
                     outStr += ',\"' + ('T' if flags['ab'] else 'F') + '\"'                                  # 36 ab flag*
@@ -260,8 +275,12 @@ class Game:
                     outStr += ',\"' + ('' if self.Sub1['name']==None else self.Sub1['name'])+ '\"'          # 83 ID of Runner removed for pinch-runner on 1st
                     outStr += ',\"' + ('' if self.Sub2['name']==None else self.Sub2['name'])+ '\"'          # 84 ID of Runner removed for pinch-runner on 2nd
                     outStr += ',\"' + ('' if self.Sub3['name']==None else self.Sub3['name'])+ '\"'          # 85 ID of Runner removed for pinch-runner on 3rd
-                    outStr += ',\"' + ('' if self.Sub0['name']==None else self.Sub0['name'])+ '\"'          # 86 ID of Batter removed for pinch-hitter
-                    outStr += ',' + str(self.Sub0['pos'])                                                   # 87 Fielding position of batter removed for pinch-hitter
+                    sub = FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
+                    subpos = '0'
+                    if sub == None: sub = ''
+                    else:           subpos = str(MIN(10, Offros[sub]['pos']))
+                    outStr += ',\"' + sub + '\"'                                                            # 86 ID of Batter removed for pinch-hitter
+                    outStr += ',' + subpos                                                                  # 87 Fielding position of batter removed for pinch-hitter
                     outStr += ',' + str(flags['putout1'])                                                   # 88 Fielder with First Putout (0 if none)
                     outStr += ',' + str(flags['putout2'])                                                   # 89 Fielder with Second Putout (0 if none)
                     outStr += ',' + str(flags['putout3'])                                                   # 90 Fielder with Third Putout (0 if none)
@@ -273,6 +292,12 @@ class Game:
                     outStr += ',' + str(self.EventNum)                                                      # 96 event num
                     print (outStr)
                     self.NewGame = False
+                    for it in Offros.values():
+                        if it['pos'] < 0:
+                            it['pos'] = 0
+                    for it in Offros.values():
+                        if it['ord'] < 0:
+                            it['ord'] = 0
                 for i in reversed(range(4)):
                     if i != runners[i] and runners[i] in range(4):
                         self.Bases[runners[i]] = self.Bases[i]
@@ -290,13 +315,26 @@ class Game:
                 self.Sub1 = {'name': None, 'pos': 0}
                 self.Sub2 = {'name': None, 'pos': 0}
                 self.Sub3 = {'name': None, 'pos': 0}
+
             case "radj":
                 self.Bases[int(r[2])] = r[1]
-                Offros = Rosters[self.Info['visteam'] if self.Half==0 else self.Info['hometeam']]
+                Offros = self.Rosters[self.Half]
                 Offros[r[1]]['resp'] = self.Position[1-self.Half][0]
             case "com": None
             case "data": None
             case _: print(r[0])
+
+def ProcessRoster(s: str):
+    with open(s, mode='r') as file:
+        Rosters[s[:3]] = {}
+        csv_reader = csv.reader(file)
+        for row in csv_reader:
+            Rosters[s[:3]][row[0]] = {}
+            Rosters[s[:3]][row[0]]['bats'] = row[3]
+            Rosters[s[:3]][row[0]]['throws'] = row[4]
+            Rosters[s[:3]][row[0]]['resp'] = None
+            Rosters[s[:3]][row[0]]['pos'] = 0
+            Rosters[s[:3]][row[0]]['ord'] = 0
 
 def ProcessFile(s: str) -> list[Game]:
     g = []
@@ -309,11 +347,8 @@ def ProcessFile(s: str) -> list[Game]:
                 g[-1].Process(row)
     return g
 
-files = [f for f in os.listdir('.') if re.match('.*\\.ev.$', f, re.IGNORECASE)]
 print("game id,visiting team,inning,batting team,outs,balls,strikes,pitch sequence,vis score,home score,batter,batter hand,res batter,res batter hand,pitcher,pitcher hand,res pitcher,res pitcher hand,catcher,first base,second base,third base,shortstop,left field,center field,right field,first runner,second runner,third runner,event text,leadoff flag,pinchhit flag,defensive position,lineup position,event type,batter event flag,ab flag,hit value,SH flag,SF flag,outs on play,double play flag,triple play flag,RBI on play,wild pitch flag,passed ball flag,fielded by,batted ball type,bunt flag,foul flag,hit location,num errors,1st error player,1st error type,2nd error player,2nd error type,3rd error player,3rd error type,batter dest,runner on 1st dest,runner on 2nd dest,runner on 3rd dest,play on batter,play on runner on 1st,play on runner on 2nd,play on runner on 3rd,SB for runner on 1st flag,SB for runner on 2nd flag,SB for runner on 3rd flag,CS for runner on 1st flag,CS for runner on 2nd flag,CS for runner on 3rd flag,PO for runner on 1st flag,PO for runner on 2nd flag,PO for runner on 3rd flag,Responsible pitcher for runner on 1st,Responsible pitcher for runner on 2nd,Responsible pitcher for runner on 3rd,New Game Flag,End Game Flag,Pinch-runner on 1st,Pinch-runner on 2nd,Pinch-runner on 3rd,ID of Runner removed for pinch-runner on 1st,ID of Runner removed for pinch-runner on 2nd,ID of Runner removed for pinch-runner on 3rd,ID of Batter removed for pinch-hitter,Fielding position of batter removed for pinch-hitter,Fielder with First Putout,Fielder with Second Putout,Fielder with Third Putout,Fielder with First Assist,Fielder with Second Assist,Fielder with Third Assist,Fielder with Fourth Assist,Fielder with Fifth Assist,event num")
-for f in files:
-    #for i in range(5):
-        #None
-    #print (str(i))
-    games = ProcessFile(f)
-    print (*games)
+files = [f for f in os.listdir('.') if re.match('.*\\.ros$', f, re.IGNORECASE)]
+for f in files: ProcessRoster(f)
+files = [f for f in os.listdir('.') if re.match('.*\\.ev.$', f, re.IGNORECASE)]
+for f in files: games = ProcessFile(f); print (*games)
