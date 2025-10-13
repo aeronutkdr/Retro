@@ -68,8 +68,14 @@ class Game:
             case "version": self.Version = int(r[1])
             case "info":
                 self.Info[r[1]] = r[2]
-                if r[1] == 'visteam' : self.Rosters[0] = Rosters[r[2]]
-                if r[1] == 'hometeam': self.Rosters[1] = Rosters[r[2]]
+                if r[1] == 'visteam' :
+                    self.Rosters[0] = Rosters[r[2]]
+                    for rent in self.Rosters[0].values():
+                        rent['ord'] = 0; rent['pos'] = 0
+                if r[1] == 'hometeam':
+                    self.Rosters[1] = Rosters[r[2]]
+                    for rent in self.Rosters[1].values():
+                        rent['ord'] = 0; rent['pos'] = 0
             case "start" | "sub":
                 team = int(r[3])
                 ord = int(r[4])
@@ -77,18 +83,23 @@ class Game:
                 ros = self.Rosters[team]
                 repl = self.Lineup[team][ord]
 
-                posent = FindByField(ros, 'pos', pos)
-                if (posent):
-                    ros[posent]['pos'] = -pos
-                ros[r[1]]['pos'] = pos
+                oldpos = pos
                 if ord > 0:
                     ordent = FindByField(ros, 'ord', ord)
                     if (ordent):
+                        oldpos = ros[ordent]['pos']
+                        self.PH = oldpos < 10
+                        assert pos==oldpos or pos>10 or oldpos>10
+                        pos = oldpos
                         ros[ordent]['ord'] = -ord
                     ros[r[1]]['ord'] = ord
                     if repl != None:
                         self.Bases = [r[1] if x==repl else x for x in self.Bases]
                         ros[r[1]]['resp'] = ros[repl]['resp']
+                posent = FindByField(ros, 'pos', oldpos)
+                if (posent):
+                    ros[posent]['pos'] = -pos
+                ros[r[1]]['pos'] = pos
                 
                 '''
                 self.Sub0['name'] = repl if repl != None and self.Bases[0] == repl else self.Sub0['name']
@@ -220,8 +231,10 @@ class Game:
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
-                    outStr += ',\"' + ('F' if self.Sub0['name']==None else 'T') + '\"'                      # 31 pinchhit flag*
-                    outStr += ',' + str(MIN(10,Offros[self.Bases[0]]['pos']))                               # 32 defensive position*
+                    ph = None if Offros[self.Bases[0]]['pos']>10 else FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
+                    outStr += ',\"' + ('F' if (ph==None or not self.PH) else 'T') + '\"'                    # 31 pinchhit flag*
+                    self.PH = False
+                    outStr += ',' + str(MIN(10,abs(Offros[self.Bases[0]]['pos'])))                          # 32 defensive position*
                     outStr += ',' + str(Offros[self.Bases[0]]['ord'])                                       # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                         # 35 batter event flag*
@@ -278,7 +291,7 @@ class Game:
                     sub = FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
                     subpos = '0'
                     if sub == None: sub = ''
-                    else:           subpos = str(MIN(10, Offros[sub]['pos']))
+                    else:           subpos = str(MIN(10, abs(Offros[sub]['pos'])))
                     outStr += ',\"' + sub + '\"'                                                            # 86 ID of Batter removed for pinch-hitter
                     outStr += ',' + subpos                                                                  # 87 Fielding position of batter removed for pinch-hitter
                     outStr += ',' + str(flags['putout1'])                                                   # 88 Fielder with First Putout (0 if none)
