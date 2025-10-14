@@ -78,46 +78,42 @@ class Game:
                         rent['ord'] = 0; rent['pos'] = 0
             case "start" | "sub":
                 team = int(r[3])
+                ros = self.Rosters[team]
                 ord = int(r[4])
                 pos = int(r[5])
-                ros = self.Rosters[team]
-                repl = self.Lineup[team][ord]
-
-                oldpos = pos
+                repl = None
+                ordent = None
                 if ord > 0:
                     ordent = FindByField(ros, 'ord', ord)
                     if (ordent):
-                        oldpos = ros[ordent]['pos']
-                        self.PH = oldpos < 10
-                        assert pos==oldpos or pos>10 or oldpos>10
-                        pos = oldpos
-                        ros[ordent]['ord'] = -ord
-                    ros[r[1]]['ord'] = ord
-                    if repl != None:
-                        self.Bases = [r[1] if x==repl else x for x in self.Bases]
-                        ros[r[1]]['resp'] = ros[repl]['resp']
-                posent = FindByField(ros, 'pos', oldpos)
+                        ros[ordent]['ord'] *= -1
+                        if ros[ordent]['pos'] == 10: pos = 10
+                        repl = ordent
+                posent = FindByField(ros, 'pos', pos)
                 if (posent):
-                    ros[posent]['pos'] = -pos
+                    ros[posent]['pos'] *= -1
+                    assert repl == None or repl == ordent
+                    repl = ordent
+                ros[r[1]]['ord'] = ord
                 ros[r[1]]['pos'] = pos
                 
-                '''
                 self.Sub0['name'] = repl if repl != None and self.Bases[0] == repl else self.Sub0['name']
-                self.Sub0['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[0] == repl else self.Sub0['pos']
+                #self.Sub0['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[0] == repl else self.Sub0['pos']
                 self.Sub1['name'] = repl if repl != None and self.Bases[1] == repl else self.Sub1['name']
-                self.Sub1['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[1] == repl else self.Sub1['pos']
+                #self.Sub1['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[1] == repl else self.Sub1['pos']
                 self.Sub2['name'] = repl if repl != None and self.Bases[2] == repl else self.Sub2['name']
-                self.Sub2['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[2] == repl else self.Sub2['pos']
+                #self.Sub2['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[2] == repl else self.Sub2['pos']
                 self.Sub3['name'] = repl if repl != None and self.Bases[3] == repl else self.Sub3['name']
-                self.Sub3['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[3] == repl else self.Sub3['pos']
+                #self.Sub3['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[3] == repl else self.Sub3['pos']
+                '''
                 if (ord >= 0):
                     self.Lineup[team][ord]=r[1]
                 if (pos < 11):
                     self.Position[team][pos]=r[1]
+                '''
                 if repl != None:
                     self.Bases = [r[1] if x==repl else x for x in self.Bases]
                     ros[r[1]]['resp'] = ros[repl]['resp']
-                '''
             case "play":
                 States = []
                 self.Inning = int(r[1])
@@ -231,10 +227,10 @@ class Game:
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
-                    ph = None if Offros[self.Bases[0]]['pos']>10 else FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
-                    outStr += ',\"' + ('F' if (ph==None or not self.PH) else 'T') + '\"'                    # 31 pinchhit flag*
-                    self.PH = False
-                    outStr += ',' + str(MIN(10,abs(Offros[self.Bases[0]]['pos'])))                          # 32 defensive position*
+                    ph = FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
+                    dh = FindByField(Offros, 'pos', -10)
+                    outStr += ',\"' + ('F' if (dh != None or ph == None) else 'T') + '\"'                   # 31 pinchhit flag*
+                    outStr += ',' + str(Offros[self.Bases[0]]['pos'])                                       # 32 defensive position*
                     outStr += ',' + str(Offros[self.Bases[0]]['ord'])                                       # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                         # 35 batter event flag*
@@ -332,7 +328,7 @@ class Game:
             case "radj":
                 self.Bases[int(r[2])] = r[1]
                 Offros = self.Rosters[self.Half]
-                Offros[r[1]]['resp'] = self.Position[1-self.Half][0]
+                Offros[r[1]]['resp'] = FindByField(self.Rosters[1-self.Half], 'pos', 1)
             case "com": None
             case "data": None
             case _: print(r[0])
