@@ -32,9 +32,6 @@ def FindByField(r: dict, fld: str, val: int) -> str:
             break
     return v
 
-def MIN(a,b):
-    return a if a<b else b
-
 class Game:
     def __init__(self, name : str):
         self.Name = name
@@ -275,7 +272,7 @@ class Game:
                     sub = FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
                     subpos = '0'
                     if sub == None: sub = ''
-                    else:           subpos = str(MIN(10, abs(Offros[sub]['pos'])))
+                    else:           subpos = str(abs(Offros[sub]['pos']))
                     outStr += ',\"' + sub + '\"'                                                            # 86 ID of Batter removed for pinch-hitter
                     outStr += ',' + subpos                                                                  # 87 Fielding position of batter removed for pinch-hitter
                     outStr += ',' + str(flags['putout1'])                                                   # 88 Fielder with First Putout (0 if none)
