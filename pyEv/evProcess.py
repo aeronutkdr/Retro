@@ -212,7 +212,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'P9S':        flags['battedballtype'] = 'P'; flags['hitlocation'] = '9S'
             case '2-H(UR)': runners[2] = 5
             case 'BK':      flags['eventtype'] = 11; flags['batterevent'] = False; flags['ab'] = False
-            case 'SH' :      flags['eventtype'] = 2; flags['ab'] = False; flags['shhit'] = True
+            case 'SH' :      flags['eventtype'] = 2; flags['ab'] = False; flags['sachit'] = True
             case 'TH': flags['error' + str(flags['numerrors']) + 'type'] = 'T'
             case '3-3' : None
             case  _ : print (r, file=sys.stderr)
