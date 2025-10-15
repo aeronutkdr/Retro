@@ -40,18 +40,16 @@ class Game:
         self.Name = name
         self.Version = 0
         self.Info = {}
-        self.Lineup = [[None for _ in range(10)] for _ in range(2)]
-        self.Position = [[None for _ in range(12)] for _ in range(2)]
         self.Bases = [None for _ in range(4)]
         self.Inning = 0
         self.Half = 0
         self.Out = 0
         self.Score= [0, 0]
         self.Leadoff = True
-        self.Sub0 = {'name': None, 'pos': 0}
-        self.Sub1 = {'name': None, 'pos': 0}
-        self.Sub2 = {'name': None, 'pos': 0}
-        self.Sub3 = {'name': None, 'pos': 0}
+        self.Sub0 = None
+        self.Sub1 = None
+        self.Sub2 = None
+        self.Sub3 = None
         self.NewGame = True
         self.EventNum = 0
         self.Rosters = [None, None]
@@ -97,20 +95,10 @@ class Game:
                 ros[r[1]]['ord'] = ord
                 ros[r[1]]['pos'] = pos
                 
-                self.Sub0['name'] = repl if repl != None and self.Bases[0] == repl else self.Sub0['name']
-                #self.Sub0['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[0] == repl else self.Sub0['pos']
-                self.Sub1['name'] = repl if repl != None and self.Bases[1] == repl else self.Sub1['name']
-                #self.Sub1['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[1] == repl else self.Sub1['pos']
-                self.Sub2['name'] = repl if repl != None and self.Bases[2] == repl else self.Sub2['name']
-                #self.Sub2['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[2] == repl else self.Sub2['pos']
-                self.Sub3['name'] = repl if repl != None and self.Bases[3] == repl else self.Sub3['name']
-                #self.Sub3['pos'] = (self.Position[team].index(repl)+1) if repl != None and self.Bases[3] == repl else self.Sub3['pos']
-                '''
-                if (ord >= 0):
-                    self.Lineup[team][ord]=r[1]
-                if (pos < 11):
-                    self.Position[team][pos]=r[1]
-                '''
+                self.Sub0 = repl if repl != None and self.Bases[0] == repl else self.Sub0
+                self.Sub1 = repl if repl != None and self.Bases[1] == repl else self.Sub1
+                self.Sub2 = repl if repl != None and self.Bases[2] == repl else self.Sub2
+                self.Sub3 = repl if repl != None and self.Bases[3] == repl else self.Sub3
                 if repl != None:
                     self.Bases = [r[1] if x==repl else x for x in self.Bases]
                     ros[r[1]]['resp'] = ros[repl]['resp']
@@ -278,12 +266,12 @@ class Game:
                     outStr += ',\"' + ('' if self.Bases[3]==None else Offros[self.Bases[3]]['resp']) + '\"' # 77 Responsible pitcher for runner on 3rd
                     outStr += ',\"' + ('T' if self.NewGame else 'F') + '\"'                                 # 78 New Game Flag
                     outStr += ',\"' + ('T' if EndGame else 'F') + '\"'                                      # 79 End Game Flag
-                    outStr += ',\"' + ('F' if self.Sub1['name']==None else 'T') + '\"'                      # 80 Pinch-runner on 1st? (T/F)
-                    outStr += ',\"' + ('F' if self.Sub2['name']==None else 'T') + '\"'                      # 81 Pinch-runner on 2nd? (T/F)
-                    outStr += ',\"' + ('F' if self.Sub3['name']==None else 'T') + '\"'                      # 82 Pinch-runner on 3rd? (T/F)
-                    outStr += ',\"' + ('' if self.Sub1['name']==None else self.Sub1['name'])+ '\"'          # 83 ID of Runner removed for pinch-runner on 1st
-                    outStr += ',\"' + ('' if self.Sub2['name']==None else self.Sub2['name'])+ '\"'          # 84 ID of Runner removed for pinch-runner on 2nd
-                    outStr += ',\"' + ('' if self.Sub3['name']==None else self.Sub3['name'])+ '\"'          # 85 ID of Runner removed for pinch-runner on 3rd
+                    outStr += ',\"' + ('F' if self.Sub1==None else 'T') + '\"'                              # 80 Pinch-runner on 1st? (T/F)
+                    outStr += ',\"' + ('F' if self.Sub2==None else 'T') + '\"'                              # 81 Pinch-runner on 2nd? (T/F)
+                    outStr += ',\"' + ('F' if self.Sub3==None else 'T') + '\"'                              # 82 Pinch-runner on 3rd? (T/F)
+                    outStr += ',\"' + ('' if self.Sub1==None else self.Sub1)+ '\"'                          # 83 ID of Runner removed for pinch-runner on 1st
+                    outStr += ',\"' + ('' if self.Sub2==None else self.Sub2)+ '\"'                          # 84 ID of Runner removed for pinch-runner on 2nd
+                    outStr += ',\"' + ('' if self.Sub3==None else self.Sub3)+ '\"'                          # 85 ID of Runner removed for pinch-runner on 3rd
                     sub = FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
                     subpos = '0'
                     if sub == None: sub = ''
@@ -320,10 +308,10 @@ class Game:
                 if (self.Out == 3):
                     self.Bases = [None] * 4
                 self.Leadoff &= (r[6] == "NP")
-                self.Sub0 = {'name': None, 'pos': 0}
-                self.Sub1 = {'name': None, 'pos': 0}
-                self.Sub2 = {'name': None, 'pos': 0}
-                self.Sub3 = {'name': None, 'pos': 0}
+                self.Sub0 = None
+                self.Sub1 = None
+                self.Sub2 = None
+                self.Sub3 = None
 
             case "radj":
                 self.Bases[int(r[2])] = r[1]
