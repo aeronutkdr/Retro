@@ -340,22 +340,26 @@ game id,visiting team,inning,batting team,outs,balls,strikes,pitch sequence,vis 
 "ANA202304100","WAS",9,1,0,2,2,"..CBS.FBX",6,4,"lambj001","L","lambj001","L","finnk001","R","finnk001","R","ruizk001","smitd008","chavm001","candj002","abrac001","calla002","roblv001","thoml002","","","","8/L8D","T","T",11,9,2,"T","T",0,"F","F",1,"F","F",0,"F","F",8,"L","F","F","8D",0,0,"N",0,"N",0,"N",0,0,0,0,"8","","","","F","F","F","F","F","F","F","F","F","","","","F","F","F","F","F","","","","fletd002",6,8,0,0,0,0,0,0,0,83
 "ANA202304100","WAS",9,1,1,1,2,"BCSFX",6,4,"wardt002","R","wardt002","R","finnk001","R","finnk001","R","ruizk001","smitd008","chavm001","candj002","abrac001","calla002","roblv001","thoml002","","","","8/F8D","F","F",7,1,2,"T","T",0,"F","F",1,"F","F",0,"F","F",8,"F","F","F","8D",0,0,"N",0,"N",0,"N",0,0,0,0,"8","","","","F","F","F","F","F","F","F","F","F","","","","F","F","F","F","F","","","","",0,8,0,0,0,0,0,0,0,84
 "ANA202304100","WAS",9,1,2,2,2,"BTBFS",6,4,"troum001","R","troum001","R","finnk001","R","finnk001","R","ruizk001","smitd008","chavm001","candj002","abrac001","calla002","roblv001","thoml002","","","","K","F","F",8,2,3,"T","T",0,"F","F",1,"F","F",0,"F","F",0,"","F","F","",0,0,"N",0,"N",0,"N",0,0,0,0,"2","","","","F","F","F","F","F","F","F","F","F","","","","F","T","F","F","F","","","","",0,2,0,0,0,0,0,0,0,85
+
 Game name = ANA202304070
 Version = 2
 Inning = 9
 Half = 1
 Out = 3
-Bases = [None, None, None, None] Game name = ANA202304080
+Bases = [None, None, None, None] 
+Game name = ANA202304080
 Version = 2
 Inning = 9
 Half = 0
 Out = 3
-Bases = [None, None, None, None] Game name = ANA202304090
+Bases = [None, None, None, None] 
+Game name = ANA202304090
 Version = 2
 Inning = 10
 Half = 1
 Out = 3
-Bases = [None, None, None, None] Game name = ANA202304100
+Bases = [None, None, None, None] 
+Game name = ANA202304100
 Version = 2
 Inning = 9
 Half = 1

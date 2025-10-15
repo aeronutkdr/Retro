@@ -51,7 +51,7 @@ class Game:
         self.EventNum = 0
         self.Rosters = [None, None]
     def __str__(self) -> str:
-        return "Game name = " + self.Name\
+        return "\nGame name = " + self.Name\
                + "\nVersion = " + str(self.Version)\
                + "\nInning = " + str(self.Inning)\
                + "\nHalf = " + str(self.Half)\
