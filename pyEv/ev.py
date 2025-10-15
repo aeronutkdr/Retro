@@ -37,6 +37,7 @@ class Game:
         self.Name = name
         self.Version = 0
         self.Info = {}
+        self.Position = [[None for _ in range(21)] for _ in range(2)]
         self.Bases = [None for _ in range(4)]
         self.Inning = 0
         self.Half = 0
@@ -63,6 +64,7 @@ class Game:
             case "version": self.Version = int(r[1])
             case "info":
                 self.Info[r[1]] = r[2]
+                # assign rosters and clean up
                 if r[1] == 'visteam' :
                     self.Rosters[0] = Rosters[r[2]]
                     for rent in self.Rosters[0].values():
@@ -78,20 +80,28 @@ class Game:
                 pos = int(r[5])
                 repl = None
                 ordent = None
+                Positions = self.Position[team]
+                # if not the pitcher
                 if ord > 0:
                     ordent = FindByField(ros, 'ord', ord)
                     if (ordent):
                         ros[ordent]['ord'] *= -1
-                        if ros[ordent]['pos'] == 10: pos = 10
+                        # if replacing the DH
+                        #if ros[ordent]['pos'] == 10: pos = 10
+                        pos = Positions.index(ordent)
                         repl = ordent
-                posent = FindByField(ros, 'pos', pos)
+                #posent = FindByField(ros, 'pos', pos)
+                posent = Positions[pos]
                 if (posent):
+                    Positions[pos+10]=posent
                     ros[posent]['pos'] *= -1
                     assert repl == None or repl == ordent
                     repl = ordent
                 ros[r[1]]['ord'] = ord
                 ros[r[1]]['pos'] = pos
-                
+                if (pos < 11):
+                    Positions[pos]=r[1]
+
                 self.Sub0 = repl if repl != None and self.Bases[0] == repl else self.Sub0
                 self.Sub1 = repl if repl != None and self.Bases[1] == repl else self.Sub1
                 self.Sub2 = repl if repl != None and self.Bases[2] == repl else self.Sub2
@@ -109,55 +119,55 @@ class Game:
                 self.Half = int(r[2])
                 self.Bases[0] = r[3]
                 runners = [-1 if self.Bases[v]==None else v for v in range(4)]
-                flags = {'eventtype' : 0,
-                         'hitvalue' : 0,
-                         'outsonplay' : 0,
-                         'batterevent' : True,
-                         'ab' : True,
-                         'doubleplay' : False,
-                         'tripleplay' : False,
-                         'rbi' : 0,
-                         'wildpitch' : False,
-                         'passedball' : False,
-                         'fieldedby' : 0,
+                flags = {'eventtype'      : 0,
+                         'hitvalue'       : 0,
+                         'outsonplay'     : 0,
+                         'batterevent'    : True,
+                         'ab'             : True,
+                         'doubleplay'     : False,
+                         'tripleplay'     : False,
+                         'rbi'            : 0,
+                         'wildpitch'      : False,
+                         'passedball'     : False,
+                         'fieldedby'      : 0,
                          'battedballtype' : '',
-                         'bunt' : False,
-                         'foul' : False,
-                         'hitlocation' : '',
-                         'numerrors' : 0,
-                         'error1player' : 0,
-                         'error1type' : 'N',
-                         'error2player' : 0,
-                         'error2type' : 'N',
-                         'error3player' : 0,
-                         'error3type' : 'N',
-                         'playonbatter' : '',
-                         'playonrunner1' : '',
-                         'playonrunner2' : '',
-                         'playonrunner3' : '',
-                         'sbrunner1' : False,
-                         'sbrunner2' : False,
-                         'sbrunner3' : False,
-                         'csrunner1' : False,
-                         'csrunner2' : False,
-                         'csrunner3' : False,
-                         'porunner1' : False,
-                         'porunner2' : False,
-                         'porunner3' : False,
-                         'endgame' : False,
-                         'pinchrunner1' : False,
-                         'pinchrunner2' : False,
-                         'pinchrunner3' : False,
-                         'putout1' : 0,
-                         'putout2' : 0,
-                         'putout3' : 0,
-                         'assist1' : 0,
-                         'assist2' : 0,
-                         'assist3' : 0,
-                         'assist4' : 0,
-                         'assist5' : 0,
-                         'sachit'  : False,
-                         'sacfly'  : False
+                         'bunt'           : False,
+                         'foul'           : False,
+                         'hitlocation'    : '',
+                         'numerrors'      : 0,
+                         'error1player'   : 0,
+                         'error1type'     : 'N',
+                         'error2player'   : 0,
+                         'error2type'     : 'N',
+                         'error3player'   : 0,
+                         'error3type'     : 'N',
+                         'playonbatter'   : '',
+                         'playonrunner1'  : '',
+                         'playonrunner2'  : '',
+                         'playonrunner3'  : '',
+                         'sbrunner1'      : False,
+                         'sbrunner2'      : False,
+                         'sbrunner3'      : False,
+                         'csrunner1'      : False,
+                         'csrunner2'      : False,
+                         'csrunner3'      : False,
+                         'porunner1'      : False,
+                         'porunner2'      : False,
+                         'porunner3'      : False,
+                         'endgame'        : False,
+                         'pinchrunner1'   : False,
+                         'pinchrunner2'   : False,
+                         'pinchrunner3'   : False,
+                         'putout1'        : 0,
+                         'putout2'        : 0,
+                         'putout3'        : 0,
+                         'assist1'        : 0,
+                         'assist2'        : 0,
+                         'assist3'        : 0,
+                         'assist4'        : 0,
+                         'assist5'        : 0,
+                         'sachit'         : False,
+                         'sacfly'         : False
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -169,7 +179,10 @@ class Game:
                     Offros = self.Rosters[self.Half]
                     Defros = self.Rosters[1-self.Half]
                     BatHand = Offros[self.Bases[0]]['bats']
-                    pitcher = FindByField(Defros, 'pos', 1)
+                    Defpos = self.Position[1-self.Half]
+                    Offpos = self.Position[self.Half]
+                    #pitcher = FindByField(Defros, 'pos', 1)
+                    pitcher = Defpos[1]
                     if BatHand=='B':
                         if Defros[pitcher]['throws'] == 'L':
                             BatHand = 'R'
@@ -200,6 +213,7 @@ class Game:
                     outStr += ',\"' + Defros[pitcher]['throws'] + '\"'                                      # 15 pitcher hand
                     outStr += ',\"' + pitcher +'\"'                                                         # 16 res pitcher*
                     outStr += ',\"' + Defros[pitcher]['throws'] + '\"'                                      # 17 res pitcher hand*
+                    '''
                     outStr += ',\"' + FindByField(Defros, 'pos', 2) +'\"'                                   # 18 catcher
                     outStr += ',\"' + FindByField(Defros, 'pos', 3) +'\"'                                   # 19 first base
                     outStr += ',\"' + FindByField(Defros, 'pos', 4) +'\"'                                   # 20 second base
@@ -208,15 +222,27 @@ class Game:
                     outStr += ',\"' + FindByField(Defros, 'pos', 7) +'\"'                                   # 23 left field
                     outStr += ',\"' + FindByField(Defros, 'pos', 8) +'\"'                                   # 24 center field
                     outStr += ',\"' + FindByField(Defros, 'pos', 9) +'\"'                                   # 25 right field
+                    '''
+                    outStr += ',\"' + Defpos[2] +'\"'                                                       # 18 catcher
+                    outStr += ',\"' + Defpos[3] +'\"'                                                       # 19 first base
+                    outStr += ',\"' + Defpos[4] +'\"'                                                       # 20 second base
+                    outStr += ',\"' + Defpos[5] +'\"'                                                       # 21 third base
+                    outStr += ',\"' + Defpos[6] +'\"'                                                       # 22 shortstop
+                    outStr += ',\"' + Defpos[7] +'\"'                                                       # 23 left field
+                    outStr += ',\"' + Defpos[8] +'\"'                                                       # 24 center field
+                    outStr += ',\"' + Defpos[9] +'\"'                                                       # 25 right field
                     outStr += ',\"' + ("" if self.Bases[1]==None else self.Bases[1]) + '\"'                 # 26 first runner*
                     outStr += ',\"' + ("" if self.Bases[2]==None else self.Bases[2]) + '\"'                 # 27 second runner*
                     outStr += ',\"' + ("" if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
                     ph = FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
-                    dh = FindByField(Offros, 'pos', -10)
+                    #dh = FindByField(Offros, 'pos', -10)
+                    dh = Defpos[20]
                     outStr += ',\"' + ('F' if (dh != None or ph == None) else 'T') + '\"'                   # 31 pinchhit flag*
-                    outStr += ',' + str(Offros[self.Bases[0]]['pos'])                                       # 32 defensive position*
+                    #outStr += ',' + str(Offros[self.Bases[0]]['pos'])                                      # 32 defensive position*
+                    pos = Offpos.index(self.Bases[0])
+                    outStr += ',' + str(pos)                                                                # 32 defensive position*
                     outStr += ',' + str(Offros[self.Bases[0]]['ord'])                                       # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                         # 35 batter event flag*
@@ -273,7 +299,8 @@ class Game:
                     sub = FindByField(Offros, 'ord', -Offros[self.Bases[0]]['ord'])
                     subpos = '0'
                     if sub == None: sub = ''
-                    else:           subpos = str(abs(Offros[sub]['pos']))
+                    #else:           subpos = str(abs(Offros[sub]['pos']))
+                    else:           subpos = str(Offpos.index(sub)-10)
                     outStr += ',\"' + sub + '\"'                                                            # 86 ID of Batter removed for pinch-hitter
                     outStr += ',' + subpos                                                                  # 87 Fielding position of batter removed for pinch-hitter
                     outStr += ',' + str(flags['putout1'])                                                   # 88 Fielder with First Putout (0 if none)
@@ -314,7 +341,8 @@ class Game:
             case "radj":
                 self.Bases[int(r[2])] = r[1]
                 Offros = self.Rosters[self.Half]
-                Offros[r[1]]['resp'] = FindByField(self.Rosters[1-self.Half], 'pos', 1)
+                #Offros[r[1]]['resp'] = FindByField(self.Rosters[1-self.Half], 'pos', 1)
+                Offros[r[1]]['resp'] = self.Position[1-self.Half][1]
             case "com": None
             case "data": None
             case _: print(r[0])
