@@ -37,7 +37,7 @@ class Game:
         self.Name = name
         self.Version = 0
         self.Info = {}
-        self.DFPosition    = [[None for _ in range(10)] for _ in range(2)]
+        self.DFPosition    = [[None for _ in range(12)] for _ in range(2)]
         self.SubDFPosition = [[None for _ in range(10)] for _ in range(2)]
         self.BatOrder      = [[None for _ in range( 9)] for _ in range(2)]
         self.SubBatOrder   = [[None for _ in range( 9)] for _ in range(2)]
@@ -48,6 +48,7 @@ class Game:
         self.Out = 0
         self.Score= [0, 0]
         self.Leadoff = True
+        self.Sub = []
         self.Sub0 = None
         self.Sub1 = None
         self.Sub2 = None
@@ -78,12 +79,49 @@ class Game:
                     for rent in self.Rosters[1].values():
                         rent['ord'] = 0; rent['pos'] = 0
             case "start" | "sub":
-                team = int(r[3]) # 0, 1
-                ord  = int(r[4])-1 # -1..8
-                pos  = int(r[5])-1 #  0..9
-                ros      = self.Rosters   [team]
-                order    = self.BatOrder  [team]
+                if (r[0]=='sub'):
+                    None
+                team = int(r[3])   #  0.. 1
+                ord  = int(r[4])-1 # -1.. 8
+                pos  = int(r[5])-1 #  0..11
                 position = self.DFPosition[team]
+                order = self.BatOrder[team]
+                repl = None
+                if (ord >= 0):
+                    repl = order[ord]
+                    order[ord] = r[1]
+                    posRepl = None if repl==None else position.index(repl)
+                    if posRepl == 9:
+                        pos = posRepl
+                    elif pos==10:
+                        pos = posRepl
+                repl = position[pos] if repl==None else repl
+                position[pos] = r[1]
+                if (repl != None):
+                    self.Sub.append({})
+                    try:               base = self.Bases.index(repl)
+                    except ValueError: base = None
+                    self.Sub[-1]['base'] = base
+                    self.Sub[-1]['id'] = repl
+                    self.Sub[-1]['pos'] = pos
+                '''
+                repl = None
+                replpos = None
+                if (pos < 10):
+                    repl = position[pos]
+                    replpos = pos
+                    position[pos] = r[1]
+                if (ord >= 0):
+                    #assert repl==None or repl==order[ord] # can't check this if it is reassignment of PH to defense
+                    repl = order[ord]
+                    replpos = None
+                    if repl != None:
+                        try:               replpos = position.index(repl)
+                        except ValueError: replpos = None
+                    order[ord] = r[1]
+                assert replpos == None or pos > 9 or replpos == pos
+                if (replpos == None or replpos > 9): replpos = pos
+                ros      = self.Rosters   [team]
                 offrepl = None
                 if (ord >= 0):
                     offrepl = order[ord]
@@ -101,7 +139,6 @@ class Game:
                 ros[r[1]]['offrepl'] = offrepl
                 if (offrepl != None):
                     ros[r[1]]['resp'] = ros[offrepl]['resp']
-                '''
                 repl = None
                 ordent = None
                 self.SubDFPosition[team][pos] = self.DFPosition[team][pos]
@@ -213,6 +250,8 @@ class Game:
                                                 r[5],
                                                 r[6],
                                                 flags)
+                if len(self.Sub) > 0:
+                    None
                 if (r[6] != "NP"):
                     self.EventNum += 1
                     Offros = self.Rosters[self.Half]
@@ -264,9 +303,12 @@ class Game:
                     outStr += ',\"' + ('' if self.Bases[3]==None else self.Bases[3]) + '\"'                 # 28 third runner*
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
-                    outStr += ',\"' + ('F' if Offros[self.Bases[0]]['offrepl'] == None else 'T') + '\"'     # 31 pinchhit flag*
-                    pos = Offpos.index(self.Bases[0])+1
+                    #outStr += ',\"' + ('F' if Offros[self.Bases[0]]['offrepl'] == None else 'T') + '\"'     # 31 pinchhit flag*
+                    outStr += ',\"' + 'F' + '\"'     # 31 pinchhit flag*
+                    try: pos = Offpos.index(self.Bases[0])+1
+                    except ValueError: pos = 10
                     outStr += ',' + str(pos)                                                                # 32 defensive position*
+                    #outStr += ',' + '0'                                                                # 32 defensive position*
                     outStr += ',' + str(self.BatOrder[self.Half].index(self.Bases[0])+1)                    # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                 # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                         # 35 batter event flag*
@@ -320,8 +362,16 @@ class Game:
                     outStr += ',\"' + ('' if self.Sub1==None else self.Sub1)+ '\"'                          # 83 ID of Runner removed for pinch-runner on 1st
                     outStr += ',\"' + ('' if self.Sub2==None else self.Sub2)+ '\"'                          # 84 ID of Runner removed for pinch-runner on 2nd
                     outStr += ',\"' + ('' if self.Sub3==None else self.Sub3)+ '\"'                          # 85 ID of Runner removed for pinch-runner on 3rd
-                    outStr += ',\"' + ('' if Offros[self.Bases[0]]['offrepl']==None else Offros[self.Bases[0]]['offrepl']) + '\"' # 86 ID of Batter removed for pinch-hitter
-                    outStr += ',' + ('0' if Offros[self.Bases[0]]['offrepl']==None else str(Offpos[Offros[self.Bases[0]]]['offrepl']))                           # 87 Fielding position of batter removed for pinch-hitter
+                    #outStr += ',\"' + ('' if Offros[self.Bases[0]]['offrepl']==None else Offros[self.Bases[0]]['offrepl']) + '\"' # 86 ID of Batter removed for pinch-hitter
+                    id = ''
+                    pos = '0'
+                    for x in self.Sub:
+                        if x['base'] == 0:
+                            id = x['id']
+                            pos = str(x['pos']+1)
+                    outStr += ',\"' + id + '\"' # 86 ID of Batter removed for pinch-hitter
+                    #outStr += ',' + ('0' if Offros[self.Bases[0]]['offrepl']==None else str(Offpos[Offros[self.Bases[0]]]['offrepl']))                           # 87 Fielding position of batter removed for pinch-hitter
+                    outStr += ',' + pos                                                                     # 87 Fielding position of batter removed for pinch-hitter
                     outStr += ',' + str(flags['putout1'])                                                   # 88 Fielder with First Putout (0 if none)
                     outStr += ',' + str(flags['putout2'])                                                   # 89 Fielder with Second Putout (0 if none)
                     outStr += ',' + str(flags['putout3'])                                                   # 90 Fielder with Third Putout (0 if none)
@@ -352,6 +402,7 @@ class Game:
                 if (self.Out == 3):
                     self.Bases = [None] * 4
                 self.Leadoff &= (r[6] == "NP")
+                self.Sub = []
                 self.Sub0 = None
                 self.Sub1 = None
                 self.Sub2 = None
