@@ -1,11 +1,11 @@
 Traceback (most recent call last):
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 447, in <module>
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 455, in <module>
     for f in files: games = ProcessFile(f); print (*games)
                             ~~~~~~~~~~~^^^
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 440, in ProcessFile
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 448, in ProcessFile
     g[-1].Process(row)
     ~~~~~~~~~~~~~^^^^^
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 93, in Process
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 93, in Process
     posRepl = None if repl==None else position.index(repl)
                                       ~~~~~~~~~~~~~~^^^^^^
 ValueError: 'urshg001' is not in list

@@ -91,10 +91,10 @@ class Game:
                     repl = order[ord]
                     order[ord] = r[1]
                     posRepl = None if repl==None else position.index(repl)
-                    if posRepl == 9:
-                        pos = posRepl
-                    elif pos==10:
-                        pos = posRepl
+                    #if posRepl == 9:
+                        #pos = posRepl
+                    #elif pos==10:
+                        #pos = posRepl
                 repl = position[pos] if repl==None else repl
                 position[pos] = r[1]
                 if (repl != None):
@@ -104,6 +104,11 @@ class Game:
                     self.Sub[-1]['base'] = base
                     self.Sub[-1]['id'] = repl
                     self.Sub[-1]['pos'] = pos
+                    if (r[0]=='sub') and team == self.Half and posRepl != 9:
+                        self.Sub[-1]['ph'] = True
+                    else:
+                        self.Sub[-1]['ph'] = False
+                        self.Sub[-1]['pos'] = 9
                 '''
                 repl = None
                 replpos = None
@@ -304,7 +309,10 @@ class Game:
                     outStr += ',\"' + r[6] + '\"'                                                           # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                 # 30 leadoff flag*
                     #outStr += ',\"' + ('F' if Offros[self.Bases[0]]['offrepl'] == None else 'T') + '\"'     # 31 pinchhit flag*
-                    outStr += ',\"' + 'F' + '\"'     # 31 pinchhit flag*
+                    ph = False
+                    for s in self.Sub:
+                        ph = ph or s['ph']
+                    outStr += ',\"' + ('T' if ph else 'F') + '\"'     # 31 pinchhit flag*
                     try: pos = Offpos.index(self.Bases[0])+1
                     except ValueError: pos = 10
                     outStr += ',' + str(pos)                                                                # 32 defensive position*
