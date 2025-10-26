@@ -81,18 +81,22 @@ class Game:
             case "start" | "sub":
                 if (r[0]=='sub'):
                     None
+                if (r[5]=='12'):
+                    None
                 team = int(r[3])   #  0.. 1
                 ord  = int(r[4])-1 # -1.. 8
                 pos  = int(r[5])-1 #  0..11
                 position = self.DFPosition[team]
                 order = self.BatOrder[team]
                 repl = None
+                posRepl = None
                 if (ord >= 0):
                     repl = order[ord]
                     order[ord] = r[1]
                     posRepl = None if repl==None else position.index(repl)
-                    #if posRepl == 9:
-                        #pos = posRepl
+                    if posRepl == 9:
+                        assert pos == 10
+                        pos = posRepl
                     #elif pos==10:
                         #pos = posRepl
                 repl = position[pos] if repl==None else repl
@@ -103,8 +107,12 @@ class Game:
                     except ValueError: base = None
                     self.Sub[-1]['base'] = base
                     self.Sub[-1]['id'] = repl
-                    self.Sub[-1]['pos'] = pos
-                    if (r[0]=='sub') and team == self.Half and posRepl != 9:
+                    self.Sub[-1]['pos'] = posRepl if posRepl != None else pos
+                    if base != None:
+                        self.Bases[base] = r[1]
+                        ros = self.Rosters[team]
+                        ros[r[1]]['resp'] = ros[repl]['resp']
+                    if (r[0]=='sub') and team == self.Half and posRepl != 9 and base == 0:
                         self.Sub[-1]['ph'] = True
                     else:
                         self.Sub[-1]['ph'] = False
@@ -364,10 +372,14 @@ class Game:
                     outStr += ',\"' + ('' if self.Bases[3]==None else Offros[self.Bases[3]]['resp']) + '\"' # 77 Responsible pitcher for runner on 3rd
                     outStr += ',\"' + ('T' if self.NewGame else 'F') + '\"'                                 # 78 New Game Flag
                     outStr += ',\"' + ('T' if EndGame else 'F') + '\"'                                      # 79 End Game Flag
-                    outStr += ',\"' + ('F' if self.Sub1==None else 'T') + '\"'                              # 80 Pinch-runner on 1st? (T/F)
+                    s = [None, None, None, None]
+                    for i in self.Sub:
+                        if i['base'] != None:
+                            s[i['base']] = i['id']
+                    outStr += ',\"' + ('F' if s[1]==None else 'T') + '\"'                              # 80 Pinch-runner on 1st? (T/F)
                     outStr += ',\"' + ('F' if self.Sub2==None else 'T') + '\"'                              # 81 Pinch-runner on 2nd? (T/F)
                     outStr += ',\"' + ('F' if self.Sub3==None else 'T') + '\"'                              # 82 Pinch-runner on 3rd? (T/F)
-                    outStr += ',\"' + ('' if self.Sub1==None else self.Sub1)+ '\"'                          # 83 ID of Runner removed for pinch-runner on 1st
+                    outStr += ',\"' + ('' if s[1]==None else s[1])+ '\"'                          # 83 ID of Runner removed for pinch-runner on 1st
                     outStr += ',\"' + ('' if self.Sub2==None else self.Sub2)+ '\"'                          # 84 ID of Runner removed for pinch-runner on 2nd
                     outStr += ',\"' + ('' if self.Sub3==None else self.Sub3)+ '\"'                          # 85 ID of Runner removed for pinch-runner on 3rd
                     #outStr += ',\"' + ('' if Offros[self.Bases[0]]['offrepl']==None else Offros[self.Bases[0]]['offrepl']) + '\"' # 86 ID of Batter removed for pinch-hitter
