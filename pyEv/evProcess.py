@@ -29,6 +29,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
            (1 if runners[3]>0 else 0)
     assist = 0
     putout = 0
+    rbi = 0
     for r in advs:
         match r:
             case None: None
@@ -44,6 +45,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case '2-3':         runners[2] =  3
             case '2-H':         runners[2] =  4
             case '2-H(UR)':     runners[2] =  5
+            case '2-H(E2/TH)(NR)': runners[2] =  4;         flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 2; flags['error' + str(flags['numerrors']) + 'type'] = 'T'; rbi -= 1
             case '3':           runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '3'; putout += 1; flags[strval('putout', putout)] = 3
             case '3-H':         runners[3] =  4
             case '3-H(UR)':     runners[3] =  5
@@ -96,12 +98,17 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'SB3':         runners[2] =  3;         flags['eventtype'] =  4; flags['batterevent'] = False; flags['ab'] = False; flags['sbrunner2'] = True
             case 'T9':          runners[0] =  3;         flags['eventtype'] = 22; flags['fieldedby'] = 9;                           flags['hitvalue'] = 3
             case 'W':           runners[0] =  1;         flags['eventtype'] = 14;                               flags['ab'] = False
+            case '1X1(3)':      runners[1] = -1; flags['playonrunner1'] = '3'; putout += 1; flags[strval('putout', putout)] = 3
+            case '3X3(65)':     runners[3] = -1; flags['playonrunner3'] = '65'; putout += 1; flags[strval('putout', putout)] = 5; assist += 1; flags[strval('assist', assist)] = 6
             case 'BG13':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '13'; flags['bunt'] = True
             case 'BG1S':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '1S'; flags['bunt'] = True
             case 'BG23':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '23'; flags['bunt'] = True
+            case 'DP':                                   flags['doubleplay'] = True
             case 'E1':     flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 1; flags['eventtype'] = 18; flags['fieldedby'] = 1; flags['error' + str(flags['numerrors']) + 'type'] = 'F'
+            case 'E3':     flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 3; flags['eventtype'] = 18; flags['fieldedby'] = 3; flags['error' + str(flags['numerrors']) + 'type'] = 'F'
             case 'E6':     flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 6; flags['eventtype'] = 18; flags['fieldedby'] = 6; flags['error' + str(flags['numerrors']) + 'type'] = 'T'
             case 'F3D':    flags['battedballtype'] = 'F'; flags['hitlocation'] = '3D'
+            case 'F6MD':   flags['battedballtype'] = 'F'; flags['hitlocation'] = '6MD'
             case 'F6D':    flags['battedballtype'] = 'F'; flags['hitlocation'] = '6D'
             case 'F78S':   flags['battedballtype'] = 'F'; flags['hitlocation'] = '78S'
             case 'F78D':   flags['battedballtype'] = 'F'; flags['hitlocation'] = '78D'
@@ -130,6 +137,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'F9LS':   flags['battedballtype'] = 'F'; flags['hitlocation'] = '9LS'
             case 'F9S':    flags['battedballtype'] = 'F'; flags['hitlocation'] = '9S'
             case 'F9':     flags['battedballtype'] = 'F'; flags['hitlocation'] = '9'
+            case 'F9+':    flags['battedballtype'] = 'F'; flags['hitlocation'] = '9'
             case 'FO':     flags['battedballtype'] = 'F'
             case 'FL':     flags['foul'] = True
             case 'G1':     flags['battedballtype'] = 'G'; flags['hitlocation'] = '1'
@@ -151,6 +159,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'G4D+':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '4D'
             case 'G4M':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '4M'
             case 'G4M+':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '4M'
+            case 'G4S':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '4S'
             case 'G5':     flags['battedballtype'] = 'G'; flags['hitlocation'] = '5'
             case 'G5+':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '5'
             case 'G5S':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '5S'
@@ -167,11 +176,14 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'G6MS-':  flags['battedballtype'] = 'G'; flags['hitlocation'] = '6MS'
             case 'G6S':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '6S'
             case 'GDP':    flags['battedballtype'] = 'G'; flags['doubleplay'] = True
+            case 'L3':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '3'
             case 'L4':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '4'
             case 'L4MD+':  flags['battedballtype'] = 'L'; flags['hitlocation'] = '4MD'
             case 'L5':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '5'
             case 'L5D':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '5D'
+            case 'L6':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '6'
             case 'L7':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '7'
+            case 'L7L+':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '7L'
             case 'L7+':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '7'
             case 'L78':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '78'
             case 'L78D+':  flags['battedballtype'] = 'L'; flags['hitlocation'] = '78D'
@@ -187,6 +199,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'L89XD+': flags['battedballtype'] = 'L'; flags['hitlocation'] = '89XD'
             case 'L89S':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '89S'
             case 'L8D':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '8D'
+            case 'L8D+':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '8D'
             case 'L8S':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '8S'
             case 'L9':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '9'
             case 'L9+':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '9'
@@ -197,6 +210,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'L9S':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '9S'
             case 'NP':     None
             case 'P3':     flags['battedballtype'] = 'P'; flags['hitlocation'] = '3'
+            case 'P3F':    flags['battedballtype'] = 'P'; flags['hitlocation'] = '3F'
             case 'P2F-':   flags['battedballtype'] = 'P'; flags['hitlocation'] = '2F'
             case 'P34D':   flags['battedballtype'] = 'P'; flags['hitlocation'] = '34D'
             case 'BP5S-':  flags['battedballtype'] = 'P'; flags['hitlocation'] = '5S'; flags['bunt'] = True
@@ -221,7 +235,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
     flags['rbi'] = (1 if runners[0]>3 else 0) +\
                    (1 if runners[1]>3 else 0) +\
                    (1 if runners[2]>3 else 0) +\
-                   (1 if runners[3]>3 else 0)
+                   (1 if runners[3]>3 else 0) + rbi
     return Outs
 
 def GenSequence (Outs : int, runners : list[int], pitches : str, event : str, flags : dict) -> list[int]:

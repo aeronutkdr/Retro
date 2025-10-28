@@ -831,3 +831,153 @@ data,er,wardt003,0
 data,er,ohtas001,0
 data,er,estec001,0
 data,er,quijj001,0
+id,ANA202304120
+version,2
+info,visteam,WAS
+info,hometeam,ANA
+info,site,ANA01
+info,date,2023/04/12
+info,number,0
+info,gametype,regular
+info,starttime,1:07PM
+info,daynight,day
+info,innings,9
+info,tiebreaker,2
+info,usedh,true
+info,umphome,eddid901
+info,ump1b,barrl901
+info,ump2b,dejer901
+info,ump3b,marqa901
+info,umplf,(none)
+info,umprf,(none)
+info,inputtime,2023/05/20 17:38:58
+info,howscored,unknown
+info,pitches,pitches
+info,oscorer,munse701
+info,temp,65
+info,winddir,tocf
+info,windspeed,7
+info,fieldcond,unknown
+info,precip,none
+info,sky,cloudy
+info,timeofgame,142
+info,attendance,17780
+info,wp,moorm003
+info,lp,thomm005
+info,save,quijj001
+start,calla002,"Alex Call",0,1,7
+start,candj002,"Jeimer Candelario",0,2,5
+start,smitd008,"Dominic Smith",0,3,3
+start,menej001,"Joey Meneses",0,4,10
+start,ruizk001,"Keibert Ruiz",0,5,2
+start,garcl006,"Luis Garcia",0,6,4
+start,thoml002,"Lane Thomas",0,7,9
+start,abrac001,"CJ Abrams",0,8,6
+start,roblv001,"Victor Robles",0,9,8
+start,gorem001,"MacKenzie Gore",0,0,1
+start,wardt002,"Taylor Ward",1,1,7
+start,troum001,"Mike Trout",1,2,10
+start,renda001,"Anthony Rendon",1,3,5
+start,renfh001,"Hunter Renfroe",1,4,9
+start,rengl001,"Luis Rengifo",1,5,4
+start,drurb001,"Brandon Drury",1,6,3
+start,urshg001,"Gio Urshela",1,7,6
+start,ohopl001,"Logan O'Hoppe",1,8,2
+start,philb002,"Brett Phillips",1,9,8
+start,canng001,"Griffin Canning",1,0,1
+play,1,0,calla002,10,BX,8/F78XD+
+play,1,0,candj002,22,SBBCFH,HP
+play,1,0,smitd008,02,SFS,K
+play,1,0,menej001,22,SBCBX,8/F8XD
+play,1,1,wardt002,31,FBBBB,W
+play,1,1,troum001,01,CX,6/F6MD
+play,1,1,renda001,22,BCCBFX,64(1)3/GDP/G6
+play,2,0,ruizk001,22,BBFSX,S8/L8
+play,2,0,garcl006,10,BX,54(1)/FO/G56S-.B-1
+play,2,0,thoml002,21,VCBX,64(1)3/GDP/G6
+play,2,1,renfh001,11,CBX,S8/G6M
+play,2,1,rengl001,22,CS*B*BS,K
+play,2,1,drurb001,02,FFS,K
+play,2,1,urshg001,01,CX,S8/G6M.1-2
+play,2,1,ohopl001,02,CFC,K
+play,3,0,abrac001,01,CX,63/G6
+play,3,0,roblv001,22,FFBFBS,K
+play,3,0,calla002,32,BCBF.BX,63/G6
+play,3,1,philb002,32,BSBSBB,W
+play,3,1,wardt002,11,SB>C,SB2
+play,3,1,wardt002,32,SB>C.BBC,K
+play,3,1,troum001,10,B>B,SB3.2-H(E2/TH)(NR)
+play,3,1,troum001,31,B>B.SBX,9/F9+
+play,3,1,renda001,32,BCBBCFFFX,43/G4
+play,4,0,candj002,01,CX,S6/G6
+play,4,0,smitd008,02,SSFX,S8/L8D+.1-3
+play,4,0,menej001,22,CBS.BX,S9/L9+.3-H;1-2
+play,4,0,ruizk001,01,*SX,S9/G34.2-3;1-2
+play,4,0,garcl006,01,SX,63/G6.3-H;2-3;1-2
+play,4,0,thoml002,02,SSC,K
+play,4,0,abrac001,22,FBBSS,K
+play,4,1,renfh001,32,BBCF.BFB,W
+play,4,1,rengl001,02,FFX,S7/G56.1-2
+play,4,1,drurb001,22,FFBBX,S7/G56.2-3;1-2
+play,4,1,urshg001,12,CFBFF*S,K
+play,4,1,ohopl001,22,C*BB*SS,K
+play,4,1,philb002,32,CB*BBS>F>B,W.3-H;2-3;1-2
+play,4,1,wardt002,00,,NP
+sub,thomm005,"Mason Thompson",0,0,1
+play,4,1,wardt002,02,.FFX,31/G4S
+play,5,0,roblv001,11,BCX,9/F89S
+play,5,0,calla002,00,X,9/F9
+play,5,0,candj002,01,CX,7/F7LSF/FL
+play,5,1,troum001,12,CFBS,K
+play,5,1,renda001,30,BBBB,W
+play,5,1,renfh001,01,CX,D9/L89D.1-3
+play,5,1,rengl001,01,FX,6/L6/DP.3X3(65)
+play,6,0,smitd008,00,,NP
+sub,moorm003,"Matt Moore",1,0,1
+play,6,0,smitd008,11,.BCX,8/L8D
+play,6,0,menej001,21,BSBX,63/G56
+play,6,0,ruizk001,01,FX,8/F78XD+
+play,6,1,drurb001,21,CBBX,D7/L7L+
+play,6,1,urshg001,00,X,53/G56S
+play,6,1,ohopl001,00,X,S9/L89.2-H
+play,6,1,philb002,00,,NP
+sub,harvh001,"Hunter Harvey",0,0,1
+play,6,1,philb002,02,.CSFC,K
+play,6,1,wardt002,20,BBX,64(1)/FO/G6.B-1
+play,7,0,garcl006,00,,NP
+sub,loupa001,"Aaron Loup",1,0,1
+play,7,0,garcl006,02,.FCX,8/L8XD+
+play,7,0,thoml002,01,CX,53/G5S
+play,7,0,abrac001,11,FBX,6/L6
+play,7,1,troum001,32,BBFFBB,W
+play,7,1,renda001,00,,NP
+sub,edwac001,"Carl Edwards Jr.",0,0,1
+play,7,1,renda001,12,.BCLX,E3/G3.1-3;B-1
+play,7,1,renfh001,11,CBX,54(1)/FO/G56.B-1
+play,7,1,rengl001,21,VFBX,3/L3/DP.1X1(3)
+play,8,0,roblv001,00,,NP
+sub,teper001,"Ryan Tepera",1,0,1
+play,8,0,roblv001,32,.F.BBSBFFS,K
+play,8,0,calla002,32,CF.BBFBX,8/F8XD
+play,8,0,candj002,22,CBBCFFX,S9/G34
+play,8,0,smitd008,21,BB+1CX,3/G3
+play,8,1,drurb001,00,,NP
+sub,ramie004,"Erasmo Ramirez",0,0,1
+play,8,1,drurb001,02,.CC.X,7/F78D
+play,8,1,urshg001,10,BX,7/L7D+
+play,8,1,ohopl001,22,CSFBBC,K
+play,9,0,menej001,00,,NP
+sub,quijj001,"Jose Quijada",1,0,1
+play,9,0,menej001,02,.CFS,K
+play,9,0,ruizk001,11,BCX,3/P3F/FL
+play,9,0,garcl006,00,X,8/L8D
+data,er,thomm005,1
+data,er,harvh001,0
+data,er,edwac001,0
+data,er,ramie004,0
+data,er,gorem001,2
+data,er,loupa001,0
+data,er,canng001,2
+data,er,moorm003,0
+data,er,teper001,0
+data,er,quijj001,0
