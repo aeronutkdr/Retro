@@ -24,14 +24,6 @@ import evProcess
 Rosters = {}
 # OO32 1HBB BSSF FFFF
 
-def FindByField(r: dict, fld: str, val: int) -> str:
-    v = None
-    for k,item in r.items():
-        if item[fld] == val:
-            v = k
-            break
-    return v
-
 class Team:
     def __init__(self):
         self.Position     = [None for _ in range(12)]
@@ -80,8 +72,6 @@ class Game:
                     for rent in self.Rosters[1].values():
                         rent['ord'] = 0; rent['pos'] = 0
             case "start" | "sub":
-                if (r[0]=='sub'):
-                    None
                 team = int(r[3])   #  0.. 1
                 ord  = int(r[4])   #  0.. 9
                 pos  = int(r[5])-1 #  0..11

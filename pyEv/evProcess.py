@@ -43,7 +43,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case '2':           runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 2; flags['playonbatter'] = '2'; putout += 1; flags[strval('putout', putout)] = 2
             case '2-3':         runners[2] =  3
             case '2-H':         runners[2] =  4
-            case '2-H(UR)':     runners[2] = 5
+            case '2-H(UR)':     runners[2] =  5
             case '3':           runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '3'; putout += 1; flags[strval('putout', putout)] = 3
             case '3-H':         runners[3] =  4
             case '3-H(UR)':     runners[3] =  5
@@ -76,6 +76,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'D8':          runners[0] =  2;         flags['eventtype'] = 21; flags['fieldedby'] = 8;                           flags['hitvalue'] = 2
             case 'D9':          runners[0] =  2;         flags['eventtype'] = 21; flags['fieldedby'] = 9;                           flags['hitvalue'] = 2
             case 'DGR':         runners[0] =  2;         flags['eventtype'] = 21;                                                   flags['hitvalue'] = 2
+            case 'DI':                                   flags['eventtype'] = 5;  flags['batterevent'] = False; flags['ab'] = False
             case 'HP':          runners[0] =  1;         flags['eventtype'] = 16;                               flags['ab'] = False; flags['responsible'] = False
             case 'HR':          runners[0] =  4;         flags['eventtype'] = 23;                                                   flags['hitvalue'] = 4
             case 'IW':          runners[0] =  1;         flags['eventtype'] = 15;                               flags['ab'] = False
@@ -98,7 +99,6 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'BG13':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '13'; flags['bunt'] = True
             case 'BG1S':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '1S'; flags['bunt'] = True
             case 'BG23':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '23'; flags['bunt'] = True
-            case 'DI':     flags['eventtype'] = 5;  flags['batterevent'] = False; flags['ab'] = False
             case 'E1':     flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 1; flags['eventtype'] = 18; flags['fieldedby'] = 1; flags['error' + str(flags['numerrors']) + 'type'] = 'F'
             case 'E6':     flags['numerrors'] += 1; flags['error' + str(flags['numerrors']) + 'player'] = 6; flags['eventtype'] = 18; flags['fieldedby'] = 6; flags['error' + str(flags['numerrors']) + 'type'] = 'T'
             case 'F3D':    flags['battedballtype'] = 'F'; flags['hitlocation'] = '3D'
@@ -236,9 +236,6 @@ def GenSequence (Outs : int, runners : list[int], pitches : str, event : str, fl
     Balls   = 0
     Fouls   = 0
     Pitch   = 0
-    #if pitches == "TBBFX":
-    if event == "HR/F78XD.1-H":
-        None
     for p in pitches:
         Pitch = 1
         match p:
