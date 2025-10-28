@@ -51,10 +51,12 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case '3-H(UR)':     runners[3] =  5
             case '31':          runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '31'; putout += 1; flags[strval('putout', putout)] = 1; assist += 1; flags[strval('assist', assist)] = 3
             case '36(1)':       runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonrunner1'] = '36'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 3
+            case '36(1)3':      runners[1] = -1; runners[0] = -1; flags['eventtype'] =  2; flags['fieldedby'] = 3; flags['playonbatter'] = '63'; flags['playonrunner1'] = '36'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 3; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 6
             case '4':           runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '4'; putout += 1; flags[strval('putout', putout)] = 4
             case '4(1)3':       runners[0:2] = [-1, -1]; flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '43'; flags['playonrunner1'] = '4'; putout += 1; flags[strval('putout', putout)] = 4; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 4
             case '43':          runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '43'; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 4
-            case '46(1)':       runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonrunner1'] = '46'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 4;
+            case '46(1)':       runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonrunner1'] = '46'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 4
+            case '46(1)3':      runners[1] = -1; runners[0] = -1; flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonbatter'] = '63'; flags['playonrunner1'] = '46'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 4; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 6
             case '486(1)':      runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 4; flags['playonrunner1'] = '486'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 4; assist += 1; flags[strval('assist', assist)] = 8
             case '5':           runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonbatter'] = '5'; putout += 1; flags[strval('putout', putout)] = 5
             case '53':          runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonbatter'] = '53'; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 5
@@ -62,6 +64,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case '54(1)3':      runners[0:2] = [-1, -1]; flags['eventtype'] =  2; flags['fieldedby'] = 5; flags['playonbatter'] = '43'; flags['playonrunner1'] = '54'; putout += 1; flags[strval('putout', putout)] = 4; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 5; assist += 1; flags[strval('assist', assist)] = 4
             case '6':           runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '6'; putout += 1; flags[strval('putout', putout)] = 6
             case '6(1)':        runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonrunner1'] = '6'; putout += 1; flags[strval('putout', putout)] = 6
+            case '6(1)3':       runners[1] = -1; runners[0] = -1; flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonrunner1'] = '6'; flags['playonbatter'] = '63'; putout += 1; flags[strval('putout', putout)] = 6; assist += 1; flags[strval('assist', assist)] = 6; putout += 1; flags[strval('putout', putout)] = 3
             case '63':          runners[0] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '63'; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 6
             case '64(1)':       runners[1] = -1;         flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonrunner1'] = '64'; putout += 1; flags[strval('putout', putout)] = 4; assist += 1; flags[strval('assist', assist)] = 6
             case '64(1)3':      runners[0:2] = [-1, -1]; flags['eventtype'] =  2; flags['fieldedby'] = 6; flags['playonbatter'] = '43'; flags['playonrunner1'] = '64'; putout += 1; flags[strval('putout', putout)] = 4; assist += 1; flags[strval('assist', assist)] = 6; putout += 1; flags[strval('putout', putout)] = 3; assist += 1; flags[strval('assist', assist)] = 4
@@ -169,7 +172,9 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'G56S':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '56S'
             case 'G56S-':  flags['battedballtype'] = 'G'; flags['hitlocation'] = '56S'
             case 'G6':     flags['battedballtype'] = 'G'; flags['hitlocation'] = '6'
+            case 'G6-':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '6'
             case 'G6+':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '6'
+            case 'G6D':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '6D'
             case 'G6M':    flags['battedballtype'] = 'G'; flags['hitlocation'] = '6M'
             case 'G6M+':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '6M'
             case 'G6M-':   flags['battedballtype'] = 'G'; flags['hitlocation'] = '6M'
@@ -178,10 +183,12 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'GDP':    flags['battedballtype'] = 'G'; flags['doubleplay'] = True
             case 'L3':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '3'
             case 'L4':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '4'
+            case 'L4M+':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '4M'
             case 'L4MD+':  flags['battedballtype'] = 'L'; flags['hitlocation'] = '4MD'
             case 'L5':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '5'
             case 'L5D':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '5D'
             case 'L6':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '6'
+            case 'L6D+':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '6D'
             case 'L7':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '7'
             case 'L7L+':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '7L'
             case 'L7+':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '7'
@@ -192,6 +199,8 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'L7D':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '7D'
             case 'L7D+':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '7D'
             case 'L7LD':   flags['battedballtype'] = 'L'; flags['hitlocation'] = '7LD'
+            case 'L7LD+':  flags['battedballtype'] = 'L'; flags['hitlocation'] = '7LD'
+            case 'L7S':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '7S'
             case 'L8':     flags['battedballtype'] = 'L'; flags['hitlocation'] = '8'
             case 'L8XD+':  flags['battedballtype'] = 'L'; flags['hitlocation'] = '8XD'
             case 'L89':    flags['battedballtype'] = 'L'; flags['hitlocation'] = '89'
@@ -212,6 +221,7 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
             case 'P3':     flags['battedballtype'] = 'P'; flags['hitlocation'] = '3'
             case 'P3F':    flags['battedballtype'] = 'P'; flags['hitlocation'] = '3F'
             case 'P2F-':   flags['battedballtype'] = 'P'; flags['hitlocation'] = '2F'
+            case 'P25':    flags['battedballtype'] = 'P'; flags['hitlocation'] = '25'
             case 'P34D':   flags['battedballtype'] = 'P'; flags['hitlocation'] = '34D'
             case 'BP5S-':  flags['battedballtype'] = 'P'; flags['hitlocation'] = '5S'; flags['bunt'] = True
             case 'P56':    flags['battedballtype'] = 'P'; flags['hitlocation'] = '56'
