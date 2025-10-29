@@ -72,6 +72,8 @@ class Game:
                     for rent in self.Rosters[1].values():
                         rent['ord'] = 0; rent['pos'] = 0
             case "start" | "sub":
+                if (r[0] == 'sub' and r[1]=='acevd001'):
+                    None
                 team = int(r[3])   #  0.. 1
                 ord  = int(r[4])   #  0.. 9
                 pos  = int(r[5])-1 #  0..11
@@ -82,7 +84,7 @@ class Game:
                 b = None if (v==None or v not in self.Bases) else self.Bases.index(v)
                 if b != None:
                     rp = t.Position.index(v)
-                    if (pos==10) and rp==9:
+                    if (pos>9) and rp==9:
                         pos=9
                     if (b==0):
                         self.subFlags['phpos'] = t.Position.index(v)+1
@@ -136,7 +138,6 @@ class Game:
                          'porunner1'      : False,
                          'porunner2'      : False,
                          'porunner3'      : False,
-                         'endgame'        : False,
                          'putout1'        : 0,
                          'putout2'        : 0,
                          'putout3'        : 0,
@@ -171,9 +172,14 @@ class Game:
                     Offros[r[3]]['resp'] = pitcher
                     EndGame = False
                     if (self.Inning > 8):
-                        if ((self.Half == 1) or ((States[-1] >> 14)==3)) and (self.Score[1] > self.Score[0]):
+                        runs = 0
+                        for b in runners:
+                            runs += (1 if b>3 else 0)
+                        r0 = self.Score[0] + runs*(1-self.Half)
+                        r1 = self.Score[1] + runs*(self.Half)
+                        if ((self.Half == 1) or ((States[-1] >> 14)==3)) and (r1 > r0):
                             EndGame = True
-                        if ((self.Half == 1) and ((States[-1] >> 14)==3)) and (self.Score[1] != self.Score[0]):
+                        if ((self.Half == 1) and ((States[-1] >> 14)==3)) and (r1 != r0):
                             EndGame = True
                     outStr = '\"' + str(self.Name) + '\"'                                                                    # 0  game id*
                     outStr += ',\"' + self.Info['visteam'] + '\"'                                                            # 1  visiting team*
@@ -328,6 +334,21 @@ def ProcessFile(s: str) -> list[Game]:
                 g[-1].Process(row)
     return g
 
+'''
+print(evProcess.SplitEvent("P01(E1/TH)"))
+print(evProcess.SplitEvent("S8/F8S.3-H;1-2"))
+print(evProcess.SplitEvent("9/F9D.2-3"))
+print(evProcess.SplitEvent("S7/G6S.3-H;1-2"))
+print(evProcess.SplitEvent("NP"))
+print(evProcess.SplitEvent("1"))
+print(evProcess.SplitEvent("SB3;SB2"))
+print(evProcess.SplitEvent("K"))
+print(evProcess.SplitEvent("NP"))
+print(evProcess.SplitEvent("IW"))
+print(evProcess.SplitEvent("S7/F7S.3-H;2-H;1-2"))
+print(evProcess.SplitEvent("486(1)/FO/F8S.B-1"))
+print(evProcess.SplitEvent("4(1)3/GDP/G4"))
+'''
 print("game id,visiting team,inning,batting team,outs,balls,strikes,pitch sequence,vis score,home score,batter,batter hand,res batter,res batter hand,pitcher,pitcher hand,res pitcher,res pitcher hand,catcher,first base,second base,third base,shortstop,left field,center field,right field,first runner,second runner,third runner,event text,leadoff flag,pinchhit flag,defensive position,lineup position,event type,batter event flag,ab flag,hit value,SH flag,SF flag,outs on play,double play flag,triple play flag,RBI on play,wild pitch flag,passed ball flag,fielded by,batted ball type,bunt flag,foul flag,hit location,num errors,1st error player,1st error type,2nd error player,2nd error type,3rd error player,3rd error type,batter dest,runner on 1st dest,runner on 2nd dest,runner on 3rd dest,play on batter,play on runner on 1st,play on runner on 2nd,play on runner on 3rd,SB for runner on 1st flag,SB for runner on 2nd flag,SB for runner on 3rd flag,CS for runner on 1st flag,CS for runner on 2nd flag,CS for runner on 3rd flag,PO for runner on 1st flag,PO for runner on 2nd flag,PO for runner on 3rd flag,Responsible pitcher for runner on 1st,Responsible pitcher for runner on 2nd,Responsible pitcher for runner on 3rd,New Game Flag,End Game Flag,Pinch-runner on 1st,Pinch-runner on 2nd,Pinch-runner on 3rd,ID of Runner removed for pinch-runner on 1st,ID of Runner removed for pinch-runner on 2nd,ID of Runner removed for pinch-runner on 3rd,ID of Batter removed for pinch-hitter,Fielding position of batter removed for pinch-hitter,Fielder with First Putout,Fielder with Second Putout,Fielder with Third Putout,Fielder with First Assist,Fielder with Second Assist,Fielder with Third Assist,Fielder with Fourth Assist,Fielder with Fifth Assist,event num")
 files = [f for f in os.listdir('.') if re.match('.*\\.ros$', f, re.IGNORECASE)]
 for f in files: ProcessRoster(f)
