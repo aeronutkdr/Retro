@@ -118,13 +118,8 @@ class Game:
                          'bunt'           : False,
                          'foul'           : False,
                          'hitlocation'    : '',
-                         'numerrors'      : 0,
-                         'error1player'   : 0,
-                         'error1type'     : 'N',
-                         'error2player'   : 0,
-                         'error2type'     : 'N',
-                         'error3player'   : 0,
-                         'error3type'     : 'N',
+                         'errorplayers'   : '',
+                         'errortypes'     : '',
                          'playonbatter'   : '',
                          'playonrunner1'  : '',
                          'playonrunner2'  : '',
@@ -138,14 +133,8 @@ class Game:
                          'porunner1'      : False,
                          'porunner2'      : False,
                          'porunner3'      : False,
-                         'putout1'        : 0,
-                         'putout2'        : 0,
-                         'putout3'        : 0,
-                         'assist1'        : 0,
-                         'assist2'        : 0,
-                         'assist3'        : 0,
-                         'assist4'        : 0,
-                         'assist5'        : 0,
+                         'putouts'        : '',
+                         'assists'        : '',
                          'sachit'         : False,
                          'sacfly'         : False
                     }
@@ -232,13 +221,14 @@ class Game:
                     outStr += ',\"' + ('T' if flags['bunt'] else 'F') + '\"'                                                 # 48 bunt flag
                     outStr += ',\"' + ('T' if flags['foul'] else 'F') + '\"'                                                 # 49 foul flag
                     outStr += ',\"' + str(flags['hitlocation']) + '\"'                                                       # 50 hit location
-                    outStr += ',' + str(flags['numerrors'])                                                                  # 51 num errors*
-                    outStr += ',' + str(flags['error1player'])                                                               # 52 1st error player
-                    outStr += ',\"' + str(flags['error1type']) + '\"'                                                        # 53 1st error type
-                    outStr += ',' + str(flags['error2player'])                                                               # 54 2nd error player
-                    outStr += ',\"' + str(flags['error2type']) + '\"'                                                        # 55 2nd error type
-                    outStr += ',' + str(flags['error3player'])                                                               # 56 3rd error player
-                    outStr += ',\"' + str(flags['error3type']) + '\"'                                                        # 57 3rd error type
+                    assert len(flags['errorplayers']) == len(flags['errortypes'])
+                    outStr += ',' + str(len(flags['errorplayers']))                                                          # 51 num errors*
+                    outStr += ',' + ('0' if len(flags['errorplayers']) < 1 else flags['errorplayers'][0])                    # 52 1st error player
+                    outStr += ',\"' + ('N' if len(flags['errortypes']) < 1 else flags['errortypes'][0]) + '\"'               # 53 1st error type
+                    outStr += ',' + ('0' if len(flags['errorplayers']) < 2 else flags['errorplayers'][1])                    # 54 2nd error player
+                    outStr += ',\"' + ('N' if len(flags['errortypes']) < 2 else flags['errortypes'][1]) + '\"'               # 55 2nd error type
+                    outStr += ',' + ('0' if len(flags['errorplayers']) < 3 else flags['errorplayers'][2])                    # 56 3rd error player
+                    outStr += ',\"' + ('N' if len(flags['errortypes']) < 3 else flags['errortypes'][2]) + '\"'               # 57 3rd error type
                     outStr += ',' + str(0 if runners[0] == -1 else runners[0])                                               # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[1] == -1 else runners[1])                                               # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',' + str(0 if runners[2] == -1 else runners[2])                                               # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
@@ -269,14 +259,14 @@ class Game:
                     outStr += ',\"' + ('' if self.subFlags['pinch3']==None else self.subFlags['pinch3'])+ '\"'               # 85 ID of Runner removed for pinch-runner on 3rd
                     outStr += ',\"' + ('' if self.subFlags['pinch0']==None else self.subFlags['pinch0'])+ '\"'               # 86 ID of Hitter removed for pinch-hitter
                     outStr += ',' + (str(self.subFlags['phpos']))                                                            # 87 Fielding position of batter removed for pinch-hitter
-                    outStr += ',' + str(flags['putout1'])                                                                    # 88 Fielder with First Putout (0 if none)
-                    outStr += ',' + str(flags['putout2'])                                                                    # 89 Fielder with Second Putout (0 if none)
-                    outStr += ',' + str(flags['putout3'])                                                                    # 90 Fielder with Third Putout (0 if none)
-                    outStr += ',' + str(flags['assist1'])                                                                    # 91 Fielder with First Assist (0 if none)
-                    outStr += ',' + str(flags['assist2'])                                                                    # 92 Fielder with Second Assist (0 if none)
-                    outStr += ',' + str(flags['assist3'])                                                                    # 93 Fielder with Third Assist (0 if none)
-                    outStr += ',' + str(flags['assist4'])                                                                    # 94 Fielder with Fourth Assist (0 if none)
-                    outStr += ',' + str(flags['assist5'])                                                                    # 95 Fielder with Fifth Assist (0 if none)
+                    outStr += ',' + ('0' if len(flags['putouts']) < 1 else flags['putouts'][0])                              # 88 Fielder with First Putout (0 if none)
+                    outStr += ',' + ('0' if len(flags['putouts']) < 2 else flags['putouts'][1])                              # 89 Fielder with Second Putout (0 if none)
+                    outStr += ',' + ('0' if len(flags['putouts']) < 3 else flags['putouts'][2])                              # 90 Fielder with Third Putout (0 if none)
+                    outStr += ',' + ('0' if len(flags['assists']) < 1 else flags['assists'][0])                              # 91 Fielder with First Assist (0 if none)
+                    outStr += ',' + ('0' if len(flags['assists']) < 2 else flags['assists'][1])                              # 92 Fielder with Second Assist (0 if none)
+                    outStr += ',' + ('0' if len(flags['assists']) < 3 else flags['assists'][2])                              # 93 Fielder with Third Assist (0 if none)
+                    outStr += ',' + ('0' if len(flags['assists']) < 4 else flags['assists'][3])                              # 94 Fielder with Fourth Assist (0 if none)
+                    outStr += ',' + ('0' if len(flags['assists']) < 5 else flags['assists'][4])                              # 95 Fielder with Fifth Assist (0 if none)
                     outStr += ',' + str(self.EventNum)                                                                       # 96 event num
                     print (outStr)
                     self.NewGame = False
@@ -334,21 +324,6 @@ def ProcessFile(s: str) -> list[Game]:
                 g[-1].Process(row)
     return g
 
-'''
-print(evProcess.SplitEvent("P01(E1/TH)"))
-print(evProcess.SplitEvent("S8/F8S.3-H;1-2"))
-print(evProcess.SplitEvent("9/F9D.2-3"))
-print(evProcess.SplitEvent("S7/G6S.3-H;1-2"))
-print(evProcess.SplitEvent("NP"))
-print(evProcess.SplitEvent("1"))
-print(evProcess.SplitEvent("SB3;SB2"))
-print(evProcess.SplitEvent("K"))
-print(evProcess.SplitEvent("NP"))
-print(evProcess.SplitEvent("IW"))
-print(evProcess.SplitEvent("S7/F7S.3-H;2-H;1-2"))
-print(evProcess.SplitEvent("486(1)/FO/F8S.B-1"))
-print(evProcess.SplitEvent("4(1)3/GDP/G4"))
-'''
 print("game id,visiting team,inning,batting team,outs,balls,strikes,pitch sequence,vis score,home score,batter,batter hand,res batter,res batter hand,pitcher,pitcher hand,res pitcher,res pitcher hand,catcher,first base,second base,third base,shortstop,left field,center field,right field,first runner,second runner,third runner,event text,leadoff flag,pinchhit flag,defensive position,lineup position,event type,batter event flag,ab flag,hit value,SH flag,SF flag,outs on play,double play flag,triple play flag,RBI on play,wild pitch flag,passed ball flag,fielded by,batted ball type,bunt flag,foul flag,hit location,num errors,1st error player,1st error type,2nd error player,2nd error type,3rd error player,3rd error type,batter dest,runner on 1st dest,runner on 2nd dest,runner on 3rd dest,play on batter,play on runner on 1st,play on runner on 2nd,play on runner on 3rd,SB for runner on 1st flag,SB for runner on 2nd flag,SB for runner on 3rd flag,CS for runner on 1st flag,CS for runner on 2nd flag,CS for runner on 3rd flag,PO for runner on 1st flag,PO for runner on 2nd flag,PO for runner on 3rd flag,Responsible pitcher for runner on 1st,Responsible pitcher for runner on 2nd,Responsible pitcher for runner on 3rd,New Game Flag,End Game Flag,Pinch-runner on 1st,Pinch-runner on 2nd,Pinch-runner on 3rd,ID of Runner removed for pinch-runner on 1st,ID of Runner removed for pinch-runner on 2nd,ID of Runner removed for pinch-runner on 3rd,ID of Batter removed for pinch-hitter,Fielding position of batter removed for pinch-hitter,Fielder with First Putout,Fielder with Second Putout,Fielder with Third Putout,Fielder with First Assist,Fielder with Second Assist,Fielder with Third Assist,Fielder with Fourth Assist,Fielder with Fifth Assist,event num")
 files = [f for f in os.listdir('.') if re.match('.*\\.ros$', f, re.IGNORECASE)]
 for f in files: ProcessRoster(f)
