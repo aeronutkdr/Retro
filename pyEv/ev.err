@@ -1,22 +1,23 @@
+('PO1', '(13)')
 Traceback (most recent call last):
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 332, in <module>
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 332, in <module>
     for f in files: games = ProcessFile(f); print (*games)
                             ~~~~~~~~~~~^^^
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 324, in ProcessFile
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 324, in ProcessFile
     g[-1].Process(row)
     ~~~~~~~~~~~~~^^^^^
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\ev.py", line 141, in Process
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\ev.py", line 141, in Process
     States = evProcess.GenSequence (self.Out,
                                     runners,
                                     r[5],
                                     r[6],
                                     flags)
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\evProcess.py", line 588, in GenSequence
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\evProcess.py", line 634, in GenSequence
     OutsOnPlay = ProcessEvent(runners, event, flags)
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\evProcess.py", line 545, in ProcessEvent
-    rbi += SplitMods(evt[0], runners, flags)
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\evProcess.py", line 593, in ProcessEvent
+    rbi += SplitAdvs(evt[1], runners, flags)
            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Kevin\source\repos\Retro\pyEv\evProcess.py", line 58, in SplitMods
-    case 'WILDPITCH':       assert False
-                                   ^^^^^
+  File "C:\Users\10032877\Documents\GitHub\Retro\pyEv\evProcess.py", line 196, in SplitAdvs
+    assert a[1]=='-'
+           ^^^^^^^^^
 AssertionError
