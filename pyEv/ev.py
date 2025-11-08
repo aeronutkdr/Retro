@@ -102,6 +102,11 @@ class Game:
                     self.Out = 0
                 self.Half = int(r[2])
                 self.Bases[0] = r[3]
+                #   5 : scored (no rbi)
+                #   4 : scored (rbi)
+                # 0:3 : populated
+                #  -1 : empty
+                #  -2 : out on this play
                 runners = [-1 if self.Bases[v]==None else v for v in range(4)]
                 flags = {'eventtype'      : 0,
                          'hitvalue'       : 0,
@@ -136,7 +141,8 @@ class Game:
                          'putouts'        : '',
                          'assists'        : '',
                          'sachit'         : False,
-                         'sacfly'         : False
+                         'sacfly'         : False,
+                         'fielderschoice' : False
                     }
                 States = evProcess.GenSequence (self.Out,
                                                 runners,
@@ -229,10 +235,10 @@ class Game:
                     outStr += ',\"' + ('N' if len(flags['errortypes']) < 2 else flags['errortypes'][1]) + '\"'               # 55 2nd error type
                     outStr += ',' + ('0' if len(flags['errorplayers']) < 3 else flags['errorplayers'][2])                    # 56 3rd error player
                     outStr += ',\"' + ('N' if len(flags['errortypes']) < 3 else flags['errortypes'][2]) + '\"'               # 57 3rd error type
-                    outStr += ',' + str(0 if runners[0] == -1 else runners[0])                                               # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
-                    outStr += ',' + str(0 if runners[1] == -1 else runners[1])                                               # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
-                    outStr += ',' + str(0 if runners[2] == -1 else runners[2])                                               # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
-                    outStr += ',' + str(0 if runners[3] == -1 else runners[3])                                               # 61 runner on 3rd dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',' + str(0 if runners[0] < 0 else runners[0])                                               # 58 batter dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',' + str(0 if runners[1] < 0 else runners[1])                                               # 59 runner on 1st dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',' + str(0 if runners[2] < 0 else runners[2])                                               # 60 runner on 2nd dest* (5 if scores and unearned, 6 if team unearned)
+                    outStr += ',' + str(0 if runners[3] < 0 else runners[3])                                               # 61 runner on 3rd dest* (5 if scores and unearned, 6 if team unearned)
                     outStr += ',\"' + flags['playonbatter'] + '\"'                                                           # 62 play on batter
                     outStr += ',\"' + flags['playonrunner1'] + '\"'                                                          # 63 play on runner on 1st
                     outStr += ',\"' + flags['playonrunner2'] + '\"'                                                          # 64 play on runner on 2nd
@@ -282,7 +288,9 @@ class Game:
                     elif runners[i] > 3:
                         self.Score[self.Half]+=1
                         self.Bases[i] = None
-                    elif runners[i] == -1:
+                    elif runners[i] < 0:
+                        if runners[i] == -2 and flags['fielderschoice']:
+                            Offros[self.Bases[0]]['resp'] = Offros[self.Bases[i]]['resp']
                         self.Bases[i] = None
                 self.Out = States[-1] >> 14
                 if (self.Out == 3):

@@ -66,7 +66,7 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 m = re.match('(PO\\d)(\\(\\d+\\))?', mo.group())
                 #print (m.groups(), file=sys.stderr)
                 r = int(m.groups()[0][2])
-                runners[r] = -1
+                runners[r] = -2
                 flags['eventtype'] =  8
                 flags['playonrunner' + m.groups()[0][2]] = m.groups()[1][1:-1]
                 flags['porunner' + m.groups()[0][2]] = True
@@ -80,7 +80,7 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 flags['porunner'+mo.group()[2]] = True
             case 'PITCHOUT_CS':
                 r = int(mo.group()[4])-1
-                runners[r] = -1
+                runners[r] = -2
                 flags['eventtype'] =  8
                 flags['playonrunner'+str(r)] = mo.group()[6:-1]
                 flags['csrunner'+str(r)] = True
@@ -112,10 +112,10 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 #print (m[1], file=sys.stderr)
                 if m[2] != None:
                     flags['playonrunner' + m[2][1]] = play
-                    runners[int(m[2][1])] = -1
+                    runners[int(m[2][1])] = -2
                 else:
                     flags['playonbatter'] = play[-2:]
-                    runners[0] = -1
+                    runners[0] = -2
                 if flags['fieldedby'] == 0:
                     flags['fieldedby'] = int(m[1][0])
                 flags['putouts'] += m[1][-1]
@@ -168,7 +168,7 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 assert r>0
                 pfld = 'playonrunner' + str(r)
                 csfld = 'csrunner' + str(r)
-                runners[r] = -1
+                runners[r] = -2
                 #print (m[2], file=sys.stderr)
                 for c in m[2][1:-2]:
                     if c not in flags['assists']:
@@ -179,7 +179,7 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
             case 'STRIKEOUT':
                 flags['batterevent'] = True
                 flags['ab'] = True
-                runners[0] = -1
+                runners[0] = -2
                 flags['eventtype'] =  3
                 flags['playonbatter'] = '2'
                 flags['putouts'] += '2'
@@ -204,8 +204,13 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 flags['errortypes'] += ('T' if mo.group().find('/TH')>-1 else 'F')
                 flags['fieldedby'] = int(mo.group()[1])
             case 'OTHERADVANCE':    assert False
-            case 'FORCEOUT': None
+            case 'FORCEOUT':
+                flags['fielderschoice'] = True
+                #for i in range(len(runners)):
+                    #if (runners[i] == -2):
+                        #runners[i] = -3
             case 'FIELDERSCHOICE':
+                flags['fielderschoice'] = True
                 flags['batterevent'] = True
                 flags['ab'] = True
                 flags['eventtype'] = 19
@@ -253,7 +258,7 @@ def SplitAdvs(advs: str, runners : list[int], flags : dict):
                             assert s[1]=='R'
                             runners[r1] += 1
             case 'X':
-                runners[r1] = -1
+                runners[r1] = -2
                 m = re.match(r'(.X.)(\(\d+\))?', a)
                 if len(flags['putouts']) > 0 and flags['putouts'][-1] == '2' and m.group(2)[1] == '2':
                     flags['putouts'] = ''
@@ -289,10 +294,10 @@ def ProcessEvent (runners : list[int], event : str, flags : dict) -> int:
 
 def GenSequence (Outs : int, runners : list[int], pitches : str, event : str, flags : dict) -> list[int]:
     to = [(Outs<<14) |\
-          (0 if runners[3] == -1 else (1<<13)) |\
-          (0 if runners[2] == -1 else (1<<12)) |\
-          (0 if runners[1] == -1 else (1<<11)) |\
-          (0 if runners[0] == -1 else (1<<10))]
+          (0 if runners[3] < 0 else (1<<13)) |\
+          (0 if runners[2] < 0 else (1<<12)) |\
+          (0 if runners[1] < 0 else (1<<11)) |\
+          (0 if runners[0] < 0 else (1<<10))]
     if ((to[-1] & (1<<10)) == 0): # no batter at home
         to.append (to[-1] | (1<<10))
     Strikes = 0
