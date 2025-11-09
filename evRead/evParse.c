@@ -6,8 +6,8 @@
 
 #define QUOTE ('\"')
 #define COMMA (',')
-//#define NUMFIELDS (97)
-#define NUMFIELDS (16)
+#define NUMFIELDS (97)
+//#define NUMFIELDS (16)
 /* 16 fields used (0,4,7,10,26-28,34,35,40,58-61,79,96)
 	gameid                                 =  0,
 	outs                                   =  4,

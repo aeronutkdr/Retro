@@ -64,6 +64,12 @@ int main (int argc, char* argv[])
 				lineNum++;
 				assert (strlen(str) <= LINELEN);
 				Parse (fields, str);
+				/*
+				if (!strcmp(fields[inning], "10"))
+				{
+					printf("%d\n", lineNum);
+				}
+				*/
 				enum EventType Event;
 				int isFFFF = (states[0] == 0xFFFF);
 				int n = Process(states, fields, &Event);
