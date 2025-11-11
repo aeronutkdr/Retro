@@ -101,6 +101,9 @@ class Game:
                     assert self.Out == 3
                     self.Out = 0
                 self.Half = int(r[2])
+                if (self.Bases[0] != r[3]):
+                    self.subFlags['pinch0'] = None
+                    self.subFlags['phpos'] = 0
                 self.Bases[0] = r[3]
                 #   5 : scored (no rbi)
                 #   4 : scored (rbi)
@@ -208,8 +211,8 @@ class Game:
                     outStr += ',\"' + r[6] + '\"'                                                                            # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                                  # 30 leadoff flag*
                     outStr += ',\"' + ('F' if self.subFlags['pinch0']==None or self.subFlags['phpos'] == 10 else 'T') + '\"' # 31 pinchhit flag*
-                    outStr += ',' + str(Offpos.index(self.Bases[0],1)+1)                                                       # 32 defensive position*
-                    outStr += ',' + str(self.Teams[self.Half].Order.index(self.Bases[0],1))                                    # 33 lineup position*
+                    outStr += ',' + str(Offpos.index(self.Bases[0],1)+1)                                                     # 32 defensive position*
+                    outStr += ',' + str(self.Teams[self.Half].Order.index(self.Bases[0],1))                                  # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                                  # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                                          # 35 batter event flag*
                     outStr += ',\"' + ('T' if flags['ab'] else 'F') + '\"'                                                   # 36 ab flag*
@@ -276,11 +279,11 @@ class Game:
                     outStr += ',' + str(self.EventNum)                                                                       # 96 event num
                     print (outStr)
                     self.NewGame = False
-                    self.subFlags = {'pinch0' : None,
+                    self.subFlags = {'pinch0' : self.subFlags['pinch0'],
                                      'pinch1' : None,
                                      'pinch2' : None,
                                      'pinch3' : None,
-                                     'phpos'  : 0}
+                                     'phpos'  : self.subFlags['phpos']}
                 for i in reversed(range(4)):
                     if i != runners[i] and runners[i] in range(4):
                         self.Bases[runners[i]] = self.Bases[i]

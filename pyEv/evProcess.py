@@ -19,6 +19,8 @@ def strval (s: str, v: int) -> str:
     return s + str(v)
 
 def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
+    if (mods == 'FLE5'):
+        None
     rbi = 0
     token_specification = [('DELIM'         , r'[\/;]'),
                            ('CATCHERINTER'  , r'C\/E\d'),
@@ -53,6 +55,7 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                            ('UNKNOWN'       , r'.+')]
     tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
     play = ''
+    idx = 0
     for mo in re.finditer(tok_regex, mods):
         match mo.lastgroup:
             case 'DELIM': None
@@ -90,8 +93,8 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
             case 'WILDPITCH':
                 flags['eventtype'] =  9 if flags['eventtype'] == 0 else flags['eventtype']
                 flags['wildpitch']=True
-                flags['playonbatter'] = ''
-                flags['putouts'] = flags['putouts'][:-1]
+                #flags['playonbatter'] = ''
+                #flags['putouts'] = flags['putouts'][:-1]
             case 'DOUBLEPLAY':
                 flags['doubleplay'] = True
                 flags['batterevent'] = True
@@ -113,8 +116,10 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 if m[2] != None:
                     flags['playonrunner' + m[2][1]] = play
                     runners[int(m[2][1])] = -2
+                    idx = len(play) - 1
                 else:
-                    flags['playonbatter'] = play[-2:]
+                    #flags['playonbatter'] = play[-2:]
+                    flags['playonbatter'] = play[idx:]
                     runners[0] = -2
                 if flags['fieldedby'] == 0:
                     flags['fieldedby'] = int(m[1][0])
@@ -153,6 +158,12 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 flags['hitvalue'] = 3
             case 'FOUL':
                 flags['foul'] = True
+                if len(mo.group())>2:
+                    flags['eventtype'] = 13
+                    flags['fieldedby'] = int (mo.group()[3])
+                    flags['battedballtype'] = 'P'
+                    flags['errorplayers'] += mo.group()[3]
+                    flags['errortypes'] += 'F'
             case 'LOCATION':
                 flags['bunt'] = mo.group()[0] == 'B'
                 i = 1 if flags['bunt'] else 0
@@ -240,6 +251,9 @@ def SplitAdvs(advs: str, runners : list[int], flags : dict):
         r2 = 4 if a[2]=='H' else int(a[2])
         match a[1]:
             case '-':
+                if (r1==0) and flags['wildpitch']:
+                    flags['playonbatter'] = ''
+                    flags['putouts'] = flags['putouts'][:-1]
                 #https://regex101.com/
                 mo = re.match(r'(?:.-.)((?:\(.+?\))*)', a)
                 #2-H(E3)(NR)(UR)
@@ -257,6 +271,9 @@ def SplitAdvs(advs: str, runners : list[int], flags : dict):
                         case 'U':
                             assert s[1]=='R'
                             runners[r1] += 1
+                        case 'T':
+                            assert s[1:3]=='UR'
+                            runners[r1] += 2
             case 'X':
                 runners[r1] = -2
                 m = re.match(r'(.X.)(\(\d+\))?', a)
