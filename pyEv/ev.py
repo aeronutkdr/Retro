@@ -94,6 +94,8 @@ class Game:
                 t.Order[ord] = r[1]
                 t.Position[pos] = r[1]
             case "play":
+                if r[6] == '2/BP2/DP.2X2(26)':
+                    None
                 States = []
                 self.Inning = int(r[1])
                 self.Leadoff |= (self.Half != int(r[2]))
@@ -211,7 +213,14 @@ class Game:
                     outStr += ',\"' + r[6] + '\"'                                                                            # 29 event text*
                     outStr += ',\"' + ('T' if self.Leadoff else 'F') + '\"'                                                  # 30 leadoff flag*
                     outStr += ',\"' + ('F' if self.subFlags['pinch0']==None or self.subFlags['phpos'] == 10 else 'T') + '\"' # 31 pinchhit flag*
-                    outStr += ',' + str(Offpos.index(self.Bases[0],1)+1)                                                     # 32 defensive position*
+                    try:
+                        p = (0 if (Offpos.index(self.Bases[0],1)>10) else (Offpos.index(self.Bases[0],1)+1))
+                    except:
+                        #p = 0 if Offpos.index(self.Bases[0])==0 else 1
+                        p = 1
+                    outStr += ',' + str(p)                                                                                   # 32 defensive position*
+                    #if Offpos[10]==self.Bases[0]:
+                        #Offpos[10]=None
                     outStr += ',' + str(self.Teams[self.Half].Order.index(self.Bases[0],1))                                  # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                                  # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                                          # 35 batter event flag*
@@ -298,7 +307,7 @@ class Game:
                 self.Out = States[-1] >> 14
                 if (self.Out == 3):
                     self.Bases = [None] * 4
-                self.Leadoff &= (r[6] == "NP")
+                self.Leadoff &= ((r[6] == "NP") or not flags['batterevent'])
 
             case "radj":
                 self.Bases[int(r[2])] = r[1]
