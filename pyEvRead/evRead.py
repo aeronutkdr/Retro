@@ -82,9 +82,10 @@ v = [0.0 for i in range(1<<9)]
 n = [0 for i in range(1<<9)]
 for i in range(2010,2019):
     fname = '../data/' + str(i) + 'eve/States.bin'
-    print (fname)
+    #print (fname)
     ProcessFile(fname, v, n)
-print ('O 3 2 1 B S Value N')
+#print ('O 3 2 1 B S Value N')
+print ('ID N Value stddev(Transitions)')
 for i in range(1<<9):
     if (n[i] > 0):
         # OO321BBSS
@@ -94,4 +95,4 @@ for i in range(1<<9):
         r1 = (i>>4) & 1
         balls = (i>>2) & 3
         strikes = (i>>0) & 3
-        print (outs, r3, r2, r1, balls, strikes, v[i]/float(n[i]), n[i])
+        print ((outs<<12) + (r3<<10) + (r2<<9) + (r1<<8) + (balls<<4) + (strikes<<0), n[i], v[i]/float(n[i]), 0)
