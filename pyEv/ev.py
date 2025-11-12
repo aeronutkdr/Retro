@@ -94,8 +94,6 @@ class Game:
                 t.Order[ord] = r[1]
                 t.Position[pos] = r[1]
             case "play":
-                if r[6] == '2/BP2/DP.2X2(26)':
-                    None
                 States = []
                 self.Inning = int(r[1])
                 self.Leadoff |= (self.Half != int(r[2]))
@@ -216,11 +214,8 @@ class Game:
                     try:
                         p = (0 if (Offpos.index(self.Bases[0],1)>10) else (Offpos.index(self.Bases[0],1)+1))
                     except:
-                        #p = 0 if Offpos.index(self.Bases[0])==0 else 1
                         p = 1
                     outStr += ',' + str(p)                                                                                   # 32 defensive position*
-                    #if Offpos[10]==self.Bases[0]:
-                        #Offpos[10]=None
                     outStr += ',' + str(self.Teams[self.Half].Order.index(self.Bases[0],1))                                  # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                                  # 34 event type*
                     outStr += ',\"' + ('T' if flags['batterevent'] else 'F') + '\"'                                          # 35 batter event flag*

@@ -67,7 +67,6 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 flags['ab'] = False
             case 'PITCHOUT':
                 m = re.match('(PO\\d)(\\(\\d+\\))?', mo.group())
-                #print (m.groups(), file=sys.stderr)
                 r = int(m.groups()[0][2])
                 runners[r] = -2
                 flags['eventtype'] =  8
@@ -89,15 +88,12 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 flags['csrunner'+str(r)] = True
                 flags['porunner'+str(r)] = True
                 flags['putouts']+= mo.group()[-2]
-                #flags['assists']+= mo.group()[6:-2]
                 for c in mo.group()[6:-2]:
                     if c not in flags['assists']:
                         flags['assists'] += c
             case 'WILDPITCH':
                 flags['eventtype'] =  9 if flags['eventtype'] == 0 else flags['eventtype']
                 flags['wildpitch']=True
-                #flags['playonbatter'] = ''
-                #flags['putouts'] = flags['putouts'][:-1]
             case 'DOUBLEPLAY':
                 flags['doubleplay'] = True
                 flags['batterevent'] = True
@@ -117,13 +113,11 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 flags['eventtype'] =  2
                 m = re.match('(\\d+)(\\(\\d\\))?', mo.group())
                 play += m[1]
-                #print (m[1], file=sys.stderr)
                 if m[2] != None:
                     flags['playonrunner' + m[2][1]] = play
                     runners[int(m[2][1])] = -2
                     idx = len(play) - 1
                 else:
-                    #flags['playonbatter'] = play[-2:]
                     flags['playonbatter'] = play[idx:]
                     runners[0] = -2
                 if flags['fieldedby'] == 0:
@@ -180,13 +174,11 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
             case 'CAUGHTSTEALING':
                 flags['eventtype'] =  6 if flags['eventtype'] == 0 else flags['eventtype']
                 m = re.match('(CS.)(\\(\\d+\\))?', mo.group())
-                #print (m[1], file=sys.stderr)
                 r   = 3 if m[1][2] == 'H' else int(m[1][2])-1
                 assert r>0
                 pfld = 'playonrunner' + str(r)
                 csfld = 'csrunner' + str(r)
                 runners[r] = -2
-                #print (m[2], file=sys.stderr)
                 for c in m[2][1:-2]:
                     if c not in flags['assists']:
                         flags['assists'] += c
@@ -224,9 +216,6 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
                 flags['eventtype'] = 12
             case 'FORCEOUT':
                 flags['fielderschoice'] = True
-                #for i in range(len(runners)):
-                    #if (runners[i] == -2):
-                        #runners[i] = -3
             case 'FIELDERSCHOICE':
                 flags['fielderschoice'] = True
                 flags['batterevent'] = True
@@ -242,8 +231,6 @@ def SplitMods(mods : str, runners : list[int], flags : dict) -> int:
             case 'PASSEDBALL':
                 flags['eventtype'] = 10 if flags['eventtype'] == 0 else flags['eventtype']
                 flags['passedball'] = True
-                #flags['playonbatter'] = ''
-                #flags['putouts'] = flags['putouts'][:-1]
             case 'UNKNOWN': assert False
     if play != '':
         flags['assists'] = play[:-1]
@@ -253,7 +240,6 @@ def SplitAdvs(advs: str, runners : list[int], flags : dict):
     rbi = 0
     ad = advs.split(';')
     for a in ad:
-        #mo = re.match('(.-.)(\\(E\\d.*\\))?', a)
         r1 = 0 if a[0]=='B' else int(a[0])
         r2 = 4 if a[2]=='H' else int(a[2])
         match a[1]:
