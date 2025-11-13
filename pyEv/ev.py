@@ -215,6 +215,8 @@ class Game:
                         p = (0 if (Offpos.index(self.Bases[0],1)>10) else (Offpos.index(self.Bases[0],1)+1))
                     except:
                         p = 1
+                    if p==11 and self.subFlags['pinch0']==None:
+                        p = 0
                     outStr += ',' + str(p)                                                                                   # 32 defensive position*
                     outStr += ',' + str(self.Teams[self.Half].Order.index(self.Bases[0],1))                                  # 33 lineup position*
                     outStr += ',' + str(flags['eventtype'])                                                                  # 34 event type*
